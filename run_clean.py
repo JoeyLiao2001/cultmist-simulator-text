@@ -10,6 +10,7 @@ import argparse
 import sys
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).parent / "src"))
 from cleaner.pipeline import run_pipeline
 
 
@@ -20,14 +21,14 @@ def main():
     parser.add_argument(
         "--data-dir",
         type=Path,
-        default=Path(__file__).parent,
-        help="包含 14 个类别子目录的根目录（默认：项目根目录）"
+        default=Path(__file__).parent / "data" / "raw",
+        help="包含 14 个类别子目录的根目录（默认：data/raw/）"
     )
     parser.add_argument(
         "--output-dir",
         type=Path,
-        default=Path(__file__).parent / "cleaned",
-        help="输出目录（默认：./cleaned）"
+        default=Path(__file__).parent / "data" / "cleaned",
+        help="输出目录（默认：data/cleaned）"
     )
     args = parser.parse_args()
 

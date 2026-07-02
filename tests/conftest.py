@@ -1,4 +1,8 @@
+import sys
 from pathlib import Path
+
+# Add src/ to path so tests can import cleaner.*
+sys.path.insert(0, str(Path(__file__).parent.parent / "src"))
 
 FIXTURES_DIR = Path(__file__).parent / "fixtures"
 
