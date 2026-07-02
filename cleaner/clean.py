@@ -17,7 +17,7 @@ def clean_aspects(raw: list[str]) -> list[str]:
 def clean_description(desc: str) -> tuple[str, bool, bool]:
     """
     清洗描述文本。
-    返回: (cleaned_text, has_game_instruction)
+    返回: (cleaned_text, has_game_instruction, has_template)
     """
     has_instruction = False
 

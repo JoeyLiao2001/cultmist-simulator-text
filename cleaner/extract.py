@@ -25,7 +25,7 @@ def split_frontmatter_body(text: str) -> tuple[dict, str]:
 
 def extract_file(filepath: Path) -> RawRecord | None:
     """解析单个 .md 文件，返回 RawRecord。"""
-    if not filepath.exists() or not filepath.suffix == '.md':
+    if not filepath.exists() or filepath.suffix != '.md':
         return None
     try:
         text = filepath.read_text(encoding='utf-8')
