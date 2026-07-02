@@ -10,29 +10,30 @@
 
 | 传统 | 数量 |
 |------|------|
-| 道教 / 中国民间信仰 | 20 |
+| 道教 / 中国民间信仰 | 19 |
 | 佛教 (含藏传、日本佛教) | 18 |
+| 苏菲主义 / 伊斯兰神秘主义 | 13 |
 | 塔罗牌 | 12 |
-| 苏菲主义 / 伊斯兰神秘主义 | 12 |
 | 希腊神话 / 古典秘传 | 11 |
-| 凯尔特神话与秘传 | 11 |
-| 亚瑟王传奇 | 11 |
-| 炼金术 | 11 |
-| 萨满 / 泛灵信仰 | 10 |
+| 凯尔特神话与秘传 | 10 |
 | 阿兹特克 / 中美洲 | 10 |
-| 斯拉夫民间信仰 | 10 |
+| 萨满 / 泛灵信仰 | 10 |
 | 现代秘教 / 神智学 | 10 |
+| 斯拉夫民间信仰 | 10 |
 | 卡巴拉 / 犹太神秘主义 | 9 |
 | 非洲 / 非洲散居宗教 | 9 |
-| 日本神道 / 民间信仰 | 9 |
+| 基督教神秘主义 | 8 |
+| 亚瑟王传奇 | 8 |
+| 日本神道 / 民间信仰 | 8 |
 | 琐罗亚斯德教 / 波斯神话 | 8 |
-| 诺斯替主义 | 7 |
-| 基督教神秘主义 | 7 |
+| 炼金术 | 6 |
 | 文艺复兴秘术 | 6 |
-| 赫尔墨斯主义 | 5 |
-| 印度教 / 吠陀传统 | 5 |
+| 诺斯替主义 | 6 |
 | 美索不达米亚神话 | 5 |
+| 印度教 / 吠陀传统 | 5 |
+| 赫尔墨斯主义 | 4 |
 | 古埃及秘传 | 4 |
+| 北欧神话 | 4 |
 | 大洋洲 / 太平洋原住民 | 3 |
 | 澳大利亚原住民 | 2 |
 | 玫瑰十字会 | 2 |
@@ -58,7 +59,7 @@
 | 开口仪式 (Opening of the Mouth) | `opening-mouth.md` | 古埃及最神圣的丧葬仪式——以锛刀触碰木乃伊的嘴与眼，使其在死后世界中重获感官生命。 |
 | 心脏称重 (Weighing of the Heart) | `weighing-heart.md` | 死者的心脏被放在真理羽毛的天平上称重——比羽毛重则被阿米特吞噬，比羽毛轻则进入永生。 |
 
-## 三、炼金术 (11)
+## 三、炼金术 (6)
 
 | 卡牌 | 文件 | 简介 |
 |------|------|------|
@@ -67,14 +68,9 @@
 | 赤化 (Rubedo) | `rubedo.md` | 炼金的最终阶段——红化的完成标志着哲人石的诞生与不朽的完成。 |
 | 第一原质 (Prima Materia) | `prima-materia.md` | 炼金术之基——同时具备一切形而上品质却又尚未成型的万物之源。 |
 | 炼金婚礼 (The Alchemical Wedding) | `the-alchemical-wedding.md` | 国王(硫磺)与王后(水银)在圆瓶中结合、死亡并重生为雌雄同体的瑞比斯。 |
-| 翠玉录 (Emerald Tablet) | `emerald-tablet.md` | 赫尔墨斯主义的基石——"其上如其下"的十三句箴言刻于祖母绿石板。 |
 | 帕拉塞尔苏斯的三原质 | `paracelsus-tria-prima.md` | 盐(体)、硫磺(魂)、水银(灵)——文艺复兴医哲将人的身心灵结构投射到一切物质之中。 |
-| 金丹 (Golden Elixir) | `golden-elixir.md` | 道教内丹术的最高成就——以身为炉鼎，以精炁神为药物，炼就不死金丹。 |
-| 炼丹术 | `external-alchemy.md` | 与内丹相对的外丹术——以矿物、金属、草药炼制物理形态的长生不死丹药。 |
-| 三宝 (Three Treasures) | `three-treasures.md` | 道教内丹术的三种核心修炼原料：精（生命的物质基础）、炁（生命的能量流动）、神（生命的意识光芒）。 |
-| 玫瑰十字会的化学婚礼 | `chymical-wedding-rosenkreuz.md` | 1616年匿名出版的七天之谜——克里斯蒂安·罗森克鲁兹在一场王室婚礼中经历解构与重塑。 |
 
-## 四、赫尔墨斯主义 (5)
+## 四、赫尔墨斯主义 (4)
 
 | 卡牌 | 文件 | 简介 |
 |------|------|------|
@@ -82,9 +78,8 @@
 | 翠玉录 (Emerald Tablet) | `emerald-tablet.md` | 赫尔墨斯主义核心文献——传说由三重伟大的赫尔墨斯刻于石板的十三句箴言。 |
 | 神圣的牧人者 (Poimandres) | `the-divine-pymander.md` | 《赫尔墨斯文集》第一卷——赫尔墨斯在恍惚中被"无限光体"拜访，光体自称"我即你心智中的神"。 |
 | 八重天 (The Ogdoad) | `the-ogdoad.md` | 赫尔墨斯主义的天球穿越叙事——灵魂穿越七重行星天球，在每一层剥离一层凡俗属性，最终融入第八重神圣领域。 |
-| 菲奇诺的灵魂医学 | `ficinos-astral-medicine.md` | 文艺复兴哲人将新柏拉图主义灵魂理论应用于身体治疗——行星对应器官，音乐与护符可调谐灵魂。 |
 
-## 五、诺斯替主义 (7)
+## 五、诺斯替主义 (6)
 
 | 卡牌 | 文件 | 简介 |
 |------|------|------|
@@ -94,7 +89,6 @@
 | 普累若麻 (The Pleroma) | `the-pleroma.md` | 诺斯替体系的最高实在——由不可知的父与三十位男女配对的移涌构成的完美丰盈。 |
 | 诺斯替基督论 | `gnostic-christ.md` | 基督不是赎罪者而是唤醒者——他降入物质世界带来"灵知"(gnosis)，使灵魂认出自己真正的神圣起源。 |
 | 伪经福音 | `apocryphal-gospels.md` | 未被正统教会收录的福音文本——《多马福音》《犹大福音》《马利亚福音》……从诺斯替灵知的视角重新讲述。 |
-| 摩尼教光暗二元 | `manichaean-cosmology.md` | 光明被黑暗吞食而后被拯救——摩尼教宇宙论中，整个被造世界是一场光明粒子从黑暗中逐渐回收的大工程。 |
 
 ## 六、塔罗牌 (12)
 
@@ -146,7 +140,7 @@
 | 即身成佛 | `sokushin-jobutsu.md` | 空海的终极教义——六大无碍，人身即佛身，此生此身即可证悟大日如来的法身。 |
 | 即身仏 | `sokushinbutsu.md` | 日本山形县出羽三山修验道的极端苦行——僧人在地下石室中以渐进进食的本方式将自己活活木乃伊化。 |
 
-## 九、道教 / 中国民间信仰 (20)
+## 九、道教 / 中国民间信仰 (19)
 
 | 卡牌 | 文件 | 简介 |
 |------|------|------|
@@ -169,9 +163,8 @@
 | 钟馗捉鬼 | `zhong-kui-ghost-catcher.md` | 因貌丑被夺状元而撞死殿前的进士——死后被玉帝封为驱魔大将，捉尽天下之鬼。 |
 | 蓬莱仙岛 | `penglai-isle.md` | 东海三神山之一——仙人所居，宫殿为金银，禽兽皆纯白，远望如云、近即沉入水中。 |
 | 九尾狐 | `nine-tailed-fox.md` | 从祥瑞到妖邪的千年变形——九尾狐从西王母身边的瑞兽沦为中国与日本民间传说中最危险的魅惑者。 |
-| 九字真言 | `kuji-in.md` | 源自《抱朴子》的"临兵斗者皆阵列前行"——经空海传入日本，成为修验道山伏的除魔手印。 |
 
-## 十、苏菲主义 / 伊斯兰神秘主义 (12)
+## 十、苏菲主义 / 伊斯兰神秘主义 (13)
 
 | 卡牌 | 文件 | 简介 |
 |------|------|------|
@@ -187,8 +180,9 @@
 | 胡鲁夫教团 | `hurufism.md` | 波斯神秘教派——宇宙一切现象都可以还原为字母和数字的组合，人脸是至高的"神圣文本"。 |
 | 哈尔丁之书 | `ghayat-al-hakim.md` | 阿拉伯魔法文献《贤者之目标》——中世纪伊斯兰星相魔法集大成，11世纪在安达卢斯编成，深刻影响了欧洲后来的星灵魔法。 |
 | 精灵三族 | `three-kinds-of-jinn.md` | 伊斯兰宇宙论中造于无烟之火的三类精灵：穆民精灵、混血精灵与萨坦恶灵。 |
+| 精灵附身与驱邪 | `jinn-possession-ruqya.md` | 伊斯兰世界的精灵附身传统——以《古兰经》经文诵读（Ruqya）进行的驱邪治疗仪式。 |
 
-## 十一、凯尔特神话与秘传 (11)
+## 十一、凯尔特神话与秘传 (10)
 
 | 卡牌 | 文件 | 简介 |
 |------|------|------|
@@ -202,9 +196,8 @@
 | 变形神 (The Morrígan) | `the-morrigan.md` | 战争与命运的三重女神——以乌鸦、鳗鱼、母狼或年迈妇人的面貌在战场上决定谁生谁死。 |
 | 银色枝条 (The Silver Bough) | `the-silver-bough.md` | 来自凯尔特彼岸仙境的银枝——摇动时发出使人入迷的音乐，引导凡人与死者进入另一个世界。 |
 | 橡树王与冬青王 | `oak-king-holly-king.md` | 凯尔特年轮的二元统治者——橡树王从冬至统治到夏至，冬青王从夏至统治到冬至，每年在季节交接处决斗。 |
-| 塔普禁忌 (Tapu) | `tapu.md` | 毛利人神圣与禁忌的体系——某些人、地、物是"塔普"（神圣/不可触碰），违反者自身即成为活禁忌。 |
 
-## 十二、亚瑟王传奇 (11)
+## 十二、亚瑟王传奇 (8)
 
 | 卡牌 | 文件 | 简介 |
 |------|------|------|
@@ -215,10 +208,7 @@
 | 湖中女士 | `the-lady-of-the-lake.md` | 赠剑予亚瑟的神秘水中之女——她养育了兰斯洛特，封印了默林，在亚瑟临终时收回圣剑。 |
 | 圣杯 | `the-holy-grail.md` | 基督最后晚餐所用的杯、收集了受难之血——进入不列颠后催化了圆桌骑士的最伟大追寻。 |
 | 断剑重铸 | `the-sword-in-the-stone-and-the-broken-sword.md` | 石中之剑证明亚瑟的王权——当第一把剑断裂后，湖中女士赐予他王者之剑(Excalibur)。 |
-| 荒原与渔王 | `the-wasteland-and-fisher-king.md` | 国王受伤——他的王国随之枯萎，只有骑士问出正确的问题，荒原才能恢复生机。 |
-| 圣杯 | `the-holy-grail.md` | 基督最后晚餐之杯——只有最纯洁或最勇敢的骑士才能找到它。 |
-| 石中剑与湖中剑 | `the-sword-in-the-stone-and-the-broken-sword.md` | 两把剑定义了亚瑟：石中剑赋予他王位，断裂后湖中剑赋予他无法被击败的力量——但剑鞘比剑本身更珍贵。 |
-| 渔王的荒原 | `the-wasteland-and-fisher-king.md` | 国王腹股受伤与土地的荒芜同时发生——只有帕西法尔/加拉哈德能在圣杯城堡中问出疗愈之问。 |
+| 荒原与渔王 | `the-wasteland-and-fisher-king.md` | 国王腹股受伤与土地的荒芜同时发生——只有帕西法尔/加拉哈德能在圣杯城堡中问出疗愈之问。 |
 
 ## 十三、北欧神话 (4)
 
@@ -244,7 +234,7 @@
 | 吸血鬼起源 | `upir.md` | 斯拉夫民间传统中的原始吸血鬼概念——天折、自杀或未受洗者的尸体会从坟墓中爬出，吸血引发瘟疫。 |
 | 三头龙兹梅 | `zmey-gorynych.md` | 多头喷火的斯拉夫恶龙——俄国壮士多布里尼亚·尼基季奇在普柴河畔与之血战三日。 |
 
-## 十五、日本神道 / 民间信仰 (9)
+## 十五、日本神道 / 民间信仰 (8)
 
 | 卡牌 | 文件 | 简介 |
 |------|------|------|
@@ -255,10 +245,9 @@
 | 三神器 | `sanshu-no-jingi.md` | 日本天皇的三种神器：八咫镜（天照的化身）、草薙剑（从八岐大蛇尾中取出）、八尺琼勾玉（海神的赠物）。 |
 | 式神 | `shikigami.md` | 阴阳师以符咒役使的隐形灵体——安倍晴明传说中以式神为仆，庭中落叶皆是式神所化。 |
 | 黄泉 | `yomi.md` | 日本神话中的死国——伊邪那岐赴黄泉寻妻伊邪那美，发现她已化为蛆虫满身腐烂，逃出后以千引石封堵入口。 |
-| 不动明王 | `fudo-myoo.md` | 大日如来的忿怒化身——右手持降魔剑、左手持罥索、背后燃迦楼罗焰，磐石之上无可动摇。 |
 | 九字真言 | `kuji-in.md` | 修验道山伏的除魔手印——横四竖五划九字格，配合"临兵斗者皆阵列前行"九字真言。 |
 
-## 十六、基督教神秘主义 (7)
+## 十六、基督教神秘主义 (8)
 
 | 卡牌 | 文件 | 简介 |
 |------|------|------|
@@ -269,6 +258,7 @@
 | 被逐出伊甸园 | `expulsion-from-eden.md` | 驱逐发生在吃生命树果子之前——神害怕人"与我们相似且永远活着"，意味着驱逐的核心目的是阻止堕落状态被永久化。 |
 | 伪狄奥尼修斯 | `pseudo-dionysius.md` | 5-6世纪匿名神学家——将天使分三组九品，提出"否定神学"：对神只能说祂不是什么。 |
 | 路西法：光之带来者 | `lucifer-light-bringer.md` | "晨星"(金星)在拉丁武加大译本中被译为Lucifer——原本指巴比伦王的陨落，后被诠释为天使的堕落，携带光却坠入深渊。 |
+| 四大天使长 | `four-archangels.md` | 米迦勒、加百列、拉斐尔、乌列——站立于神宝座前的四位天使长，分别对应火、水、风、土四元素的守护与传达。
 
 ## 十七、阿兹特克 / 中美洲 (10)
 
@@ -410,25 +400,25 @@
 `daat.md`, `ein-sof.md`, `golem.md`, `letters-creative-powers.md`, `qliphoth.md`, `shevirat-ha-kelim.md`, `tetragrammaton.md`, `tree-of-life.md`, `tzimtzum.md`
 
 ### 炼金术
-`albedo.md`, `chymical-wedding-rosenkreuz.md`, `emerald-tablet.md`, `external-alchemy.md`, `golden-elixir.md`, `nigredo.md`, `paracelsus-tria-prima.md`, `prima-materia.md`, `rubedo.md`, `the-alchemical-wedding.md`, `three-treasures.md`
+`albedo.md`, `nigredo.md`, `paracelsus-tria-prima.md`, `prima-materia.md`, `rubedo.md`, `the-alchemical-wedding.md`
 
 ### 希腊神话 / 古典秘传
 `circe-pharmaka.md`, `delphi-oracle.md`, `endymion-eternal-sleep.md`, `five-rivers-hades.md`, `gorgon-blood.md`, `greek-magical-papyri.md`, `hekate-crossroads.md`, `herm-boundary-marker.md`, `pan-and-panic.md`, `prometheus-theft-of-fire.md`, `tartarus-abyss.md`
 
 ### 苏菲主义 / 伊斯兰神秘主义
-`al-batin.md`, `al-khidr.md`, `conference-birds.md`, `fana.md`, `ghayat-al-hakim.md`, `hurufism.md`, `ilm-al-huruf.md`, `night-journey-miraj.md`, `nur-muhammad.md`, `perfect-man.md`, `seven-valleys.md`, `three-kinds-of-jinn.md`
+`al-batin.md`, `al-khidr.md`, `conference-birds.md`, `fana.md`, `ghayat-al-hakim.md`, `hurufism.md`, `ilm-al-huruf.md`, `jinn-possession-ruqya.md`, `night-journey-miraj.md`, `nur-muhammad.md`, `perfect-man.md`, `seven-valleys.md`, `three-kinds-of-jinn.md`
 
 ### 美索不达米亚神话
 `apkallu.md`, `inanna-underworld.md`, `lapis-lazuli-tablets.md`, `the-me.md`, `tiamat-corpse.md`
 
 ### 道教 / 中国民间信仰
-`bridge-of-helplessness.md`, `classic-of-mountains-and-seas.md`, `eighteen-levels-of-hell.md`, `external-alchemy.md`, `golden-elixir.md`, `heavenly-stems-earthly-branches.md`, `hun-po-dual-soul.md`, `immortals-departure.md`, `kuji-in.md`, `meng-po-soup.md`, `nine-tailed-fox.md`, `peach-wood-sword.md`, `penglai-isle.md`, `river-chart-luo-writing.md`, `talismanic-script.md`, `ten-courts-of-yama.md`, `three-treasures.md`, `thunder-duke-lightning-mother.md`, `zhong-kui-ghost-catcher.md`, `zuowang.md`
+`bridge-of-helplessness.md`, `classic-of-mountains-and-seas.md`, `eighteen-levels-of-hell.md`, `external-alchemy.md`, `golden-elixir.md`, `heavenly-stems-earthly-branches.md`, `hun-po-dual-soul.md`, `immortals-departure.md`, `meng-po-soup.md`, `nine-tailed-fox.md`, `peach-wood-sword.md`, `penglai-isle.md`, `river-chart-luo-writing.md`, `talismanic-script.md`, `ten-courts-of-yama.md`, `three-treasures.md`, `thunder-duke-lightning-mother.md`, `zhong-kui-ghost-catcher.md`, `zuowang.md`
 
 ### 佛教
 `aji-meditation.md`, `bardo.md`, `bardo-thodol.md`, `chod.md`, `five-dhyani-buddhas.md`, `fudo-myoo.md`, `illusory-body.md`, `kalachakra.md`, `mahakala.md`, `mandala.md`, `phowa.md`, `root-guru.md`, `shunyata.md`, `six-realms.md`, `sokushin-jobutsu.md`, `sokushinbutsu.md`, `tulku.md`, `tummo.md`
 
 ### 凯尔特神话与秘传
-`cult-of-the-head.md`, `geasa.md`, `oak-king-holly-king.md`, `ogham-alphabet.md`, `sacred-wells.md`, `tapu.md`, `the-morrigan.md`, `the-silver-bough.md`, `the-three-realms.md`, `three-grades-of-bards.md`, `triskelion.md`
+`cult-of-the-head.md`, `geasa.md`, `oak-king-holly-king.md`, `ogham-alphabet.md`, `sacred-wells.md`, `the-morrigan.md`, `the-silver-bough.md`, `the-three-realms.md`, `three-grades-of-bards.md`, `triskelion.md`
 
 ### 亚瑟王传奇
 `avalon.md`, `merlins-double-sight.md`, `the-green-knight.md`, `the-holy-grail.md`, `the-lady-of-the-lake.md`, `the-nine-sorceresses-of-avalon.md`, `the-sword-in-the-stone-and-the-broken-sword.md`, `the-wasteland-and-fisher-king.md`
@@ -440,10 +430,10 @@
 `baba-yaga.md`, `domovoy.md`, `evil-eye-slavic.md`, `firebird.md`, `koschei-the-deathless.md`, `midnight-bathhouse.md`, `nocnitsa.md`, `rusalki.md`, `upir.md`, `zmey-gorynych.md`
 
 ### 日本神道 / 民间信仰
-`fudo-myoo.md`, `hyakki-yagyo.md`, `kamikakushi.md`, `kekkai.md`, `kitsune-tsuki.md`, `kuji-in.md`, `sanshu-no-jingi.md`, `shikigami.md`, `yomi.md`
+`hyakki-yagyo.md`, `kamikakushi.md`, `kekkai.md`, `kitsune-tsuki.md`, `kuji-in.md`, `sanshu-no-jingi.md`, `shikigami.md`, `yomi.md`
 
 ### 基督教神秘主义
-`desert-fathers.md`, `expulsion-from-eden.md`, `lucifer-light-bringer.md`, `meister-eckhart.md`, `pseudo-dionysius.md`, `seven-seals.md`, `teresa-of-avila.md`
+`desert-fathers.md`, `expulsion-from-eden.md`, `four-archangels.md`, `lucifer-light-bringer.md`, `meister-eckhart.md`, `pseudo-dionysius.md`, `seven-seals.md`, `teresa-of-avila.md`
 
 ### 阿兹特克 / 中美洲
 `blood-of-the-gods.md`, `fifth-sun.md`, `mictlan.md`, `nagual.md`, `quetzalcoatl.md`, `sacrifice-at-teotihuacan.md`, `tezcatlipoca.md`, `tonalli.md`, `tzolkin.md`, `xipe-totec.md`
@@ -470,7 +460,7 @@
 `bear-festival.md`, `drum-as-vehicle.md`, `inuit-skeleton-vision.md`, `power-songs.md`, `river-of-the-dead.md`, `sami-noaidi-drum.md`, `shamanic-dismemberment.md`, `spirit-helpers-animal-spouses.md`, `spirit-marriage-vocation.md`, `world-tree-axis-mundi.md`
 
 ### 诺斯替主义
-`apocryphal-gospels.md`, `archons.md`, `demiurge.md`, `gnostic-christ.md`, `manichaean-cosmology.md`, `sophia.md`, `the-pleroma.md`
+`apocryphal-gospels.md`, `archons.md`, `demiurge.md`, `gnostic-christ.md`, `sophia.md`, `the-pleroma.md`
 
 ### 赫尔墨斯主义
 `emerald-tablet.md`, `hermes-trismegistus.md`, `the-divine-pymander.md`, `the-ogdoad.md`
@@ -489,4 +479,4 @@
 
 ---
 
-*索引生成日期：2026-07-02 | 卡片总数：220 | 传统类别：26*
+*索引生成日期：2026-07-02 | 卡片总数：220 | 传统类别：27*
