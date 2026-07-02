@@ -17,7 +17,7 @@
 | deep-research 琐罗亚斯德教 | ✅ 完成 | 可靠 — 16主张经3票对抗验证 |
 | skill.md | ✅ 完成 | 可用于生成 |
 | prompts | ✅ 完成 | 概念生成 + 卡牌渲染 |
-| Book of Hours 爬取 | ❌ 未开始 | |
+| Book of Hours 文本 | ❌ 放弃 | Rowenarium/维基/GitHub 均不可用。仅用 CS 数据（1,746条） |
 | references/style-guide.md | ❌ 未开始 | |
 | 生成第一个 OC | ❌ 未开始 | |
 
