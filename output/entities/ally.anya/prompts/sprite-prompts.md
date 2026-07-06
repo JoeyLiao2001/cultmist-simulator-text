@@ -2,95 +2,94 @@
 
 用于 Gemini / 豆包等可生图的 LLM。每段独立，直接复制粘贴。
 
-**风格基础**（已内嵌每个 prompt，不单独发送）：
-Cultist Simulator sprite。均匀重量的数字勾线围出平涂色块。无渐变。无排线。无交叉线。无纹理。方形画布，满版底色，无边无饰。每个色块是：一条闭合轮廓 + 一个平涂填充。
+**通用要求**（已内嵌每个 prompt，不单独发送）：
+
+使用干净的黑色轮廓线，去除不必要的细节。大面积的均匀单色块定义形状——不使用任何渐变或复杂的光影。光滑均匀的表面，没有纸张纹理。方形画布，满布底色，无边框，无装饰。像一张来自秘教出版社的干净书签。
 
 ---
 
 ## 1. 阿妮亚·沃洛格达 · 人物肖像
 
-参考游戏冬之追随者 sprite（violet_b），底色 #25aac2。
+参考游戏冬之追随者 sprite（violet_b），淡青底色 #25aac2。
 
 ```
-Cultist Simulator follower portrait. Uniform-weight outlines enclosing flat color fills. No gradients. No hatching. No texture. Square format, edge-to-edge flat ground, no border, no ornament.
+Cultist Simulator follower portrait. Clean black outlines. Large areas of uniform flat color — no gradients, no complex lighting, no texture. Smooth surface. Square canvas with flat ground, no border, no ornament. Like a clean bookmark from an esoteric press.
 
-The full canvas is a flat wash of pale cyan-blue — #25aac2.
+Background: a flat wash of pale cyan.
 
-THE FACE:
-Skin base: a mid-value cyan-blue. Shadow blocks: flat, hard-edged geometric fills in a single darker cyan-blue value — no softening, no blending, no transition. The shadows are applied to ONE side of the face only: one side of the nose bridge, the cheekbone on that same side, the jawline on that same side, the temple and brow ridge on that same side. The other side of the face is left as a single flat mid-tone — no shadows.
+Colors: use only the cyan-blue family — pale cyan background, mid-cyan skin, darker cyan shadow blocks, dark blue-black outlines.
 
-THE EYES:
-The eye socket is filled with the SAME shadow color used on the face — it is not blank, not white. Within that shadow-toned socket, the pupil is a small dark dot or slit in the darkest value of the palette, identical to the outline color. No iris detail. No highlight. No catchlight. No white. The eyes are small and close-set.
+The face structure: high cheekbones, expressionless single-line mouth. Shadow blocks applied to ONE side of the face only: one side of the nose bridge, the cheekbone on that side, the jawline on that side, the temple and brow ridge on that side. These are flat geometric fills in a darker cyan — no softening, no blending. The other side of the face remains a single flat mid-cyan with no shadows.
 
-THE MOUTH:
-A single closed line in the outline color. A small flat shadow block sits beneath the lower lip.
+The eyes: the defining feature of Cultist Simulator character art. Outlined oval shapes, the socket filled with the SAME darker cyan as the face shadows. The pupil is a small dark dot in the darkest blue-black. No iris detail. No highlight. No catchlight. No white. The eyes are voids.
 
-THE REST:
-A shawl wraps the head and shoulders — one clean outline, flat dark silhouette, zero internal detail. Hair: a flat darker shape with 2-3 internal dividing lines, no individual strands. No background elements. No second color family.
-
-The face is half-lit, half in stillness — asymmetric geometric shadow on one side, flat even tone on the other.
+Hair: a flat dark cyan shape with 2-3 internal dividing lines, no individual strands. A dark shawl wraps the head and shoulders — one clean outline, flat dark fill, zero internal detail.
 ```
 
 ---
 
 ## 2. 《无名日记》· 书籍
 
-参考游戏未翻译书籍 sprite（textbookaramaic），底色 #9b916b。
+参考游戏未翻译书籍 sprite（textbookaramaic），亚麻棕底色 #9b916b。
 
 ```
-Cultist Simulator untranslated book sprite. Uniform-weight outlines enclosing flat color fills. No gradients. No hatching. No texture. Square format, edge-to-edge flat ground, no border, no ornament.
+Cultist Simulator untranslated book sprite. Clean black outlines. Large areas of uniform flat color — no gradients, no texture. Smooth surface. Square canvas with flat ground, no border, no ornament.
 
-The full canvas is a flat wash of pale linen-brown — #9b916b. The book is drawn in 2-3 darker values of the same brown.
+Background: a flat wash of pale linen-brown.
 
-A plain notebook, standing upright, centered. A simple rectangular block with a rounded spine — one clean outline, flat brown fill. No title. No ornament. No cover decoration. A paper band wrapped horizontally across the middle. On the band, a single Cyrillic letter in the darkest brown.
+Colors: use only the warm brown family — pale linen background, mid-brown book, dark brown outlines.
 
-No background elements. No table. No shadow.
+A plain notebook, standing upright, centered. A simple rectangular block with a rounded spine — one clean outline, flat brown fill. No title. No cover decoration. Remove unnecessary detail. A paper band wraps horizontally across the middle. On the band, a single Cyrillic letter in dark brown.
+
+No table. No shadow. No background elements.
 ```
 
 ---
 
 ## 3. 哭丧人的披肩 · 工具
 
-参考游戏冬之工具 sprite（toolwinterb），底色 #7ad0ee。
+参考游戏冬之工具 sprite（toolwinterb），冰蓝底色 #7ad0ee。
 
 ```
-Cultist Simulator tool sprite. Uniform-weight outlines enclosing flat color fills. No gradients. No hatching. No texture. Square format, edge-to-edge flat ground, no border, no ornament.
+Cultist Simulator tool sprite. Clean black outlines. Large areas of uniform flat color — no gradients, no texture. Smooth surface. Square canvas with flat ground, no border, no ornament.
 
-The full canvas is a flat wash of pale ice-blue — #7ad0ee. The shawl is drawn in 2-3 darker values of the same blue.
+Background: a flat wash of pale ice-blue.
 
-A folded dark shawl, laid flat, centered. A simple dark rectangular block — one clean outline, flat fill. Three or four short lines along one folded edge to suggest wool. No hanger. No surface. No shadow. Nothing else.
+Colors: use only the ice-blue family — pale ice background, darker blue shawl, dark blue outlines.
+
+A folded dark shawl, laid flat, centered. A simple dark rectangular block — one clean outline, flat fill. Three or four short lines along one folded edge to suggest wool. Remove unnecessary detail. No hanger. No surface beneath it. No shadow.
 ```
 
 ---
 
 ## 4. 沃洛格达郊外的空坟 · 地点
 
-参考游戏冬之影响 sprite（influencewinter），底色 #699cae。
+参考游戏冬之影响 sprite（influencewinter），灰蓝底色 #699cae。
 
 ```
-Cultist Simulator location sprite. Uniform-weight outlines enclosing flat color fills. No gradients. No hatching. No texture. Square format, edge-to-edge flat ground, no border, no ornament.
+Cultist Simulator location sprite. Clean black outlines. Large areas of uniform flat color — no gradients, no texture. Smooth surface. Square canvas with flat ground, no border, no ornament.
 
-The full canvas is a flat wash of cold grey-blue — #699cae, the color of snow under overcast sky. Everything is drawn in 2-3 darker values of the same grey-blue.
+Background: a flat wash of cold grey-blue, the color of snow under overcast sky.
 
-A low headstone, front-facing, centered in the lower half. The inscription: a few short horizontal lines — deliberately illegible. A single line across the lower third marks the snow-line. Behind the stone, three bare tree silhouettes — thin branch shapes, leafless, flat dark fills.
+Colors: use only the cold grey-blue family — pale grey-blue background, darker grey-blue stone and trees, dark grey-blue outlines.
 
-The sky is entirely empty — the bare ground color. No clouds. No moon. No birds. No cross. The stone casts no shadow.
+A low headstone, front-facing, centered in the lower half. The inscription: a few short horizontal lines — deliberately illegible. A single line across the lower third marks the snow-line. Behind the stone, three bare tree silhouettes — thin branch shapes, leafless, flat dark fills. Remove unnecessary detail. The sky is the bare background color. No clouds. No moon. No birds. The stone casts no shadow.
 ```
 
 ---
 
 ## 5. 预忘 · 影响
 
-参考游戏冬之影响 sprite（influencewinter），底色 #699cae，提亮处理。
+参考游戏冬之影响 sprite（influencewinter），底色提至极淡。
 
 ```
-Cultist Simulator influence sprite. Uniform-weight outlines enclosing flat color fills. No gradients. No hatching. No texture. Square format, edge-to-edge flat ground, no border, no ornament.
+Cultist Simulator influence sprite. Clean black outlines. Large areas of uniform flat color — no gradients, no texture. Smooth surface. Square canvas with flat ground, no border, no ornament.
 
-The full canvas is a flat wash of very pale ice-blue — lighter than #699cae, almost white, the color of breath on cold air. The circles are drawn in a single slightly deeper grey-blue, uniform line weight.
+Background: a flat wash of very pale ice-blue — almost white, like breath on cold air.
 
-Three concentric circles, centered. The innermost circle is complete. The second circle is broken in two places — the line stops, then resumes. The outermost circle is disintegrating into scattered dots, barely distinguishable from the ground. No fill inside any circle — outline only.
+Colors: use only the faint ice-blue family — near-white background, slightly deeper grey-blue lines.
 
-No radial lines. No ripples. No glow. Just three circles, each less whole than the one inside it.
+Three concentric circles, centered. Clean uniform line weight. No fill inside any circle — outline only. The innermost circle is complete. The second circle is broken in two places. The outermost circle is disintegrating into scattered dots, barely visible against the background. Remove unnecessary detail. No radial lines. No ripples. No glow.
 ```
 
 ---
@@ -100,45 +99,45 @@ No radial lines. No ripples. No glow. Just three circles, each less whole than t
 参考游戏冬+刃灵体 sprite（spirit_winterd_edge），底色 #0dbbd1；启之教团 sprite（cultknock_1），底色 #7e55ba。取两者之间的淡紫灰。
 
 ```
-Cultist Simulator spirit sprite. Uniform-weight outlines enclosing flat color fills. No gradients. No hatching. No texture. Square format, edge-to-edge flat ground, no border, no ornament.
+Cultist Simulator spirit sprite. Clean black outlines. Large areas of uniform flat color — no gradients, no texture. Smooth surface. Square canvas with flat ground, no border, no ornament.
 
-The full canvas is a flat wash of pale violet-grey — midway between cyan-blue and Knock-purple, like diluted ink. The figure is drawn in 2-3 darker values of the same violet-grey.
+Background: a flat wash of pale violet-grey — midway between cyan-blue and Knock-purple, like diluted ink.
 
-A human figure, centered. Its outline is not a solid line: built from short disconnected dashes of uniform weight — a form stitched from gaps. No facial features at all — the head is a smooth blank oval. The body leans slightly left. One arm is drawn with firmer, darker dashes than the other — almost solid while the rest barely exists.
+Colors: use only the pale violet-grey family — pale violet background, darker violet-grey figure, dark violet outlines.
 
-No ground line. No shadow. The figure floats in the flat color-field.
+A human figure, centered. Its outline is not a solid line: built from short disconnected dashes of uniform weight — a form stitched from gaps. No facial features — the head is a smooth blank oval. The body leans slightly left. One arm is drawn with firmer, darker dashes than the other. Remove unnecessary detail. No ground line. No shadow. The figure floats in the flat color-field.
 ```
 
 ---
 
 ## 7. 打听不得的女人 · 传闻
 
-参考游戏冬之教团 sprite（cultwinter_1），底色 #597a8b。
+参考游戏冬之教团 sprite（cultwinter_1），灰蓝底色 #597a8b。
 
 ```
-Cultist Simulator scene fragment. Uniform-weight outlines enclosing flat color fills. No gradients. No hatching. No texture. Square format, edge-to-edge flat ground, no border, no ornament.
+Cultist Simulator scene fragment. Clean black outlines. Large areas of uniform flat color — no gradients, no texture. Smooth surface. Square canvas with flat ground, no border, no ornament.
 
-The full canvas is a flat wash of cold grey-blue — #597a8b, the color of railway station air in November. Everything is drawn in 2-3 darker values of the same grey-blue.
+Background: a flat wash of cold grey-blue — the color of railway station air in November.
 
-The lower half of a train compartment. A long bench seat: a few straight horizontal lines. Above it, a rectangular window frame. Outside the window: the bare ground color — nothing. On the seat, a folded dark shawl: the heaviest, darkest flat block in the composition, one clean outline with flat fill.
+Colors: use only the cold grey-blue family — grey-blue background, darker grey-blue compartment and shawl, dark grey-blue outlines.
 
-No person. No luggage rack. No curtains. No signage. The shawl is the only evidence that anyone was here.
+The lower half of a train compartment. A long bench seat: a few straight horizontal lines. Above it, a rectangular window frame. Outside the window: the bare background color. On the seat, a folded dark shawl — a simple flat dark block within a clean outline. Remove unnecessary detail. No person. No luggage rack. No curtains. The shawl is the only evidence.
 ```
 
 ---
 
 ## 8. 哑歌之仪 · 仪式
 
-参考游戏冬之追随者 sprite（violet_b），底色 #25aac2。俯视角度。
+参考游戏冬之追随者 sprite（violet_b），冰蓝底色 #25aac2。俯视角度。
 
 ```
-Cultist Simulator rite sprite. Uniform-weight outlines enclosing flat color fills. No gradients. No hatching. No texture. Overhead view — looking straight down. Square format, edge-to-edge flat ground, no border, no ornament.
+Cultist Simulator rite sprite. Overhead view — looking straight down. Clean black outlines. Large areas of uniform flat color — no gradients, no texture. Smooth surface. Square canvas with flat ground, no border, no ornament.
 
-The full canvas is a flat wash of pale ice-blue — #25aac2. Everything is drawn in 2-3 darker values of the same blue.
+Background: a flat wash of pale ice-blue.
 
-A horizontal line near the top of the frame: the edge of a windowsill. On the sill, a tiny rectangle — a slip of paper. Beside it, an even smaller vertical line — a candle. The "writing" on the paper: three hair-thin horizontal marks, deliberately illegible. All rendered as simple flat shapes within clean outlines.
+Colors: use only the ice-blue family — pale ice background, darker blue objects, dark blue outlines.
 
-No flame. No candleholder. No room beyond the sill. No hands. Paper, candle, sill, silence.
+A horizontal line near the top of the frame: the edge of a windowsill. On the sill, a tiny rectangle — a slip of paper. Beside it, an even smaller vertical line — a candle. The paper has three hair-thin horizontal marks — illegible writing. Remove unnecessary detail. No flame. No candleholder. No room beyond the sill. No hands. Paper, candle, sill, silence.
 ```
 
 ---
@@ -148,16 +147,16 @@ No flame. No candleholder. No room beyond the sill. No hands. Paper, candle, sil
 参考蛾之原则色调（#f0c8a0）与冬之灰绿（#78a0a0）的中间淡灰绿。
 
 ```
-Cultist Simulator found document. Uniform-weight outlines enclosing flat color fills. No gradients. No hatching. No texture. Square format, edge-to-edge flat ground, no border, no ornament.
+Cultist Simulator found document. Clean black outlines. Large areas of uniform flat color — no gradients, no texture. Smooth surface. Square canvas with flat ground, no border, no ornament.
 
-The full canvas is a flat wash of pale grey-green — old sketchbook paper left in a drawer. Everything is drawn in 2-3 darker values of the same grey-green.
+Background: a flat wash of pale grey-green — old sketchbook paper left in a drawer.
 
-A torn sheet of paper, centered, floating. Edges are jagged — ripped, not cut, rendered as clean irregular outlines. On the paper, faint lines: the bare perspective of a railway platform, a bench, a seated woman's silhouette — all simple outlines. Where her face should be: three smudged eraser-marks — cloudy grey-green shapes, softly irregular. The upper right corner of the paper is folded over.
+Colors: use only the grey-green family — pale grey-green background, darker grey-green lines and smudges.
 
-No hand. No sketchbook binding. No background beyond the torn sheet.
+A torn sheet of paper, centered, floating. Edges are jagged — ripped, not cut. On the paper, faint lines: the bare perspective of a railway platform, a bench, a seated woman's silhouette — simple outlines. Where her face should be: three smudged eraser-marks — cloudy grey-green shapes. The upper right corner of the paper is folded over. Remove unnecessary detail. No hand. No sketchbook binding. No background beyond the torn sheet.
 ```
 
 ---
 
 生成日期：2026-07-06
-风格参考：游戏 sprite 色彩分析 + 脸部阴影结构标注
+风格参考：游戏 sprite 色彩分析 + 脸部阴影结构标注 + Gemini 成功反馈词汇吸收
