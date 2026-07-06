@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Parang Ludwig</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;600&display=swap');
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #d5cdbd; display: flex; justify-content: center; padding: 1.5rem; font-family: 'Noto Serif SC','SimSun',serif; min-height: 100vh; }
+  .page { width: 210mm; height: 297mm; background: #ece4d5; background-image: repeating-linear-gradient(45deg,transparent,transparent 3.5px,rgba(180,160,130,0.07) 3.5px,rgba(180,160,130,0.07) 4.5px),repeating-linear-gradient(-45deg,transparent,transparent 3.5px,rgba(180,160,130,0.07) 3.5px,rgba(180,160,130,0.07) 4.5px); padding: 14mm; overflow: hidden; box-shadow: 0 0 0 1px rgba(0,0,0,0.06),0 2px 16px rgba(0,0,0,0.12); }
+
+  .hero { display: flex; gap: 6mm; align-items: center; margin-bottom: 5mm; }
+  .hero-img { flex: 0 0 36mm; height: 36mm; background: #d8d0c0; border: 1px solid rgba(0,0,0,0.06); overflow: hidden; }
+  .hero-img img { width: 100%; height: 100%; object-fit: cover; }
+  .hero-tag { font-size: 6pt; color: #908070; letter-spacing: 0.28em; text-transform: uppercase; }
+  .hero-name { font-size: 15pt; font-weight: 400; color: #3c4048; letter-spacing: 0.1em; margin: 1.5mm 0; }
+  .hero-desc { font-size: 8pt; line-height: 1.9; color: #5a4e3e; letter-spacing: 0.04em; max-width: 130mm; }
+  .hero-icons { display: flex; gap: 5px; margin-top: 2mm; }
+  .hero-icons img { width: 22px; height: 22px; opacity: 0.55; }
+
+  .vignette { max-width: 150mm; margin: 0 auto; padding: 5mm 0 4mm; }
+  .vignette p { font-size: 8pt; line-height: 2.2; color: #5a4e3e; letter-spacing: 0.04em; text-indent: 2em; margin: 0 0 2mm 0; }
+
+  .list { display: flex; flex-wrap: wrap; gap: 3.5mm 5mm; align-content: flex-start; }
+  .item { display: flex; gap: 2.5mm; align-items: flex-start; }
+  .item.t2 { flex: 0 0 calc(50% - 2.5mm); }
+  .item.t3 { flex: 0 0 calc(50% - 2.5mm); }
+  .item-img { flex: 0 0 18mm; height: 18mm; background: #d8d0c0; border: 1px solid rgba(0,0,0,0.05); overflow: hidden; }
+  .item.t3 .item-img { flex: 0 0 16mm; height: 16mm; }
+  .item-img img { width: 100%; height: 100%; object-fit: cover; }
+  .item-body { flex: 1; display: flex; flex-direction: column; gap: 0.8mm; min-width: 0; }
+  .item-tag { font-size: 5pt; color: #a09080; letter-spacing: 0.2em; text-transform: uppercase; }
+  .item-name { font-size: 7.5pt; font-weight: 600; color: #3c3024; letter-spacing: 0.04em; line-height: 1.3; }
+  .item.t3 .item-name { font-size: 6.5pt; }
+  .item-desc { font-size: 6.5pt; line-height: 1.6; color: #6b5e4e; letter-spacing: 0.02em; }
+  .item.t3 .item-desc { font-size: 5.8pt; }
+  .item-icons { display: flex; gap: 3px; }
+  .item-icons img { width: 13px; height: 13px; opacity: 0.45; }
+
+  @media print { * { -webkit-print-color-adjust: exact; print-color-adjust: exact; } body { background: #d5cdbd; padding: 0; } .page { box-shadow: none; } }
+</style>
+</head>
+<body><div class="page" id="page"></div>
+<script>
+const IMG = {
+  'parang':'assets/fragmentedgeg.png','forge':'assets/paintingmasteredge.png',
+  'lionsmith':'assets/fragmentedgeg.png','rail':'assets/rarity.edge.png',
+  'book':'assets/bookofthrones.png','curse':'assets/fragmentmothg.png',
+  'dream':'assets/memory.golden.png','painting':'assets/paintingmasteredge.png'
+};
+const ICO = {'刃':'assets/edge.png','蛾':'assets/moth.png','杯':'assets/grail.png','工具':'assets/tool.png','文献':'assets/books.png','密传':'assets/lore.png','地点':'assets/location.png','欲望':'assets/desire.png'};
+const icons = (aa) => aa.map(a => ICO[a] ? `<img src="${ICO[a]}" alt="${a}">` : '').join('');
+
+const HERO = {
+  name:'Parang Ludwig', tag:'Long · Lionsmith · Edge / Moth / Grail',
+  aspects:['刃','蛾','杯'],
+  desc:'不是名字。是刀。锻过三次。断过三次。每次都接回去。断过三次的人站在你旁边的时候，子弹会恰好绕开他。'
+};
+
+const ITEMS = [
+  {n:'巴冷刀',t:'工具',a:['刃','杯','工具'],d:'刀身三道锻接痕。第一道青黑，拇指宽——入会礼那年打断的。第二道铁色泛白，收窄了近半，密林里一架机枪的弹链扫过来，刀替他挡了。第三道细若游丝，对光才现。断过的钢锻回去比原来更密。',ti:2,el:'parang'},
+  {n:'锻炉空地',t:'地点',a:['刃','地点'],d:'林中有座藤蔓覆盖的石砌锻炉。灰浆配比对不上任何殖民时期的建筑记录。至少二百年。铁砧上的凹痕比锤印窄——比任何锻造工具都窄。周围一圈树的树龄不超过一百二十年。最近一棵在七年前破土。',ti:2,el:'forge'},
+  {n:'狮子匠的教诲',t:'密传',a:['刃','密传'],d:'狮子匠砸碎佩剑。碎铁七片。重锻。重淬。重碎。七次之后，碎片不再反光。刃口不再卷。末页注文非原典所载——热带硬木炭，马来语。第一次折断，是别人砸的。后面都是自己砸的。',ti:2,el:'lionsmith'},
+  {n:'被扭断的铁轨',t:'地点',a:['刃','蛾','地点'],d:'一段窄轨铁路穿越榕树林。铁轨从路基中间朝上翻卷。弯口处扳手齿痕仍在——是从下方被拧起来的。旁边石头上一行马来语。苔藓盖了大半。能辨认的词：飞。不对。铁。',ti:2,el:'rail'},
+  {n:'《雨林匿杀录》',t:'书籍',a:['刃','蛾','文献'],d:'账簿纸裁成三十二开，衣线重订。封面无字。内页四十三条战术，各附日期地名。笔迹愈后愈急。四十一页始见潦草。五十三页墨淡近无。六十七页写至半句而止。后半页不在了。',ti:2,el:'book'},
+  {n:'《刀之诵读》',t:'密传',a:['蛾','密传'],d:'残篇。巫医文字。诵至第二句，枪哑火。诵至第四句，航图不可读。诵至第七句，罗盘针自顾自转。此篇共三节。至第三节，雨林深处有刀声。每字一刀。与咒文同拍。末句诵毕，刀声止息。',ti:2,el:'curse'},
+  {n:'《三次梦》',t:'梦境',a:['蛾'],d:'反复的梦。他在林间走。不说话。蹲到板根榕前，以刀刻符。第一夜刻的是圈。第二夜是交叉线。第三夜是折角。第一夜醒来掌心汗透。第三夜醒后摸黑摹下。三道斜线。两处弧。一个折角。天亮后对纸细看。能读。',ti:3,el:'dream'},
+  {n:'《热带的黄昏》',t:'画作',a:['蛾'],d:'《热带的黄昏》。业余油画。一八八七年。作者署名C·L，马六甲海关三等文书。前景雨林。树蕨。板根交叠。远处窄轨铁路穿林而过。树冠阴影里站着一人。画家在信中提到此画时坚称未画此人。画框内侧有一片枯叶。铁木。叶脉焦黑。',ti:3,el:'painting'},
+];
+
+(function(){
+  let h = `<div class="hero"><div class="hero-img"><img src="${IMG['parang']}"></div><div><div class="hero-tag">${HERO.tag}</div><div class="hero-name">${HERO.name}</div><div class="hero-desc">${HERO.desc}</div><div class="hero-icons">${icons(HERO.aspects)}</div></div></div><div class="vignette"><p>不是名字。是刀。殖民地档案里他的名字被划掉又补上、补上又划掉——叛变那年划了一次，日军登陆那年又划了一次。两处划痕用一种墨水。谁也不知道中间那几年的档案是谁填的。雨季里窄轨铁路被炸断的那段至今没有人去修。枕木下面长出榕树气根。巡道工说晚上能听到铁轨自己在响。不是扩张。是收缩。像铁在往回弹。</p></div><div class="list">`;
+  ITEMS.forEach(i => { h += `<div class="item t${i.ti}"><div class="item-img"><img src="${IMG[i.el]}"></div><div class="item-body"><div class="item-tag">${i.t}</div><div class="item-name">${i.n}</div><div class="item-desc">${i.d}</div><div class="item-icons">${icons(i.a)}</div></div></div>`; });
+  h += '</div>'; document.getElementById('page').innerHTML = h;
+})();
+</script>
+</body>
+</html>
