@@ -11,7 +11,7 @@ Cultist Simulator follower portrait. The style is a digital block print: clean o
 
 Cyan-blue ground. The full square canvas is a flat wash of pale cyan. The figure is drawn in cyan-blue at 3-4 darker values, applied as flat fills within clean outlines.
 
-A woman's bust. High cheekbones. Eyes: an outlined oval with a dark dot inside, no iris detail, no white, no highlight. Mouth: a single closed line. No expression. A shawl wraps the head and shoulders — rendered as a flat dark silhouette, one clean outline, no folds, no texture inside. Hair: a flat darker shape with 2-3 internal dividing lines, no individual strands.
+A woman's bust. High cheekbones. Eyes: outlined oval shapes, empty inside — no pupil, no iris, no dot. Blank. This is the defining feature of Cultist Simulator character art: the eyes are voids. Mouth: a single closed line. No expression. A shawl wraps the head and shoulders — rendered as a flat dark silhouette, one clean outline, no folds, no texture inside. Hair: a flat darker shape with 2-3 internal dividing lines, no individual strands.
 
 The line weight is uniform throughout — no thick-to-thin variation. No background elements. No border. No ornament. No second color family. Square format, edge to edge.
 
