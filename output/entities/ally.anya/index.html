@@ -3,249 +3,355 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>阿妮亚·沃洛格达 — 叙事星座</title>
+<title>阿妮亚·沃洛格达 — 档案</title>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&display=swap');
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   body {
     background: #1a1612;
-    background-image:
-      radial-gradient(ellipse at 50% 30%, rgba(60,80,95,0.08) 0%, transparent 70%),
-      radial-gradient(ellipse at 25% 70%, rgba(50,40,30,0.06) 0%, transparent 50%);
-    color: #c8c0b8;
-    font-family: 'Noto Serif SC', 'SimSun', 'Georgia', serif;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 1.5rem 1rem 3rem;
+    font-family: 'Noto Serif SC', 'SimSun', serif;
     min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 2rem 1rem;
-    overflow-x: hidden;
   }
 
-  /* ── Header ── */
-  .header {
-    text-align: center;
-    margin-bottom: 2.5rem;
-  }
-  .header h1 {
-    font-size: 1.3rem;
-    font-weight: 400;
-    color: #dce6ec;
-    letter-spacing: 0.2em;
-    margin-bottom: 0.2rem;
-  }
-  .header .sub {
-    font-size: 0.7rem;
-    color: #6b6560;
-    letter-spacing: 0.15em;
-  }
-
-  /* ── Tabletop ── */
-  .tabletop {
+  /* ── A4 page ── */
+  .page {
+    width: 210mm;
+    min-height: 297mm;
+    background: #f5f0e6;
+    background-image:
+      linear-gradient(180deg, rgba(200,180,150,0.08) 0%, transparent 3%),
+      linear-gradient(0deg, rgba(180,160,120,0.06) 0%, transparent 5%);
+    color: #2c2418;
+    padding: 18mm 16mm 16mm;
     position: relative;
-    width: 100%;
-    max-width: 1100px;
-    min-height: 700px;
-    background:
-      radial-gradient(ellipse at center, rgba(30,28,24,0.5) 0%, rgba(20,18,14,0.8) 100%);
-    border-radius: 6px;
-    box-shadow: inset 0 0 180px rgba(0,0,0,0.6), 0 0 2px rgba(255,255,255,0.04);
-  }
-
-  /* ── Card wrapper with scatter position/rotation ── */
-  .card-pos {
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 6px;
-  }
-
-  /* ── Card frame ── */
-  .card {
-    width: 260px;
-    background: #2a2620;
-    border: 8px solid transparent;
-    border-image: url('../../references/sprites/card_border.png') 8 repeat;
-    box-shadow:
-      0 4px 20px rgba(0,0,0,0.5),
-      0 1px 3px rgba(0,0,0,0.4);
-    position: relative;
+    box-shadow: 0 2px 30px rgba(0,0,0,0.6), 0 0 0 1px rgba(0,0,0,0.2);
     overflow: hidden;
   }
 
-  /* Sprite area */
-  .card-sprite {
-    width: 100%;
-    aspect-ratio: 1;
+  /* ── Paper aging ── */
+  .page::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background:
+      radial-gradient(ellipse at 80% 20%, rgba(139,119,80,0.12) 0%, transparent 50%),
+      radial-gradient(ellipse at 15% 85%, rgba(139,119,80,0.08) 0%, transparent 40%);
+    pointer-events: none;
+  }
+
+  /* ── File header ── */
+  .file-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 5mm;
+    padding-bottom: 3mm;
+    border-bottom: 1px solid rgba(0,0,0,0.12);
+    position: relative;
+    z-index: 1;
+  }
+  .file-header .ref {
+    font-size: 7pt;
+    color: #6b6050;
+    letter-spacing: 0.12em;
+  }
+  .file-header .stamp {
+    font-size: 8pt;
+    color: #8b3a3a;
+    border: 1.5px solid #8b3a3a;
+    padding: 1mm 3mm;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    transform: rotate(-3deg);
+    opacity: 0.7;
+  }
+
+  /* ── Section labels ── */
+  .section-label {
+    font-size: 6.5pt;
+    color: #8b7560;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 2mm;
+    padding-bottom: 1mm;
+    border-bottom: 1px dotted rgba(0,0,0,0.1);
+    position: relative;
+    z-index: 1;
+  }
+
+  /* ── CHARACTER: Tier 1 — hero section ── */
+  .hero {
+    display: flex;
+    gap: 5mm;
+    margin-bottom: 5mm;
+    position: relative;
+    z-index: 1;
+  }
+  .hero-portrait {
+    flex: 0 0 48mm;
+    height: 48mm;
+    background: #e8e0d4;
+    border: 1px solid rgba(0,0,0,0.12);
+    overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
-    background: #1e1c18;
   }
-  .card-sprite img {
+  .hero-portrait img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
   }
-
-  /* Text area */
-  .card-text {
-    padding: 10px 14px 8px;
-    font-size: 0.72rem;
-    line-height: 1.7;
-    color: #b8b0a8;
-    letter-spacing: 0.03em;
-    background: linear-gradient(180deg, #2a2620 0%, #242018 100%);
-    min-height: 50px;
-  }
-
-  /* Aspect bar */
-  .card-aspects {
+  .hero-info {
+    flex: 1;
     display: flex;
-    gap: 5px;
-    padding: 4px 14px 8px;
-    background: #1e1a14;
-    border-top: 1px solid rgba(255,255,255,0.05);
-    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2mm;
   }
-  .card-aspects img {
-    width: 22px;
-    height: 22px;
-    opacity: 0.85;
-    image-rendering: auto;
+  .hero-name {
+    font-size: 12pt;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    color: #1a1410;
   }
-
-  /* Card label below */
-  .card-label {
-    font-size: 0.62rem;
-    color: #6b6560;
+  .hero-meta {
+    font-size: 6.5pt;
+    color: #6b6050;
     letter-spacing: 0.1em;
-    text-align: center;
-    max-width: 240px;
-    line-height: 1.4;
+    display: flex;
+    gap: 3mm;
   }
-  .card-label .label-type {
-    color: #8b8070;
-    font-size: 0.55rem;
-    text-transform: uppercase;
-    letter-spacing: 0.2em;
-    display: block;
-    margin-bottom: 1px;
+  .hero-meta span {
+    background: rgba(0,0,0,0.04);
+    padding: 0.5mm 2mm;
+    border-radius: 1px;
   }
-  .card-label .label-name {
-    color: #a09888;
+  .hero-desc {
+    font-size: 7.5pt;
+    line-height: 1.8;
+    color: #3c3028;
+    letter-spacing: 0.03em;
+    font-style: italic;
   }
 
-  /* ── Footer ── */
-  .footer {
-    margin-top: 2rem;
-    font-size: 0.6rem;
-    color: #4a4540;
+  /* ── EVIDENCE: Tier 2 — key physical evidence ── */
+  .evidence-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 3mm;
+    margin-bottom: 4mm;
+    position: relative;
+    z-index: 1;
+  }
+  .evidence-item {
+    background: rgba(0,0,0,0.02);
+    border: 1px solid rgba(0,0,0,0.08);
+    padding: 2mm;
+    display: flex;
+    flex-direction: column;
+    gap: 1mm;
+  }
+  .evidence-sprite {
+    width: 100%;
+    aspect-ratio: 1;
+    background: #e8e0d4;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .evidence-sprite img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .evidence-sprite .no-sprite {
+    width: 18px;
+    height: 18px;
+    opacity: 0.2;
+  }
+  .evidence-sprite .no-sprite svg {
+    width: 100%;
+    height: 100%;
+  }
+  .evidence-type {
+    font-size: 5pt;
+    color: #8b7560;
     letter-spacing: 0.15em;
-    text-align: center;
+    text-transform: uppercase;
+  }
+  .evidence-name {
+    font-size: 6.5pt;
+    font-weight: 600;
+    color: #2c2418;
+    letter-spacing: 0.03em;
+    line-height: 1.3;
+  }
+  .evidence-desc {
+    font-size: 5.5pt;
+    line-height: 1.5;
+    color: #5a4e3e;
+    letter-spacing: 0.02em;
   }
 
-  /* ── Responsive ── */
-  @media (max-width: 800px) {
-    .tabletop { min-height: 500px; overflow-x: auto; }
-    .card { width: 200px; }
-    .card-sprite img { object-fit: contain; }
-    .card-text { font-size: 0.65rem; padding: 6px 10px 4px; }
+  /* ── TRACES: Tier 3 — ambient traces ── */
+  .traces {
+    display: flex;
+    gap: 3mm;
+    position: relative;
+    z-index: 1;
+  }
+  .trace-item {
+    flex: 1;
+    padding: 2mm 3mm;
+    background: rgba(0,0,0,0.015);
+    border-left: 1.5px solid rgba(0,0,0,0.08);
+  }
+  .trace-type {
+    font-size: 5pt;
+    color: #8b7560;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 0.5mm;
+  }
+  .trace-name {
+    font-size: 6.5pt;
+    font-weight: 600;
+    color: #2c2418;
+    margin-bottom: 1mm;
+  }
+  .trace-desc {
+    font-size: 5.5pt;
+    line-height: 1.5;
+    color: #5a4e3e;
+  }
+
+  /* ── Footer annotations ── */
+  .file-footer {
+    margin-top: 5mm;
+    padding-top: 2mm;
+    border-top: 1px solid rgba(0,0,0,0.08);
+    display: flex;
+    justify-content: space-between;
+    font-size: 5.5pt;
+    color: #8b7560;
+    letter-spacing: 0.08em;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* ── Print ── */
+  @media print {
+    body { background: white; padding: 0; }
+    .page { box-shadow: none; width: 100%; min-height: auto; }
+  }
+
+  @media screen and (max-width: 800px) {
+    .page { width: 100%; padding: 10mm 8mm; }
+    .hero { flex-direction: column; }
+    .evidence-grid { grid-template-columns: repeat(3, 1fr); }
   }
 </style>
 </head>
 <body>
 
-<div class="header">
-  <h1>阿妮亚·沃洛格达</h1>
-  <div class="sub">叙事星座 · 冬 / 启 · 长生者</div>
-</div>
+<div class="page">
 
-<div class="tabletop" id="tabletop">
-  <!-- cards rendered by JS -->
-</div>
+  <!-- File header -->
+  <div class="file-header">
+    <span class="ref">档案编号: VLG-1910-11&ensp;·&ensp;冬/启&ensp;·&ensp;机密</span>
+    <span class="stamp">已归档</span>
+  </div>
 
-<div class="footer">骨白鸽的失落色彩 · cultist-simulator-text</div>
+  <!-- Hero: character card Tier 1 -->
+  <div class="hero">
+    <div class="hero-portrait">
+      <img src="sprite_ally_anya.png" alt="阿妮亚·沃洛格达">
+    </div>
+    <div class="hero-info">
+      <div class="hero-name">阿妮亚·沃洛格达</div>
+      <div class="hero-meta">
+        <span>长生者</span>
+        <span>悼歌诗人唤归</span>
+        <span>活跃: 1910–</span>
+      </div>
+      <div class="hero-desc">她从来不会用沙哑得像冻土的声音做自我介绍。她的日记里没有她自己的名字。</div>
+    </div>
+  </div>
+
+  <!-- Evidence: Tier 2 items -->
+  <div class="section-label">物证 · 直接关联</div>
+  <div class="evidence-grid" id="evidence-grid">
+    <!-- rendered by JS -->
+  </div>
+
+  <!-- Traces: Tier 3 items -->
+  <div class="section-label">环境线索 · 间接痕迹</div>
+  <div class="traces" id="traces">
+    <!-- rendered by JS -->
+  </div>
+
+  <!-- Footer -->
+  <div class="file-footer">
+    <span>本档案由防剿局沃洛格达分局整理 · 1924年3月</span>
+    <span>第 1 页，共 1 页</span>
+  </div>
+
+</div>
 
 <script>
-// ── Sprite image mapping ──
+// ── Sprite mapping ──
 const SPRITES = {
   'ally.anya': 'sprite_ally_anya.png',
   'book.nameless': 'sprite_book_nameless.png',
-  // Others use placeholder — the generated sprite itself as fallback
 };
 
-// ── Aspect icon paths ──
-const ASPECT_ICONS = {
-  '冬': '../../references/sprites/winter.png',
-  '启': '../../references/sprites/knock.png',
-  '蛾': '../../references/sprites/moth.png',
-  '秘史': '../../references/sprites/secrethistories.png',
-};
+// ── No-sprite placeholder ──
+const NO_SPRITE = `<div class="no-sprite"><svg viewBox="0 0 24 24" fill="none"><rect x="4" y="3" width="16" height="18" rx="1" stroke="currentColor" stroke-width="1"/></svg></div>`;
 
-// ── Card positions: scattered on the tabletop with slight random rotations ──
-const POSITIONS = [
-  { x: '4%',  y: '2%',  r: -2.5 },
-  { x: '28%', y: '1%',  r: 1.8 },
-  { x: '52%', y: '4%',  r: -1.2 },
-  { x: '74%', y: '0%',  r: 2.5 },
-  { x: '2%',  y: '44%', r: 1.0 },
-  { x: '26%', y: '42%', r: -2.0 },
-  { x: '52%', y: '46%', r: 1.5 },
-  { x: '74%', y: '40%', r: -1.0 },
-  { x: '40%', y: '20%', r: 0.3 },  // character card, center-biased
-];
-
-// ── Character card is more central and larger ──
-const CHAR_INDEX = 0; // First in data
-
-// ── Inline data (self-contained, no fetch needed) ──
-const DATA = {"character":{"name":"阿妮亚·沃洛格达","name_en":"Anya of Vologda","element_id":"ally.anya","category":"characters","aspects":["冬","启"],"tier":"长生者","desc":"她从来不会用沙哑得像冻土的声音做自我介绍。她的日记里没有她自己的名字。"},"constellation":[{"name":"《无名日记》","name_en":"The Nameless Diary","element_id":"book.nameless","category":"books","type":"书籍","aspects":["冬","秘史"],"desc":"封皮是某种深色皮革，磨损得看不出原色。内页以一种细小而工整的笔迹写满——每一页一个名字，附带日期、地点、一两句特征。日记的主人从未在页中提及自己。读到第十三页时你注意到一件事：你不记得翻开这一页之前读过的任何一个名字了。它们还在纸上。只是不在你脑子里了。","note":"在沃洛格达火车站失物招领处存放了十五年，无人认领。标签上只写着'阿·沃'。"},{"name":"哭丧人的披肩","name_en":"The Keener's Shawl","element_id":"tool.keeners.shawl","category":"tools","type":"工具","aspects":["冬","启"],"desc":"一件黑色的羊毛披肩，边缘已磨出线头。触手永远湿冷——像刚从十一月的雾里走进来。如果在夜深时将它贴在耳边，能听到模糊的歌声，用俄语唱着悼亡的调子。嗓音是沙的。唱到第三节时总会停——不是唱完了，是被什么东西打断了。","note":""},{"name":"沃洛格达郊外的空坟","name_en":"The Empty Grave, Vologda","element_id":"location.emptygrave.vologda","category":"locations","type":"地点","aspects":["冬"],"desc":"圣安娜墓园，城北三俄里。最边缘一排，墓碑风化，仅辨'阿——娅'与1910年。坟穴中空。土面平整，无挖掘痕迹——不像被盗，像是里面的东西自己散了。教堂死亡登记簿1910年11月页上有一条记录被人用指甲刮去。对光倾斜：凹痕仍在。七个字符。","note":""},{"name":"预忘","name_en":"Pre-Oblivion","element_id":"influence.preforget","category":"influences","type":"影响","aspects":["冬","蛾"],"desc":"我刚和谁说过话。站台上。黑披肩。问了我往哪里去。我回答了。然后她走了。\n\n现在我试着回想她的脸——没有。声音——没有。我只记得我问了她一个问题，却忘了是什么。也忘了她有没有回答。\n\n但霜的气味还没散。","note":""},{"name":"记名亡者","name_en":"The Recorded Dead","element_id":"spirit.recorded.dead","category":"spirits","type":"召唤物","aspects":["冬","启"],"desc":"\"你还记得我吗。\"\n\n轮廓模糊。它说话时嘴不动——声音是从别的地方来的。站到你身后时没有脚步声。它不属于任何司辰，不属于任何召唤者，它只属于某个在很久以前记下了它名字的人。如果你此时翻开一本无名日记，你会发现某一页上的字迹正在变淡。不要去看。让它走。","note":""},{"name":"打听不得的女人","name_en":"\"A Woman You Don't Ask About\"","element_id":"rumour.dont.ask","category":"elements","type":"传闻","aspects":["秘史","冬"],"desc":"莫斯科—喀山线的规矩。末班车最后一节车厢，靠窗。穿黑披肩的女人。不买票。不要查。不要问。老列车员教给新人——不是规章里写的，是口口相传的那种东西。\n\n喀山来的一个新人，一九二三年冬天，不信。事后别人问她长什么样、什么口音、多大年纪——他一样也说不出来。只记得嗓子是沙的。还有她问了一句：你母亲叫什么名字。他回答了。她点了点头，走了。到现在他也不知道为什么。","note":""},{"name":"哑歌之仪","name_en":"Rite of the Mute Elegy","element_id":"ritual.mute.elegy","category":"rituals","type":"仪式","aspects":["冬","启"],"desc":"备一张不是你自己写的日记残页。置于纯白之门方向的窗台上。点燃蜡烛。仪式全程不可出声——这不是规矩，而是因为悼歌诗人不听有声音的祈祷。仪式完成后，残页上的名字会变成另一个人。不是你认识的人。但你会记住那个名字，记住很久，久到忘记自己为什么会记住。被记住的人欠的不是你。","note":""},{"name":"维奥莱特的速写","name_en":"Violet's Sketch","element_id":"element.violet.sketch","category":"elements","type":"回忆","aspects":["冬","蛾"],"desc":"在那本从不在画中出现人物的速写本里，有一页例外。一幅铅笔素描——画的是火车站台，一个女人坐在长凳上。维奥莱特在旁注里写道：'今天在雅罗斯拉夫尔站碰到了一个女人。声音很难听，像破掉的管风琴。她知道我的名字。我让她坐了三个小时。'画中的女人没有脸——维奥莱特在那里只画了几道铅笔擦痕。下面写着：'第二天醒来时，我已经不记得和她说过什么了。但画还在。'","note":"从维奥莱特的遗物中找到。她一生画了几百张画，这是唯一一张有人物的。"}]};
+const DATA = {"character":{"name":"阿妮亚·沃洛格达","element_id":"ally.anya","aspects":["冬","启"],"tier":"长生者","desc":"她从来不会用沙哑得像冻土的声音做自我介绍。她的日记里没有她自己的名字。","type":"角色"},"constellation":[{"name":"《无名日记》","element_id":"book.nameless","type":"书籍","aspects":["冬","秘史"],"tier":2,"desc":"八开本，深色皮革装订。内页以细小工整的俄文笔迹写满——每页一个名字，附带日期、地点。全书共四百一十二个名字。日记主人的名字不在其中。","note":"在沃洛格达火车站失物招领处存放十五年，标签仅书\"阿·沃\"。"},{"name":"哭丧人的披肩","element_id":"tool.keeners.shawl","type":"工具","aspects":["冬","启"],"tier":2,"desc":"黑色羊毛织品。边缘磨损。触感永远湿冷。贴近耳际可听到模糊的俄语女声。伦敦超自然现象研究学会1923年鉴定结论：\"暂无法做出任何结论。\"","note":""},{"name":"沃洛格达郊外的空坟","element_id":"location.emptygrave.vologda","type":"地点","aspects":["冬"],"tier":2,"desc":"圣安娜墓园，城北三俄里。墓碑风化，仅辨\"阿——娅\"与1910年。坟穴中空，土面平整，无挖掘痕迹。教堂死亡登记簿11月页有一条记录被指甲刮去，对光可见凹痕。","note":""},{"name":"记名亡者","element_id":"spirit.recorded.dead","type":"召唤物","aspects":["冬","启"],"tier":2,"desc":"\"你还记得我吗。\"——轮廓模糊的人形。它说话时嘴不动。它不属于任何司辰，不属于任何召唤者，只属于某个在很久以前记下了它名字的人。","note":""},{"name":"哑歌之仪","element_id":"ritual.mute.elegy","type":"仪式","aspects":["冬","启"],"tier":2,"desc":"备一张不是你自己写的日记残页。置于朝北窗台。点燃蜡烛。全程不可出声——悼歌诗人不听有声音的祈祷。完成后残页上的名字改变。","note":""},{"name":"预忘","element_id":"influence.preforget","type":"影响","aspects":["冬","蛾"],"tier":3,"desc":"我刚和谁说过话。站台上。黑披肩。我想不起她的脸了。想不起她的声音了。但霜的气味还没散。","note":""},{"name":"打听不得的女人","element_id":"rumour.dont.ask","type":"传闻","aspects":["秘史","冬"],"tier":3,"desc":"莫斯科—喀山线的规矩。末班车最后一节车厢。穿黑披肩的女人。不买票。不要查。不要问。喀山来的新人，一九二三年冬天，不信——事后什么也说不出来。","note":""},{"name":"维奥莱特的速写","element_id":"element.violet.sketch","type":"回忆","aspects":["冬","蛾"],"tier":3,"desc":"维奥莱特的速写本从来没有人。就这一页例外：火车站台，长凳，一个女人。画中女人没有脸。旁注：\"第二天醒来已经忘了。但画还在。\"","note":"从维奥莱特的遗物中找到。"}]};
 
 (function render(data) {
-    const tabletop = document.getElementById('tabletop');
-    const all = [data.character, ...data.constellation];
+  // Tier 2 evidence grid
+  const evidence = data.constellation.filter(c => c.tier === 2);
+  const grid = document.getElementById('evidence-grid');
+  evidence.forEach(item => {
+    const sprite = SPRITES[item.element_id]
+      ? `<img src="${SPRITES[item.element_id]}" alt="">`
+      : NO_SPRITE;
+    grid.insertAdjacentHTML('beforeend', `
+      <div class="evidence-item">
+        <div class="evidence-sprite">${sprite}</div>
+        <div class="evidence-type">${item.type}</div>
+        <div class="evidence-name">${item.name}</div>
+        <div class="evidence-desc">${item.desc}</div>
+        ${item.note ? `<div class="evidence-desc" style="margin-top:0.5mm;color:#8b7560;font-style:italic;">${item.note}</div>` : ''}
+      </div>
+    `);
+  });
 
-    all.forEach((item, i) => {
-      const pos = POSITIONS[i] || POSITIONS[POSITIONS.length - 1];
-      const isChar = !item.type;
-
-      // Sprite
-      const spriteFile = SPRITES[item.element_id] || SPRITES['ally.anya'];
-      const spriteHtml = `<img src="${spriteFile}" alt="${item.name}" loading="lazy">`;
-
-      // Aspect icons
-      const aspectsHtml = (item.aspects || []).map(a => {
-        const iconPath = ASPECT_ICONS[a];
-        return iconPath ? `<img src="${iconPath}" alt="${a}" title="${a}">` : '';
-      }).join('');
-
-      // Type label
-      const typeLabel = item.type || (isChar ? '角色' : '');
-      const label = `
-        <span class="label-type">${typeLabel}</span>
-        <span class="label-name">${item.name}</span>
-      `;
-
-      const cardHtml = `
-        <div class="card-pos" style="left:${pos.x}; top:${pos.y}; transform:rotate(${pos.r}deg);${isChar ? 'z-index:5;' : ''}">
-          <div class="card" style="${isChar ? 'width:280px;' : ''}">
-            <div class="card-sprite">${spriteHtml}</div>
-            <div class="card-text">${(item.desc || '').replace(/\n/g, '<br>')}</div>
-            <div class="card-aspects">${aspectsHtml}</div>
-          </div>
-          <div class="card-label">${label}</div>
-        </div>
-      `;
-
-      tabletop.insertAdjacentHTML('beforeend', cardHtml);
-    });
-  })(DATA);
+  // Tier 3 traces
+  const traces = data.constellation.filter(c => c.tier === 3);
+  const tracesDiv = document.getElementById('traces');
+  traces.forEach(item => {
+    tracesDiv.insertAdjacentHTML('beforeend', `
+      <div class="trace-item">
+        <div class="trace-type">${item.type}</div>
+        <div class="trace-name">${item.name}</div>
+        <div class="trace-desc">${item.desc}</div>
+        ${item.note ? `<div class="trace-desc" style="margin-top:0.5mm;color:#8b7560;font-style:italic;">${item.note}</div>` : ''}
+      </div>
+    `);
+  });
+})(DATA);
 </script>
 
 </body>
