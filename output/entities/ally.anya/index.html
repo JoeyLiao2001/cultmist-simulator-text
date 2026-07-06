@@ -37,7 +37,7 @@
   .hero-name { font-size: 15pt; font-weight: 400; color: #3c4048; letter-spacing: 0.1em; margin: 1.5mm 0; }
   .hero-desc { font-size: 9pt; line-height: 1.9; color: #5a4e3e; letter-spacing: 0.04em; font-style: italic; max-width: 130mm; }
   .hero-icons { display: flex; gap: 5px; margin-top: 2mm; }
-  .hero-icons img { width: 16px; height: 16px; opacity: 0.55; }
+  .hero-icons img { width: 22px; height: 22px; opacity: 0.55; }
 
   /* ── Vignette ── */
   .vignette {
@@ -72,7 +72,7 @@
   .item-desc { font-size: 7pt; line-height: 1.65; color: #6b5e4e; letter-spacing: 0.02em; }
   .item.t3 .item-desc { font-size: 6.2pt; }
   .item-icons { display: flex; gap: 3px; }
-  .item-icons img { width: 10px; height: 10px; opacity: 0.4; }
+  .item-icons img { width: 15px; height: 15px; opacity: 0.5; }
 
   @media print { body { background: white; padding: 0; } .page { box-shadow: none; } }
 </style>
@@ -98,7 +98,7 @@ const ICO = {
 };
 const icons = (aa) => aa.map(a => `<img src="${ICO[a]}" alt="${a}">`).join('');
 
-const D = {"character":{"name":"阿妮亚·沃洛格达","el":"ally.anya","aspects":["冬","启"],"desc":"她从来不会用沙哑得像冻土的声音做自我介绍。她的日记里没有她自己的名字。"},"items":[{"name":"《无名日记》","el":"book.nameless","type":"书籍","aspects":["冬","秘史"],"desc":"封皮磨损。内页以细小工整的俄文笔迹写满——每页一个名字。全书四百一十二个名字。日记主人的名字不在其中。","t":2},{"name":"哭丧人的披肩","el":"tool.keeners.shawl","type":"工具","aspects":["冬","启"],"desc":"黑色羊毛织品。触感永远湿冷。贴近耳际可听到模糊的俄语悼歌。唱到第三节总会停——不是唱完了，是被什么东西打断了。","t":2},{"name":"沃洛格达郊外的空坟","el":"location.emptygrave.vologda","type":"地点","aspects":["冬"],"desc":"圣安娜墓园。墓碑风化。坟穴中空，土面平整。教堂登记簿1910年11月条被指甲刮去。","t":2},{"name":"记名亡者","el":"spirit.recorded.dead","type":"召唤物","aspects":["冬","启"],"desc":"\"你还记得我吗。\"——轮廓模糊的人形。它说话时嘴不动。只属于某个记下它名字的人。","t":2},{"name":"哑歌之仪","el":"ritual.mute.elegy","type":"仪式","aspects":["冬","启"],"desc":"备一张不是你自己写的日记残页。置于朝北窗台。点燃蜡烛。全程不可出声。悼歌诗人不听有声音的祈祷。","t":2},{"name":"预忘","el":"influence.preforget","type":"影响","aspects":["冬","蛾"],"desc":"我刚和谁说过话。站台上。黑披肩。想不起脸了。想不起声音了。但霜的气味还没散。","t":3},{"name":"打听不得的女人","el":"rumour.dont.ask","type":"传闻","aspects":["秘史","冬"],"desc":"莫斯科—喀山线的规矩。末班车，最后一节车厢，靠窗。披肩。不买票。不要问。","t":3},{"name":"维奥莱特的速写","el":"element.violet.sketch","type":"回忆","aspects":["冬","蛾"],"desc":"速写本里唯一有人物的一页。站台，长凳，一个女人。画中女人没有脸。旁注：\"第二天醒来已经忘了。但画还在。\"","t":3}]};
+const D = {"character":{"name":"阿妮亚·沃洛格达","el":"ally.anya","aspects":["冬","启"],"desc":"她从来不会用沙哑得像冻土的声音做自我介绍。她的日记里没有她自己的名字。"},"items":[{"name":"《无名日记》","el":"book.nameless","type":"书籍","aspects":["冬","秘史"],"desc":"封皮磨损。内页以细小工整的俄文笔迹写满——每页一个名字。全书四百一十二个名字。日记主人的名字不在其中。","t":2},{"name":"哭丧人的披肩","el":"tool.keeners.shawl","type":"工具","aspects":["冬"],"desc":"黑色羊毛织品。触感永远湿冷。贴近耳际可听到模糊的俄语悼歌。唱到第三节总会停——不是唱完了，是被什么东西打断了。","t":2},{"name":"沃洛格达郊外的空坟","el":"location.emptygrave.vologda","type":"地点","aspects":["冬"],"desc":"圣安娜墓园。墓碑风化。坟穴中空，土面平整。教堂登记簿1910年11月条被指甲刮去。","t":2},{"name":"记名亡者","el":"spirit.recorded.dead","type":"召唤物","aspects":["冬","启"],"desc":"\"你还记得我吗。\"——轮廓模糊的人形。它说话时嘴不动。只属于某个记下它名字的人。","t":2},{"name":"哑歌之仪","el":"ritual.mute.elegy","type":"仪式","aspects":["冬","启"],"desc":"备一张不是你自己写的日记残页。置于朝北窗台。点燃蜡烛。全程不可出声。悼歌诗人不听有声音的祈祷。","t":2},{"name":"预忘","el":"influence.preforget","type":"影响","aspects":["冬","蛾"],"desc":"我刚和谁说过话。站台上。黑披肩。想不起脸了。想不起声音了。但霜的气味还没散。","t":3},{"name":"打听不得的女人","el":"rumour.dont.ask","type":"传闻","aspects":["秘史","冬"],"desc":"莫斯科—喀山线的规矩。末班车，最后一节车厢，靠窗。披肩。不买票。不要问。","t":3},{"name":"维奥莱特的速写","el":"element.violet.sketch","type":"回忆","aspects":["冬","蛾"],"desc":"速写本里唯一有人物的一页。站台，长凳，一个女人。画中女人没有脸。旁注：\"第二天醒来已经忘了。但画还在。\"","t":3}]};
 
 (function(){
   const cc = D.character;
