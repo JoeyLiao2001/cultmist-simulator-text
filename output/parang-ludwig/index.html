@@ -70,7 +70,7 @@ const ITEMS = [
 ];
 
 (function(){
-  let h = `<div class="hero"><div class="hero-img"><img src="${IMG['hero']}"></div><div><div class="hero-tag">${HERO.tag}</div><div class="hero-name">${HERO.name}</div><div class="hero-desc">${HERO.desc}</div><div class="hero-icons">${icons(HERO.aspects)}</div></div></div><div class="vignette"><p>殖民地档案里他的名字被划掉了两次。两次用的是同一种墨水。中间那几年的档案换了别人的笔迹。雨季里窄轨铁路被炸断的那段至今没有修。枕木下面长出榕树气根。巡道工说晚上能听到铁轨在响。收缩的声音。铁在往回弹。</p></div><div class="list">`;
+  let h = `<div class="hero"><div class="hero-img"><img src="${IMG['hero']}"></div><div><div class="hero-tag">${HERO.tag}</div><div class="hero-name">${HERO.name}</div><div class="hero-desc">${HERO.desc}</div><div class="hero-icons">${icons(HERO.aspects)}</div></div></div><div class="vignette"><p>狮子匠的锻炉在漫宿深处日夜不歇。每一块被重锻的铁都有自己的声音——但在此之前，从没有人把自己的声音锻进去过。他在雨林战场上折断第三次之后，锻炉的火色变了一瞬。狮子匠低头看了一眼铁砧。砧面上多了一道不是锤子打的凹痕。此后漫宿的锻炉每隔七年会短暂地停一次火——不长，只够一片榕树叶从枝头落到地上。刃之准则的学徒在这七年间挥刀的速度会恰好慢下来半拍。他们自己察觉不到。但他们的对手察觉到了。</p></div><div class="list">`;
   ITEMS.forEach(i => { h += `<div class="item t${i.ti}"><div class="item-img"><img src="${IMG[i.el]}"></div><div class="item-body"><div class="item-tag">${i.t}</div><div class="item-name">${i.n}</div><div class="item-desc">${i.d}</div><div class="item-icons">${icons(i.a)}</div></div></div>`; });
   h += '</div>'; document.getElementById('page').innerHTML = h;
 })();
