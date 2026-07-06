@@ -41,6 +41,25 @@
   .hero-icons { display: flex; gap: 5px; margin-top: 2mm; }
   .hero-icons img { width: 16px; height: 16px; opacity: 0.55; }
 
+  /* ── Vignette ── */
+  .vignette {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2.5mm;
+    padding: 4mm 0;
+    max-width: 160mm;
+    margin: 0 auto;
+  }
+  .vignette p {
+    font-size: 7.5pt;
+    line-height: 2;
+    color: #5a4e3e;
+    letter-spacing: 0.04em;
+    text-indent: 2em;
+  }
+
   /* ── Item list ── */
   .list { display: flex; flex-wrap: wrap; gap: 5mm 6mm; align-content: flex-start; }
 
@@ -97,6 +116,13 @@ const D = {"character":{"name":"阿妮亚·沃洛格达","el":"ally.anya","aspec
       <div class="hero-desc">${cc.desc}</div>
       <div class="hero-icons">${icons(cc.aspects)}</div>
     </div></div><div class="list">`;
+
+    // Vignette between hero and items
+  h += `<div class="vignette">
+    <p>1910年冬天，沃洛格达的哭丧人一个接一个死于伤寒。她是最后一个。据说她咽气的时候唱完了整首悼歌——歌词是给她自己的。</p>
+    <p>坟是空的这件事，三年后有人迁葬才发现的。土面平整，没有挖掘痕迹。教堂登记簿上她的名字被人用指甲刮去了。对光还能看见凹痕。</p>
+    <p>之后有人在莫斯科—喀山线的夜班车上见过她。最后一节车厢，靠窗。穿黑披肩。从来不买票。有个列车员试着跟她聊了一整夜。第二天他想不起来她长什么样了。但他在调度室里放了一本空日记本。至今还放在那里。</p>
+  </div>`;
 
   D.items.forEach(i => {
     h += `<div class="item t${i.t}">
