@@ -40,6 +40,10 @@
   .hero-icons { display: flex; gap: 5px; margin-top: 2mm; }
   .hero-icons img { width: 22px; height: 22px; opacity: 0.55; }
 
+  /* ── Vignette ── */
+  .vignette { max-width: 150mm; margin: 0 auto; padding: 5mm 0 4mm; }
+  .vignette p { font-size: 8pt; line-height: 2.2; color: #5a4e3e; letter-spacing: 0.04em; text-indent: 2em; margin: 0 0 2mm 0; }
+
   /* ── Items ── */
   .list { display: flex; flex-wrap: wrap; gap: 4mm 5mm; align-content: flex-start; }
 
@@ -119,6 +123,11 @@ const ITEMS = [
       <div class="hero-desc">${HERO.desc}</div>
       <div class="hero-icons">${icons(HERO.aspects)}</div>
     </div></div>
+    <div class="vignette">
+      <p>《翼中之翼》首演于1577年，曼托瓦。此后四百年间上演了十一次。没有一次演完。</p>
+      <p>故障各不相同——吊灯坠落、台板塌陷、女高音在第三幕中段突然失声随后改行当了大理石匠——但每次中断的时间点恰好一致：第三幕，第四小节。每次散场后包厢栏杆上有一根黑白羽毛。每次都不是同一根。</p>
+      <p>歌剧的原始总谱已经失传。但每版重排的指挥都会在第三幕前夕做一个关于喜鹊的梦。梦里它不说话。它只是蹲在指挥台的谱架上，伸出左爪，给他们看它少了一根趾。</p>
+    </div>
     <div class="list">`;
 
   ITEMS.forEach(i => {
