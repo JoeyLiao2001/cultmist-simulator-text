@@ -7,19 +7,19 @@
 ```
 Cultist Simulator follower portrait. Clean uniform-weight black outlines enclosing large areas of flat color. No gradients. No hatching. No crosshatching. No texture. Smooth surface. Square canvas with flat ground, no border, no ornament. Every shape is one closed contour filled with one flat color.
 
-Background: a flat wash of warm earth-brown — the color of tropical hardwood, deep and still. Not grey. Not cold. The heat of the jungle floor.
+Background: a flat wash of deep jungle green — the color of rainforest canopy at dusk. Not bright. Not olive. The stillness of the jungle floor at twilight.
 
-Colors: use only the warm earth family — sepia-brown skin, darker umber shadow blocks, near-black outlines.
+Colors: use only the jungle palette — deep green background, warm brown skin, dark green-brown shadow blocks, near-black outlines.
 
-The face structure: broad cheekbones, jaw set firm, a face that has been broken and reset. Expression: no expression. The mouth is a single closed line. High cheekbones defined by the shadow blocks on ONE side of the face only. Shadows are flat geometric fills in a darker umber — hard-edged, no softening, no blending. Applied to one side of the nose bridge, the cheekbone on that same side, the jawline on that same side, the temple and brow ridge on that same side. The other side of the face remains a single flat sepia mid-tone with no shadows.
+The face structure: broad cheekbones, jaw set firm. Expression: no expression. The mouth is a single closed line. High cheekbones defined by shadow blocks on ONE side of the face only. Shadows are flat geometric fills in a darker green-brown — hard-edged, no softening, no blending. Applied to one side of the nose bridge, the cheekbone on that same side, the jawline on that same side, the temple and brow ridge on that same side. The other side of the face remains a single flat mid-tone with no shadows.
 
-The eyes: the defining feature of Cultist Simulator character art. Outlined almond shapes. The socket is filled with the SAME darker umber as the face shadows — not blank white, not empty black, but shadow-tone. The pupil is a small dark dot or slit in the darkest near-black — identical to the outline color. No iris detail. No highlight. No catchlight. No white anywhere in the eye. The eye is a void that sees through you.
+The eyes: outlined almond shapes. Fill the eye shape with the SAME skin color as the surrounding face — do NOT fill with shadow, do NOT fill with black, do NOT fill with white. The eye interior is skin-toned. The outline is black. In the center of each eye, a single dark dot — the pupil. That is all. No iris. No sclera. No white. No highlight. No shadow inside the eye. Just skin color with a black dot.
 
-Hair: close-cropped, a flat dark near-black shape with a few clean internal dividing lines. No individual strands. No texture. A thin scar runs from the left temple into the hairline — a single clean line, lighter than the shadow but darker than the skin. The ear on the shadow side is a simple flat shape.
+Hair: close-cropped, a flat dark shape with a few clean internal dividing lines. No individual strands. No texture. A thin scar runs from the left temple into the hairline — a single clean line. The ear on the shadow side is a simple flat shape.
 
-Above the brow, on the lit side of the forehead, three very faint parallel marks — the ghost of an old ritual scarification, almost absorbed back into the skin. Rendered as slightly lighter lines within the flat sepia tone. Not wounds. Traces.
+Above the brow, on the lit side of the forehead, three very faint parallel marks — old ritual scarification. Rendered as slightly lighter lines within the flat skin tone. Not wounds. Traces.
 
-The face is half-lit, half in stillness. Geometric shadow on one side. Flat even tone on the other. The scar is the only line that crosses the boundary between them.
+The face is half-lit, half in stillness. Geometric shadow on one side. Flat even tone on the other.
 ```
 
 ---
