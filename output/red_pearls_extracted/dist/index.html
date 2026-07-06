@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What Happened In Borneo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+  <script type="module" crossorigin src="./assets/index-Psz20-PL.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-DyuGQf5x.css">
+</head>
+
+<body>
+    <div id="app">
+        <header>
+            <div class="header-left-controls">
+                <div id="settings-btn" class="icon-btn" data-i18n-title="settings_tooltip" title="Settings">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="3"></circle>
+                        <path
+                            d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z">
+                        </path>
+                    </svg>
+                </div>
+                <div id="minds-eye-btn" class="icon-btn" data-i18n-title="minds_eye_tooltip" title="Mind's Eye">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                        <circle cx="12" cy="12" r="3"></circle>
+                    </svg>
+                </div>
+                <div class="logo-mini"></div>
+            </div>
+
+            <div id="game-status" class="glass">
+                <span id="nav-guests-btn" class="glass-nav-btn" data-i18n="nav_guests"
+                    onclick="window.openGuestFolder()">Guests</span>
+                <span id="nav-inventory-btn" class="glass-nav-btn" data-i18n="nav_inventory"
+                    onclick="window.openInventory()">Inventory</span>
+                <span id="current-location">Map View</span>
+                <span id="current-time-display">Friday, 13:00</span>
+            </div>
+        </header>
+
+        <div id="settings-modal" class="hidden confirmation-overlay">
+            <div class="confirmation-box">
+                <h3 style="margin-top: 0; margin-bottom: 1.5rem;" data-i18n="settings_title">Settings</h3>
+
+                <div class="setting-row">
+                    <label data-i18n="settings_music_volume">Music Volume</label>
+                    <div class="volume-controls">
+                        <button id="vol-down">-</button>
+                        <div id="vol-display">100%</div>
+                        <button id="vol-up">+</button>
+                    </div>
+                </div>
+
+                <div class="setting-row">
+                    <label data-i18n="settings_mute">Mute</label>
+                    <button id="mute-toggle-btn" class="toggle-btn">OFF</button>
+                </div>
+
+                <div class="setting-row">
+                    <label data-i18n="settings_global_timeline">Global Timeline View</label>
+                    <button id="global-timeline-toggle-btn" class="toggle-btn">OFF</button>
+                </div>
+
+                <div class="setting-row">
+                    <label data-i18n="settings_show_hints">Show Hints</label>
+                    <button id="show-hints-toggle-btn" class="toggle-btn">ON</button>
+                </div>
+
+                <div class="setting-row">
+                    <label data-i18n="settings_save_data">Save Data</label>
+                    <div style="display: flex; gap: 0.5rem;">
+                        <button id="export-save-btn" class="folder-btn secondary" data-i18n="settings_export_save"
+                            style="flex: 1; font-size: 0.8rem; padding: 0.5rem;">Export Save</button>
+                        <button id="import-save-btn" class="folder-btn secondary" data-i18n="settings_import_save"
+                            style="flex: 1; font-size: 0.8rem; padding: 0.5rem;">Import Save</button>
+                        <input type="file" id="import-save-input" style="display: none;" accept=".sav,.txt">
+                    </div>
+                </div>
+
+                <div class="setting-row"
+                    style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgba(0,0,0,0.1);">
+                    <label style="color: #d45d5d;" data-i18n="settings_danger_zone">Danger Zone</label>
+                    <button id="full-restart-btn" class="folder-btn" data-i18n="settings_erase_restart"
+                        style="background: #d45d5d; color: white; border: 1px solid #d45d5d; font-size: 0.8rem; padding: 0.5rem;">ERASE
+                        DATA & RESTART</button>
+                </div>
+                <div style="text-align: center; font-size: 0.8rem; color: rgba(0,0,0,0.6); margin-top: 1rem;"
+                    data-i18n="settings_keyboard_hint">
+                    Keyboard shortcuts: 'i' for Inventory, 'g' for Guests
+                </div>
+                <button id="close-settings-btn" class="folder-btn secondary" style="margin-top: 1rem;"
+                    data-i18n="settings_close">Close</button>
+                <div id="version-display"
+                    style="text-align: center; font-size: 0.7rem; color: rgba(0,0,0,0.5); margin-top: 0.5rem;">
+                </div>
+            </div>
+        </div>
+
+        <main id="main-content">
+            <!-- Content will be injected by main.js -->
+        </main>
+
+        <div id="overlay" class="hidden">
+            <div class="psychic-blast"></div>
+        </div>
+    </div>
+
+    <div id="portrait-modal" class="hidden">
+        <div class="modal-content">
+            <h3 data-i18n="portrait_select_character">Select a Character</h3>
+            <div id="portrait-grid"></div>
+            <div class="modal-footer">
+                <button id="close-modal-btn" class="modal-footer-btn secondary"
+                    data-i18n="portrait_cancel">CANCEL</button>
+                <button id="confirm-selection-btn" class="modal-footer-btn primary"
+                    data-i18n="portrait_select">SELECT</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="guest-folder" class="hidden">
+        <div class="folder-content">
+            <div class="folder-header">
+                <h3 data-i18n="guest_folder_title">Case Files: The Guests</h3>
+                <button id="close-folder-btn" class="folder-btn" data-i18n="guest_folder_close">Close File</button>
+            </div>
+            <div id="guest-grid"></div>
+        </div>
+    </div>
+
+    <div id="guest-timeline-view" class="hidden">
+        <div class="timeline-modal-wrapper">
+            <div class="timeline-content">
+                <div class="timeline-header">
+                    <h3 id="timeline-guest-name">Guest Name</h3>
+                    <button id="back-to-folder-btn" class="folder-btn" data-i18n="guest_timeline_back">Back to
+                        Files</button>
+                </div>
+                <div id="timeline-list"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="room-timeline-view" class="hidden">
+        <div class="timeline-content">
+            <div class="timeline-header">
+                <h3 id="timeline-room-name">Room Name</h3>
+                <button id="close-room-timeline-btn" class="folder-btn" data-i18n="room_timeline_close">Close
+                    Timeline</button>
+            </div>
+            <div id="room-timeline-list"></div>
+        </div>
+    </div>
+
+    <!-- Global Room Timeline View -->
+    <div id="global-timeline-view" class="global-popup-hidden">
+        <button id="close-global-timeline-btn" class="global-timeline-toggle" data-i18n-title="close_global_timeline_tooltip" title="Close Global Timeline">▼</button>
+        <div class="global-timeline-content">
+            <div class="global-timeline-header">
+                <h3 data-i18n="global_timeline_title">Global Timeline</h3>
+            </div>
+            <div id="global-timeline-list"></div>
+        </div>
+    </div>
+
+    <div id="item-timeline-view" class="hidden">
+        <div class="timeline-content">
+            <div class="timeline-header">
+                <h3 id="timeline-item-name">Item Timeline</h3>
+                <button id="close-item-timeline-btn" class="folder-btn" data-i18n="item_timeline_close">Back to
+                    Cabinet</button>
+            </div>
+            <div id="item-timeline-list"></div>
+        </div>
+    </div>
+
+    <div id="minds-eye-view" class="hidden">
+        <div class="minds-eye-content">
+            <div class="minds-eye-header">
+                <h3 data-i18n="minds_eye_title">The Mind's Eye</h3>
+                <button id="close-minds-eye-btn" class="folder-btn" data-i18n="minds_eye_close">Close Trace</button>
+            </div>
+            <div id="minds-eye-canvas"></div>
+        </div>
+    </div>
+
+    <div id="inventory-view" class="hidden">
+        <div class="cabinet-modal">
+            <div class="cabinet-header">
+                <h3 data-i18n="cabinet_title">Evidence Cabinet</h3>
+                <button id="close-inventory-btn" class="folder-btn" data-i18n="cabinet_close">Close Cabinet</button>
+            </div>
+            <div class="cabinet-tabs">
+                <div class="cabinet-tab active" data-tab="documents" data-i18n="cabinet_tab_documents">Documents</div>
+                <div class="cabinet-tab" data-tab="notes" data-i18n="cabinet_tab_notes">Notes</div>
+                <div class="cabinet-tab" data-tab="items" data-i18n="cabinet_tab_items">Items</div>
+                <div class="cabinet-tab" data-tab="transcripts" data-i18n="cabinet_tab_transcripts">Transcripts</div>
+                <div class="cabinet-tab" data-tab="glossary" data-i18n="cabinet_tab_glossary">Glossary</div>
+                <div class="cabinet-tab" data-tab="help" data-i18n="cabinet_tab_help">Help</div>
+                <div class="cabinet-tab" data-tab="hints" data-i18n="cabinet_tab_hints">Hints</div>
+            </div>
+            <div id="inventory-content" class="cabinet-body">
+                <!-- Content will be injected by main.js -->
+            </div>
+        </div>
+    </div>
+
+    <div id="annotation-modal" class="hidden">
+        <div class="modal-content">
+            <h3 data-i18n="annotation_title">Investigation Note</h3>
+            <div class="annotation-original-box">
+                <span class="annotation-label" data-i18n="annotation_label">REFERENCE:</span>
+                <p id="annotation-original-text"></p>
+            </div>
+            <textarea id="annotation-textarea" data-i18n-placeholder="annotation_placeholder"
+                placeholder="Type your investigation notes here..."></textarea>
+            <div id="annotation-dropdown" class="theory-dropdown hidden"></div>
+            <p id="annotation-hint" class="annotation-hint hidden" data-i18n="annotation_hint">Tip: Type '@' to link
+                this note to a location.</p>
+            <div class="modal-btns">
+                <button id="save-annotation-btn" class="folder-btn" data-i18n="annotation_save">Save Note</button>
+                <button id="cancel-annotation-btn" class="folder-btn secondary"
+                    data-i18n="annotation_cancel">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="image-title-screen">
+        <div class="press-any-key" data-i18n="press_any_key">Press any key to start</div>
+        <div class="title-sequel-banner">
+            <div class="title-sequel-label">wishlist the sequel now</div>
+            <button id="title-sequel-btn" class="title-sequel-btn">
+                <img src="./titlescreen/library_header.jpg" alt="Green Mist over Portland" class="title-sequel-img">
+            </button>
+        </div>
+    </div>
+
+    <!-- LANGUAGE SELECTION SCREEN -->
+    <div id="language-screen" class="hidden">
+        <div class="language-options">
+            <button class="folder-btn lang-flag-btn" id="lang-en"><img src="./flag/en.png" alt="English"></button>
+            <button class="folder-btn lang-flag-btn" id="lang-cn"><img src="./flag/cn.png" alt="中文"></button>
+            <button class="folder-btn lang-flag-btn hidden" id="lang-jp"><img src="./flag/jp.png" alt="日本語"></button>
+            <button class="folder-btn lang-flag-btn hidden" id="lang-fr"><img src="./flag/fr.png"
+                    alt="Français"></button>
+            <button class="folder-btn lang-flag-btn hidden" id="lang-es"><img src="./flag/es.png" alt="Español"></button>
+        </div>
+        <div class="language-hint">
+            New: You can now use @ in character and item notes to select a location. This note will show in the
+            timelines for that location.
+        </div>
+    </div>
+
+    <!-- CONTENT WARNING SCREEN -->
+    <div id="content-warning-screen" class="hidden">
+        <h2 class="language-title" id="cw-title">Content Warning</h2>
+        <div style="text-align: center; max-width: 600px; margin: 0 auto 2rem auto; color: #fff; font-size: 1.2rem; line-height: 1.5;"
+            id="cw-text">
+            This game contains period-typical racist insults aimed at WW2 Japanese and German soldiers that some may
+            find offensive.
+            <br><br>
+            Would you like to censor these words?
+
+        </div>
+        <div class="language-options">
+            <button class="folder-btn" id="cw-censor">Censor Language</button>
+            <button class="folder-btn" id="cw-continue">Continue Uncensored</button>
+        </div>
+    </div>
+
+    <!-- DIFFICULTY SCREEN -->
+    <div id="difficulty-screen" class="hidden">
+        <h2 class="language-title" id="diff-title">Select Difficulty</h2>
+        <div style="text-align: center; max-width: 600px; margin: 0 auto 2rem auto; color: #fff; font-size: 1.2rem; line-height: 1.5;"
+            id="diff-text">
+            Would you like to play the game as intended, or experience a more hardcore investigation?
+            <br><br>
+            <span style="font-size:0.9rem; opacity:0.8;">(Hardcore mode disables the global timeline tracker and turns
+                off discovery hints. These can be toggled on or off in the settings menu at any time.)</span>
+        </div>
+        <div class="language-options">
+            <button class="folder-btn" id="diff-normal">Normal</button>
+            <button class="folder-btn" id="diff-hardcore">Hardcore</button>
+        </div>
+    </div>
+
+    <div id="title-screen" class="hidden">
+        <div class="envelope-wrapper">
+            <div class="envelope">
+                <div class="stamp" data-i18n="title_envelope_top_secret">Top Secret</div>
+                <div class="address" data-i18n-html="title_envelope_to">
+                    To: Miss Delphine<br>
+                    CONFIDENTIAL
+                </div>
+                <div class="title-text" data-i18n="title_envelope_question">What happened in Borneo?</div>
+                <div class="open-instruction" data-i18n="title_envelope_open">(Click to Open)</div>
+            </div>
+        </div>
+    </div>
+
+    <div id="intro-screen" class="hidden">
+        <div class="letter-container">
+            <h1 data-i18n="intro_confidential">CONFIDENTIAL</h1>
+            <div class="letter-body">
+                12th April, 1948
+                <br>
+                London
+                <br><br>
+                Dear Miss Delphine,
+                <br><br>
+                I trust this correspondence finds you in good health and that the spring air is proving a welcome relief
+                after the winter’s chill. I must apologise for the sudden nature of this letter, as we have never been
+                formally introduced; however, I was given your name by a mutual acquaintance in Oxford who spoke with
+                great conviction of your unique gifts. He assured me that where the conventional authorities reach their
+                limit, your investigation begins. It is that hope, perhaps a desperate one, that compels me to write to
+                you today.
+                <br><br>
+                They told me it was the war. That my father, my sister Lune... that they were just casualties of the
+                occupation. But I know better now. They were gone long before the Japanese landed.
+                <br><br>
+                I was stuck here in London during the blitz, unable to reach them. My father, Jeremiah, had been running
+                the <strong>Goodwill Tobacco Plantation</strong> in North Borneo for decades. It was our paradise. Now
+                they say it's a graveyard.
+                <br><br>
+                I've spent every penny of my inheritance chasing ghosts. Letters to the colonial office, bribes to
+                sailors... and this is all I have. A box of scraps. A map. Some photos.
+                <br><br>
+                You are a Sensitive I am told. That's what they call you people? Please. I need to know what happened to
+                them. Access the memories attached to these items. Find the truth.
+                <br><br>
+                Enclosed are the few photos I managed to recover.
+                <br>
+                <div class="intro-mugshots">
+                    <img src="portraits/portrait_jeremiah_goodwill.png" alt="Jeremiah">
+                    <img src="portraits/portrait_lucas_sterling.png" alt="Lucas">
+                    <img src="portraits/portrait_lune_goodwill.png" alt="Lune">
+                    <!-- Showing just a few key suspects as "top files" -->
+                    <div class="more-files">+7 Others</div>
+                </div>
+                <br>
+                The only thing I know for sure is what little the colonial office told me:
+                <br>
+                <span class="clue-highlight">"Jeremiah Goodwill was alone in the study at 16:00 on Tuesday 16th
+                    December 1941, when he placed a telephone call to the local authorities regarding the arrival of an
+                    unannounced and unexpected guest."</span>
+                <br><br>
+                Please help me put them to rest.
+                <br><br>
+                - J. Goodwill Jr.
+            </div>
+            <button id="start-game-btn">BEGIN INVESTIGATION</button>
+        </div>
+    </div>
+
+    <div id="dialogue-overlay" class="hidden">
+        <div class="dialogue-container">
+            <!-- Optional Portrait -->
+            <div id="dialogue-portrait" class="hidden">
+                <img src="" alt="Speaker">
+            </div>
+            <div class="dialogue-box">
+                <div id="dialogue-speaker-name"></div>
+                <div id="dialogue-text"></div>
+                <div class="dialogue-continue">▼</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Graphics Library -->
+
+</body>
+
+</html>
