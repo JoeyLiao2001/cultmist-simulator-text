@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>阿妮亚·沃洛格达 — 叙事星座</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&display=swap');
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #1a1814;
+    --table: #231f1a;
+    --card-bg: #f4efe3;
+    --card-bg-dim: #e8e2d4;
+    --text: #2c2822;
+    --text-dim: #6b6560;
+    --winter-ice: #b8c9d4;
+    --winter-frost: #dce6ec;
+    --winter-bone: #e3dcd0;
+    --knock-amber: #c4a35a;
+    --edge-scarlet: #8b3a3a;
+    --frame-dark: #3a3530;
+    --label-bg: #2c2822;
+    --label-text: #d5cfc4;
+  }
+
+  body {
+    background: var(--bg);
+    background-image:
+      radial-gradient(ellipse at 50% 0%, rgba(180,200,210,0.06) 0%, transparent 70%),
+      radial-gradient(ellipse at 30% 60%, rgba(180,160,120,0.04) 0%, transparent 50%);
+    color: var(--text);
+    font-family: 'Noto Serif SC', 'SimSun', serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 1rem 4rem;
+  }
+
+  /* ── Header ── */
+  header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  header h1 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--winter-frost);
+    letter-spacing: 0.15em;
+    margin-bottom: 0.4rem;
+  }
+  header .sub {
+    font-size: 0.85rem;
+    color: var(--text-dim);
+    letter-spacing: 0.1em;
+  }
+
+  /* ── Table surface ── */
+  .table {
+    background: var(--table);
+    background-image:
+      repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(255,255,255,0.008) 2px, rgba(255,255,255,0.008) 4px),
+      repeating-linear-gradient(90deg, transparent, transparent 1px, rgba(255,255,255,0.005) 1px, rgba(255,255,255,0.005) 2px);
+    border-radius: 4px;
+    padding: 2.5rem 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 1.8rem;
+    max-width: 1100px;
+    width: 100%;
+    box-shadow:
+      inset 0 0 120px rgba(0,0,0,0.5),
+      0 0 2px rgba(255,255,255,0.06);
+  }
+
+  /* ── Character card (central, largest) ── */
+  .card.character {
+    flex: 1 1 320px;
+    max-width: 360px;
+    order: -1;
+    align-self: center;
+  }
+  .card.character .card-inner {
+    padding: 1.6rem 1.5rem 1.4rem;
+    border: 2px solid var(--winter-ice);
+    box-shadow: 0 0 24px rgba(180,200,210,0.15), 0 2px 12px rgba(0,0,0,0.4);
+  }
+  .card.character .card-name {
+    font-size: 1.3rem;
+    text-align: center;
+    margin-bottom: 0.15rem;
+  }
+  .card.character .card-tier {
+    text-align: center;
+    font-size: 0.7rem;
+    color: var(--winter-ice);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 0.8rem;
+  }
+  .card.character .card-desc {
+    font-size: 1rem;
+    line-height: 1.9;
+    text-align: center;
+    letter-spacing: 0.05em;
+  }
+
+  /* ── Generic card frame ── */
+  .card {
+    flex: 0 1 220px;
+    min-width: 200px;
+    max-width: 260px;
+    transition: transform 0.2s;
+  }
+  .card:hover { transform: translateY(-2px); }
+  .card-inner {
+    background: var(--card-bg);
+    background-image:
+      linear-gradient(180deg, rgba(255,255,255,0.6) 0%, rgba(240,235,220,0.3) 40%, rgba(220,210,190,0.2) 100%);
+    border: 1px solid rgba(0,0,0,0.15);
+    padding: 1rem 1.1rem 0.9rem;
+    border-radius: 2px;
+    box-shadow: 0 1px 6px rgba(0,0,0,0.35);
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+  .card-icon {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.2rem;
+    opacity: 0.7;
+  }
+  .card-icon svg { width: 40px; height: 40px; }
+
+  .card-type {
+    font-size: 0.6rem;
+    letter-spacing: 0.15em;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    margin-bottom: -0.2rem;
+  }
+  .card-name {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text);
+    letter-spacing: 0.04em;
+    line-height: 1.4;
+  }
+  .card-desc {
+    font-size: 0.78rem;
+    line-height: 1.75;
+    color: #3c3834;
+    letter-spacing: 0.03em;
+    flex: 1;
+  }
+  .card-note {
+    font-size: 0.65rem;
+    color: var(--text-dim);
+    font-style: italic;
+    margin-top: 0.2rem;
+    padding-top: 0.4rem;
+    border-top: 1px solid rgba(0,0,0,0.08);
+  }
+  .card-aspects {
+    display: flex;
+    gap: 0.4rem;
+    flex-wrap: wrap;
+    margin-top: 0.3rem;
+    padding-top: 0.4rem;
+    border-top: 1px solid rgba(0,0,0,0.08);
+  }
+  .aspect-tag {
+    font-size: 0.6rem;
+    padding: 0.15rem 0.5rem;
+    border-radius: 2px;
+    letter-spacing: 0.1em;
+  }
+  .aspect-winter { background: #dce6ec; color: #3a4a53; }
+  .aspect-knock  { background: #f0e6cc; color: #7a6230; }
+  .aspect-moth   { background: #e8d8c8; color: #6b4f3a; }
+  .aspect-secret { background: #e0d8d0; color: #5a4e42; }
+
+  /* ── Per-type card variants ── */
+  .card.type-书籍 .card-inner {
+    background: linear-gradient(180deg, #ede4d3 0%, #e3d8c2 50%, #d9cdb4 100%);
+    border-left: 3px solid #8b7355;
+  }
+  .card.type-书籍 .card-icon { height: 50px; }
+
+  .card.type-工具 .card-inner {
+    background: linear-gradient(180deg, #e8e3db 0%, #ddd6cc 100%);
+  }
+  .card.type-工具 .card-icon svg { opacity: 0.6; width: 32px; height: 32px; }
+
+  .card.type-地点 .card-inner {
+    background: linear-gradient(180deg, #dde4e8 0%, #cbd5dc 50%, #bcc7cf 100%);
+    border-top: 2px solid #9db4c0;
+  }
+  .card.type-地点 .card-icon { height: 44px; }
+  .card.type-地点 .card-desc { color: #2a3036; }
+
+  .card.type-影响 .card-inner {
+    background: linear-gradient(135deg, #d8dce8 0%, #e8ebf0 30%, #d0d8e4 100%);
+    border: 1px solid rgba(150,170,190,0.3);
+    box-shadow: 0 0 18px rgba(160,180,200,0.12), 0 1px 4px rgba(0,0,0,0.3);
+  }
+  .card.type-影响 .card-icon { height: 36px; }
+
+  .card.type-召唤物 .card-inner {
+    background: linear-gradient(180deg, #e0dcd8 0%, #d5d0ca 60%, #c8c2ba 100%);
+    border: 1px dashed rgba(0,0,0,0.2);
+  }
+  .card.type-召唤物 .card-icon svg { opacity: 0.5; }
+
+  .card.type-传闻 .card-inner {
+    background: linear-gradient(180deg, #f2efe8 0%, #eae5da 100%);
+    border: 1px solid rgba(0,0,0,0.1);
+    transform: rotate(0.3deg);
+  }
+  .card.type-传闻:hover { transform: rotate(0deg) translateY(-2px); }
+
+  .card.type-仪式 .card-inner {
+    background: linear-gradient(180deg, #e8e4dc 0%, #ddd8ce 100%);
+    border: 1px solid rgba(0,0,0,0.2);
+    border-bottom: 3px solid #9db4c0;
+  }
+  .card.type-仪式 .card-name { text-align: center; letter-spacing: 0.1em; }
+
+  .card.type-回忆 .card-inner {
+    background: linear-gradient(180deg, #f0ece5 0%, #e6e0d6 100%);
+    border: 1px solid rgba(0,0,0,0.1);
+    max-width: 240px;
+  }
+
+  /* ── Footer ── */
+  footer {
+    margin-top: 2rem;
+    text-align: center;
+    color: var(--text-dim);
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 800px) {
+    .table { padding: 1.5rem 1rem; gap: 1rem; }
+    .card.character { flex: 1 1 100%; max-width: 100%; }
+    .card { flex: 0 1 160px; min-width: 150px; }
+    .card-desc { font-size: 0.72rem; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>阿妮亚·沃洛格达</h1>
+  <div class="sub">叙事星座 · 冬 / 启 · 长生者</div>
+</header>
+
+<div class="table" id="table">
+  <!-- rendered by JS -->
+</div>
+
+<footer>骨白鸽的失落色彩 · cultist-simulator-text · 2026</footer>
+
+<script>
+const DATA = {"character":{"name":"阿妮亚·沃洛格达","name_en":"Anya of Vologda","element_id":"ally.anya","category":"characters","aspects":["冬","启"],"tier":"长生者","desc":"她从来不会用沙哑得像冻土的声音做自我介绍。她的日记里没有她自己的名字。"},"constellation":[{"name":"《无名日记》","name_en":"The Nameless Diary","element_id":"book.nameless","category":"books","type":"书籍","aspects":["冬","秘史"],"desc":"封皮是某种深色皮革，磨损得看不出原色。内页以一种细小而工整的笔迹写满——每一页一个名字，附带日期、地点、一两句特征。日记的主人从未在页中提及自己。读到第十三页时你注意到一件事：你不记得翻开这一页之前读过的任何一个名字了。它们还在纸上。只是不在你脑子里了。","note":"在沃洛格达火车站失物招领处存放了十五年，无人认领。标签上只写着'阿·沃'。"},{"name":"哭丧人的披肩","name_en":"The Keener's Shawl","element_id":"tool.keeners.shawl","category":"tools","type":"工具","aspects":["冬","启"],"desc":"一件黑色的羊毛披肩，边缘已磨出线头。触手永远湿冷——像刚从十一月的雾里走进来。如果在夜深时将它贴在耳边，能听到模糊的歌声，用俄语唱着悼亡的调子。嗓音是沙的。唱到第三节时总会停——不是唱完了，是被什么东西打断了。","note":""},{"name":"沃洛格达郊外的空坟","name_en":"The Empty Grave, Vologda","element_id":"location.emptygrave.vologda","category":"locations","type":"地点","aspects":["冬"],"desc":"城北三俄里，圣安娜墓园最边缘的一排。墓碑已风化，只能辨认出'阿——娅'和年份的数字。坟是空的。土面平整，没有被翻过的痕迹——仿佛埋在里面的东西不是被挖出来，而是自己散去了。教堂死亡登记簿1910年11月的那一页上，有一条记录被人用指甲刮掉了。但如果你对着光看，纸上还留着凹痕。","note":""},{"name":"预忘","name_en":"Pre-Oblivion","element_id":"influence.preforget","category":"influences","type":"影响","aspects":["冬","蛾"],"desc":"你确定刚才在站台上和某个女人说过话。她穿黑色披肩，问了你去哪里。但你现在想不起她的脸——不，你想不起她的声音。不，你甚至不确定她是不是女人。空气里有霜的气味。你翻开笔记本，发现上面有一个不是你写下的名字。字迹细小而工整。","note":""},{"name":"记名亡者","name_en":"The Recorded Dead","element_id":"spirit.recorded.dead","category":"spirits","type":"召唤物","aspects":["冬","启"],"desc":"一个几乎完全失去了轮廓的人形。它开口说话时用的是别人的声音——不是它自己的，而是阿妮亚在日记里为它记录的那个声音。'她还记得我的名字，'它说，然后站到了你身后。如果你翻开《无名日记》，会发现某一页上的名字正在变淡——淡成纸上的一道凹痕。等墨迹完全消失，它也就走了。那是它欠她的最后一笔债。","note":""},{"name":"打听不得的女人","name_en":"\"A Woman You Don't Ask About\"","element_id":"rumour.dont.ask","category":"elements","type":"传闻","aspects":["秘史","冬"],"desc":"莫斯科—喀山线上的夜班列车员都知道这个规矩：车上有个女人从来不买票，靠窗坐在最后一节车厢，哼着听不清词的调子。不要查她的票。不要问她的名字。有个新来的列车员不信，跟她聊了一整夜——事后别人问他那女人长什么样、多大年纪、说了些什么，他一样也说不出来。只记得她嗓音沙哑。还有临走时她用俄语对他说：记下你妈妈的名字。第二天他买了本日记本。","note":""},{"name":"哑歌之仪","name_en":"Rite of the Mute Elegy","element_id":"ritual.mute.elegy","category":"rituals","type":"仪式","aspects":["冬","启"],"desc":"备一张不是你自己写的日记残页。置于纯白之门方向的窗台上。点燃蜡烛。仪式全程不可出声——这不是规矩，而是因为悼歌诗人不听有声音的祈祷。仪式完成后，残页上的名字会变成另一个人。不是你认识的人。但你会记住那个名字，记住很久，久到忘记自己为什么会记住。被记住的人欠的不是你。","note":""},{"name":"维奥莱特的速写","name_en":"Violet's Sketch","element_id":"element.violet.sketch","category":"elements","type":"回忆","aspects":["冬","蛾"],"desc":"在那本从不在画中出现人物的速写本里，有一页例外。一幅铅笔素描——画的是火车站台，一个女人坐在长凳上。维奥莱特在旁注里写道：'今天在雅罗斯拉夫尔站碰到了一个女人。声音很难听，像破掉的管风琴。她知道我的名字。我让她坐了三个小时。'画中的女人没有脸——维奥莱特在那里只画了几道铅笔擦痕。下面写着：'第二天醒来时，我已经不记得和她说过什么了。但画还在。'","note":"从维奥莱特的遗物中找到。她一生画了几百张画，这是唯一一张有人物的。"}]};
+
+const ICONS = {
+  '书籍': `<svg viewBox="0 0 40 40" fill="none"><rect x="10" y="6" width="20" height="28" rx="1" stroke="#5a4a3a" stroke-width="1.2"/><line x1="14" y1="12" x2="26" y2="12" stroke="#8b7355" stroke-width="0.8"/><line x1="14" y1="16" x2="26" y2="16" stroke="#8b7355" stroke-width="0.8"/><line x1="14" y1="20" x2="22" y2="20" stroke="#8b7355" stroke-width="0.8"/><rect x="12" y="24" width="16" height="8" rx="0.5" stroke="#8b7355" stroke-width="0.6" stroke-dasharray="2 1"/></svg>`,
+  '工具': `<svg viewBox="0 0 40 40" fill="none"><path d="M14 28 C14 20, 18 16, 20 12 C22 16, 26 20, 26 28 C26 31, 23 34, 20 34 C17 34, 14 31, 14 28Z" stroke="#5a5040" stroke-width="1.2" fill="none"/><circle cx="20" cy="22" r="8" stroke="#5a5040" stroke-width="0.6" fill="none" stroke-dasharray="3 2"/></svg>`,
+  '地点': `<svg viewBox="0 0 40 40" fill="none"><path d="M12 30 L12 18 C12 14, 16 12, 20 10 C24 12, 28 14, 28 18 L28 30" stroke="#6b7d8a" stroke-width="1.2" fill="none"/><rect x="17" y="22" width="6" height="8" stroke="#6b7d8a" stroke-width="0.8" fill="none"/><line x1="18" y1="10" x2="22" y2="10" stroke="#6b7d8a" stroke-width="0.8"/></svg>`,
+  '影响': `<svg viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="12" stroke="#8a9aaa" stroke-width="0.6" fill="none" opacity="0.6"/><circle cx="20" cy="20" r="8" stroke="#8a9aaa" stroke-width="0.6" fill="none" opacity="0.4"/><circle cx="20" cy="20" r="4" stroke="#8a9aaa" stroke-width="0.8" fill="none"/></svg>`,
+  '召唤物': `<svg viewBox="0 0 40 40" fill="none"><path d="M20 8 C24 12, 28 14, 28 20 C28 26, 24 30, 20 32 C16 30, 12 26, 12 20 C12 14, 16 12, 20 8Z" stroke="#6b6050" stroke-width="1" fill="none"/><circle cx="18" cy="18" r="1.5" fill="#6b6050" opacity="0.5"/><circle cx="22" cy="18" r="1.5" fill="#6b6050" opacity="0.5"/></svg>`,
+  '传闻': `<svg viewBox="0 0 40 40" fill="none"><path d="M14 12 C16 10, 18 14, 20 12 C22 10, 24 14, 26 12" stroke="#7a7060" stroke-width="0.8" fill="none"/><path d="M12 18 C15 16, 18 20, 20 18 C22 16, 25 20, 28 18" stroke="#7a7060" stroke-width="0.8" fill="none"/><path d="M10 24 C14 22, 17 26, 20 24 C23 22, 26 26, 30 24" stroke="#7a7060" stroke-width="0.8" fill="none"/></svg>`,
+  '仪式': `<svg viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="14" stroke="#7a8090" stroke-width="0.8" fill="none"/><circle cx="20" cy="20" r="10" stroke="#7a8090" stroke-width="0.6" fill="none" stroke-dasharray="4 2"/><circle cx="20" cy="20" r="3" stroke="#8a90a0" stroke-width="1" fill="none"/><line x1="20" y1="6" x2="20" y2="10" stroke="#7a8090" stroke-width="0.6"/></svg>`,
+  '回忆': `<svg viewBox="0 0 40 40" fill="none"><rect x="14" y="10" width="12" height="18" rx="1" stroke="#7a7065" stroke-width="1" fill="none"/><line x1="16" y1="14" x2="24" y2="14" stroke="#7a7065" stroke-width="0.6"/><line x1="16" y1="18" x2="24" y2="18" stroke="#7a7065" stroke-width="0.6"/><line x1="16" y1="22" x2="22" y2="22" stroke="#7a7065" stroke-width="0.6"/><circle cx="14" cy="10" r="1.5" stroke="#8a8075" stroke-width="0.6" fill="none"/></svg>`
+};
+
+function aspectTag(principle) {
+  const map = { '冬':'aspect-winter', '启':'aspect-knock', '蛾':'aspect-moth', '秘史':'aspect-secret', '刃':'aspect-winter', '灯':'aspect-knock', '铸':'aspect-knock', '杯':'aspect-winter', '心':'aspect-winter' };
+  return `<span class="aspect-tag ${map[principle] || 'aspect-winter'}">[[${principle}]]</span>`;
+}
+
+// ── Render ──
+(function render(data) {
+  const table = document.getElementById('table');
+  const all = [data.character, ...data.constellation];
+
+  all.forEach((item) => {
+    const card = document.createElement('div');
+    const isChar = !item.type;
+    card.className = 'card' + (isChar ? ' character' : ' type-' + item.type);
+
+    let aspectsHTML = item.aspects
+      ? '<div class="card-aspects">' + item.aspects.map(aspectTag).join('') + '</div>'
+      : '';
+
+    let noteHTML = item.note
+      ? `<div class="card-note">${item.note}</div>`
+      : '';
+
+    let tierHTML = item.tier
+      ? `<div class="card-tier">${item.tier}</div>`
+      : '';
+
+    let typeLabel = item.type
+      ? `<div class="card-type">${item.type}</div>`
+      : '';
+
+    let iconHTML = (item.type && ICONS[item.type])
+      ? `<div class="card-icon">${ICONS[item.type]}</div>`
+      : '';
+
+    card.innerHTML = `
+      <div class="card-inner">
+        ${typeLabel}
+        ${iconHTML}
+        <div class="card-name">${item.name}</div>
+        ${tierHTML}
+        <div class="card-desc">${item.desc}</div>
+        ${noteHTML}
+        ${aspectsHTML}
+      </div>
+    `;
+    table.appendChild(card);
+  });
+})(DATA);
+</script>
+
+</body>
+</html>
