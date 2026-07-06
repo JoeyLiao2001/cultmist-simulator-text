@@ -26,9 +26,7 @@
       repeating-linear-gradient(-45deg, transparent, transparent 3.5px, rgba(180,160,130,0.07) 3.5px, rgba(180,160,130,0.07) 4.5px);
     padding: 14mm 14mm;
     box-shadow: 0 0 0 1px rgba(0,0,0,0.06), 0 2px 16px rgba(0,0,0,0.12);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    overflow: hidden;
   }
 
   /* ── Hero ── */
@@ -43,14 +41,9 @@
 
   /* ── Vignette ── */
   .vignette {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    gap: 2mm;
-    padding: 2mm 0;
     max-width: 150mm;
     margin: 0 auto;
+    padding: 6mm 0 5mm;
   }
   .vignette p {
     font-size: 8pt;
@@ -58,7 +51,7 @@
     color: #5a4e3e;
     letter-spacing: 0.04em;
     text-indent: 2em;
-    margin: 0;
+    margin: 0 0 2mm 0;
   }
 
   /* ── Item list ── */
@@ -121,9 +114,9 @@ const D = {"character":{"name":"阿妮亚·沃洛格达","el":"ally.anya","aspec
     // Vignette between hero and items
   h += `<div class="vignette">
     <p>1910年冬天，沃洛格达的哭丧人一个接一个死于伤寒。她是最后一个。据说她咽气的时候唱完了整首悼歌——歌词是给她自己的。葬礼上没有人哭。哭丧人不需要别人替她哭。</p>
-    <p>坟是空的这件事，三年后有人迁葬才发现的。土面平整，无挖掘痕迹——不像被盗，像里面的东西自己散了。教堂登记簿上她的名字被人用指甲刮去了。对光倾斜：凹痕仍在，七个字符。</p>
-    <p>之后有人在莫斯科—喀山线的夜班车上见过她。最后一节车厢，靠窗。黑披肩。从来不买票。老列车员会告诉新人：不要查。不要问。有个喀山来的不信，一九二三年冬天，聊了一整夜。第二天什么也说不出来——她的脸、她的口音、她多大年纪。只记得嗓子是沙的。</p>
-    <p>她有一本日记。封皮磨损，内页用细小的俄文笔迹写满——不是她自己的故事，是她遇见的每一个人的名字。如果哪天你在旧货市场或火车站储物柜里翻到一本没有署名的本子，看看第一页。如果那一页上的名字不是你认识的人，把它放回去。</p>
+    <p>三年后有人迁葬，发现坟是空的。土面平整，不像被盗，像里面的东西自己散了。教堂登记簿上她的名字被人用指甲刮去了。</p>
+    <p>那之后开始有人在莫斯科—喀山线的夜班车上见到一个女人。靠窗，最后一节车厢。穿黑披肩。从来不买票。列车员之间口口相传的规矩：不要查。不要问。有个喀山来的新人没听过这个规矩——聊了一整夜。第二天他连她长什么样都说不出来。只记得她的嗓子是沙的。还有她问了他母亲的名字。</p>
+    <p>悼歌诗人唤回一个亡者，便从她那里取走一样东西。她失去的不是声音。是被人记住的能力。但她记得所有人。她一直在记。</p>
   </div>`;
 
   D.items.forEach(i => {
