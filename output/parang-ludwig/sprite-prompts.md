@@ -11,6 +11,8 @@ Background: a flat wash of deep jungle green — the color of rainforest canopy 
 
 Colors: use only the jungle palette — deep green background, warm brown skin, dark green-brown shadow blocks, near-black outlines.
 
+The composition: a bust portrait — head, neck, and the top of the shoulders. The figure fills the frame from the crown of the head to the upper chest. Like all Cultist Simulator follower portraits, the body below the neck is rendered as a simple flat silhouette — no collar detail, no fabric folds, no buttons. The neck is a clean flat shape. The shoulders are a broader flat block that terminates at the bottom of the frame.
+
 The face structure: broad cheekbones, jaw set firm. Expression: no expression. The mouth is a single closed line. High cheekbones defined by shadow blocks on ONE side of the face only. Shadows are flat geometric fills in a darker green-brown — hard-edged, no softening, no blending. Applied to one side of the nose bridge, the cheekbone on that same side, the jawline on that same side, the temple and brow ridge on that same side. The other side of the face remains a single flat mid-tone with no shadows.
 
 The eyes: Cultist Simulator characters have no eyeballs, no pupils, no irises. The eyes are two different colors — a defining visual rule of the game's art.
@@ -25,7 +27,7 @@ Hair: close-cropped, a flat dark shape with a few clean internal dividing lines.
 
 Above the brow, on the lit side of the forehead, three very faint parallel marks — old ritual scarification. Rendered as slightly lighter lines within the flat skin tone. Not wounds. Traces.
 
-The face is half-lit, half in stillness. Geometric shadow on one side. Flat even tone on the other.
+The neck is a clean flat column. The shoulders below it are a broader dark silhouette that fills the bottom of the frame — no clothing detail, no collar line, just a flat block shape. The face is half-lit, half in stillness. Geometric shadow on one side. Flat even tone on the other.
 ```
 
 ---
