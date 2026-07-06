@@ -1,8 +1,34 @@
 # Parang Ludwig — 角色肖像 Prompt
 
-## 人物肖像
+## 人物肖像 A：正面
 
-不露脸。背影。走进密林深处的人不再需要正面。
+面部肖像。干净均匀的黑色轮廓线，大面积平涂色块，无渐变，无排线，无纹理，光滑表面。方形画布，无边无饰。
+
+```
+Cultist Simulator follower portrait. Clean uniform-weight black outlines enclosing large areas of flat color. No gradients. No hatching. No crosshatching. No texture. Smooth surface. Square canvas with flat ground, no border, no ornament. Every shape is one closed contour filled with one flat color.
+
+Background: a flat wash of deep jungle green — the color of rainforest canopy at dusk. Not bright. Not olive. The stillness of the jungle floor at twilight.
+
+Colors: use only the jungle palette — deep green background, warm brown skin, dark green-brown shadow blocks, near-black outlines.
+
+The composition: a bust portrait — head, neck, and the top of the shoulders. The figure fills the frame from the crown of the head to the upper chest. The body below the neck is rendered as a simple flat silhouette — no collar detail, no fabric folds, no buttons. The neck is a clean flat shape. The shoulders are a broader flat block that terminates at the bottom of the frame.
+
+The face structure: broad cheekbones, jaw set firm. Expression: no expression. The mouth is a single closed line. High cheekbones defined by shadow blocks on ONE side of the face only. Shadows are flat geometric fills in a darker green-brown — hard-edged, no softening, no blending. Applied to one side of the nose bridge, the cheekbone on that same side, the jawline on that same side, the temple and brow ridge on that same side. The other side of the face remains a single flat mid-tone with no shadows.
+
+The eyes: Cultist Simulator characters have no eyeballs, no pupils, no irises. The eyes are two different colors — a defining visual rule of the game's art. The left eye (shadow side): fill it with the EXACT SAME deep jungle green as the background. The right eye (lit side): fill it with flat white. No pupils. No irises. No dots. Black outlines around both. One green eye. One white eye. That is the rule.
+
+Hair: close-cropped, a flat dark shape with a few clean internal dividing lines. No individual strands. No texture. A thin scar runs from the left temple into the hairline — a single clean line. The ear on the shadow side is a simple flat shape.
+
+Above the brow, on the lit side of the forehead, three very faint parallel marks — old ritual scarification. Rendered as slightly lighter lines within the flat skin tone. Not wounds. Traces.
+
+The face is half-lit, half in stillness. Geometric shadow on one side. Flat even tone on the other.
+```
+
+---
+
+## 人物肖像 B：背影
+
+不露脸。走进密林深处的人不再需要正面。
 
 ```
 Cultist Simulator follower portrait. Clean uniform-weight black outlines enclosing large areas of flat color. No gradients. No hatching. No crosshatching. No texture. Smooth surface. Square canvas with flat ground, no border, no ornament. Every shape is one closed contour filled with one flat color.
