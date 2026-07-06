@@ -70,7 +70,7 @@ const ITEMS = [
 ];
 
 (function(){
-  let h = `<div class="hero"><div class="hero-img"><img src="${IMG['hero']}"></div><div><div class="hero-tag">${HERO.tag}</div><div class="hero-name">${HERO.name}</div><div class="hero-desc">${HERO.desc}</div><div class="hero-icons">${icons(HERO.aspects)}</div></div></div><div class="vignette"><p>殖民地档案里他的名字被划掉又补上、补上又划掉——叛变那年划了一次，日军登陆那年又划了一次。两处划痕用一种墨水。中间那几年的档案是谁填的，没有人知道。雨季里窄轨铁路被炸断的那段至今没有修。枕木下面长出榕树气根。巡道工说晚上能听到铁轨自己在响——收缩的声音。像铁在往回弹。</p></div><div class="list">`;
+  let h = `<div class="hero"><div class="hero-img"><img src="${IMG['hero']}"></div><div><div class="hero-tag">${HERO.tag}</div><div class="hero-name">${HERO.name}</div><div class="hero-desc">${HERO.desc}</div><div class="hero-icons">${icons(HERO.aspects)}</div></div></div><div class="vignette"><p>殖民地档案里他的名字被划掉了两次。两次用的是同一种墨水。中间那几年的档案换了别人的笔迹。雨季里窄轨铁路被炸断的那段至今没有修。枕木下面长出榕树气根。巡道工说晚上能听到铁轨在响。收缩的声音。铁在往回弹。</p></div><div class="list">`;
   ITEMS.forEach(i => { h += `<div class="item t${i.ti}"><div class="item-img"><img src="${IMG[i.el]}"></div><div class="item-body"><div class="item-tag">${i.t}</div><div class="item-name">${i.n}</div><div class="item-desc">${i.d}</div><div class="item-icons">${icons(i.a)}</div></div></div>`; });
   h += '</div>'; document.getElementById('page').innerHTML = h;
 })();
