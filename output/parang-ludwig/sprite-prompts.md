@@ -13,7 +13,13 @@ Colors: use only the jungle palette — deep green background, warm brown skin, 
 
 The face structure: broad cheekbones, jaw set firm. Expression: no expression. The mouth is a single closed line. High cheekbones defined by shadow blocks on ONE side of the face only. Shadows are flat geometric fills in a darker green-brown — hard-edged, no softening, no blending. Applied to one side of the nose bridge, the cheekbone on that same side, the jawline on that same side, the temple and brow ridge on that same side. The other side of the face remains a single flat mid-tone with no shadows.
 
-The eyes: outlined almond shapes. Fill the eye shape with the SAME skin color as the surrounding face — do NOT fill with shadow, do NOT fill with black, do NOT fill with white. The eye interior is skin-toned. The outline is black. In the center of each eye, a single dark dot — the pupil. That is all. No iris. No sclera. No white. No highlight. No shadow inside the eye. Just skin color with a black dot.
+The eyes: Cultist Simulator characters have no eyeballs, no pupils, no irises. The eyes are two different colors — a defining visual rule of the game's art.
+
+The left eye (shadow side): fill it with the EXACT SAME deep jungle green as the background. No pupil. No iris. No white. No dot. Just the background color. The eye blends into the background — it disappears into the green. The outline is black. Inside: only green.
+
+The right eye (lit side): fill it with flat white. No pupil. No iris. No dot. No green. Just white. The outline is black. Inside: only white.
+
+No other features inside either eye. No highlights. No shadows inside the eye shape. One green eye. One white eye. Black outlines around both. That is the rule.
 
 Hair: close-cropped, a flat dark shape with a few clean internal dividing lines. No individual strands. No texture. A thin scar runs from the left temple into the hairline — a single clean line. The ear on the shadow side is a simple flat shape.
 
