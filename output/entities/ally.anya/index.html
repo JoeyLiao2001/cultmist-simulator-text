@@ -5,199 +5,148 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>阿妮亚·沃洛格达</title>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;600&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Noto+Serif+SC:wght@300;400;600&display=swap');
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   body {
-    background: #1a1814;
+    background: #d5cdbd;
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    padding: 1.2rem;
-    font-family: 'Noto Serif SC', 'SimSun', serif;
+    padding: 1.5rem;
     min-height: 100vh;
+    font-family: 'Noto Serif SC', 'SimSun', serif;
   }
 
   .page {
     width: 210mm;
     min-height: 297mm;
     background: #ece4d5;
-    /* Diamond pattern — from CS character portrait backgrounds */
     background-image:
-      radial-gradient(circle at 50% 50%, rgba(180,160,130,0.12) 0%, transparent 60%),
-      repeating-linear-gradient(45deg, transparent, transparent 3px, rgba(180,160,130,0.08) 3px, rgba(180,160,130,0.08) 4px),
-      repeating-linear-gradient(-45deg, transparent, transparent 3px, rgba(180,160,130,0.08) 3px, rgba(180,160,130,0.08) 4px);
-    padding: 7mm 8mm;
+      repeating-linear-gradient(45deg, transparent, transparent 3.5px, rgba(180,160,130,0.07) 3.5px, rgba(180,160,130,0.07) 4.5px),
+      repeating-linear-gradient(-45deg, transparent, transparent 3.5px, rgba(180,160,130,0.07) 3.5px, rgba(180,160,130,0.07) 4.5px);
+    padding: 11mm 12mm;
+    box-shadow: 0 0 0 1px rgba(0,0,0,0.06), 0 2px 16px rgba(0,0,0,0.15);
     position: relative;
-    box-shadow: 0 1px 8px rgba(0,0,0,0.3);
   }
 
-  .content {
+  /* ── Hero row ── */
+  .hero {
     display: flex;
-    flex-direction: column;
-    gap: 3mm;
-  }
-
-  /* ── Top section: portrait + name ── */
-  .top {
-    display: flex;
-    align-items: center;
     gap: 5mm;
-    padding-bottom: 3mm;
-    border-bottom: 1px solid rgba(0,0,0,0.06);
+    align-items: flex-start;
+    margin-bottom: 6mm;
   }
-  .portrait {
-    flex: 0 0 50mm;
-    height: 50mm;
-    overflow: hidden;
+  .hero-img {
+    flex: 0 0 52mm;
+    height: 52mm;
     background: #d8d0c0;
-    border: 1px solid rgba(0,0,0,0.08);
+    border: 1px solid rgba(0,0,0,0.06);
+    overflow: hidden;
   }
-  .portrait img { width: 100%; height: 100%; object-fit: cover; }
-
-  .top-text { flex: 1; }
-  .top-text .tier {
-    font-size: 6pt;
+  .hero-img img { width: 100%; height: 100%; object-fit: cover; }
+  .hero-body { flex: 1; padding-top: 2mm; }
+  .hero-tag {
+    font-size: 5.5pt;
     color: #908070;
-    letter-spacing: 0.25em;
+    letter-spacing: 0.28em;
     text-transform: uppercase;
-    margin-bottom: 1mm;
   }
-  .top-text .name {
-    font-size: 13pt;
-    font-weight: 400;
-    color: #2c2018;
-    letter-spacing: 0.15em;
-    margin-bottom: 1mm;
+  .hero-name {
+    font-family: 'Cormorant Garamond', 'Noto Serif SC', serif;
+    font-size: 18pt;
+    font-weight: 300;
+    color: #3c4048;
+    letter-spacing: 0.12em;
+    line-height: 1.1;
+    margin: 1.5mm 0;
   }
-  .top-text .aspect-row {
-    display: flex;
-    gap: 3px;
-    margin-bottom: 2mm;
-  }
-  .top-text .aspect-row img { width: 16px; height: 16px; opacity: 0.6; }
-  .top-text .desc {
+  .hero-desc {
     font-size: 7.5pt;
-    line-height: 1.9;
+    line-height: 2;
     color: #5a4e3e;
     letter-spacing: 0.04em;
     font-style: italic;
-    max-width: 90mm;
+    max-width: 95mm;
+    margin-bottom: 2mm;
   }
-
-  /* ── Middle: 5 evidence items (larger, 2-3 per row) ── */
-  .section-head {
-    font-size: 6pt;
-    color: #908070;
-    letter-spacing: 0.25em;
-    padding: 1mm 0;
-  }
-  .evidence-row {
+  .hero-icons {
     display: flex;
+    gap: 4px;
+  }
+  .hero-icons img { width: 15px; height: 15px; opacity: 0.55; }
+
+  /* ── Items: varied sizes, not a grid ── */
+  .items {
+    display: flex;
+    flex-wrap: wrap;
     gap: 3mm;
   }
-  .evidence {
-    flex: 1;
+
+  .item {
     display: flex;
     flex-direction: column;
     gap: 1mm;
-    padding: 2mm;
-    background: rgba(255,255,255,0.3);
-    border: 1px solid rgba(0,0,0,0.05);
   }
-  .evidence .e-sprite {
+  /* Tier 2: larger */
+  .item.t2 { flex: 0 0 calc(33.33% - 2mm); max-width: 55mm; }
+  /* Tier 3: smaller, more marginal */
+  .item.t3 { flex: 0 0 calc(33.33% - 2mm); max-width: 48mm; opacity: 0.85; }
+
+  .item-img {
     width: 100%;
     aspect-ratio: 1;
-    overflow: hidden;
     background: #d8d0c0;
-    border: 1px solid rgba(0,0,0,0.06);
+    border: 1px solid rgba(0,0,0,0.05);
+    overflow: hidden;
   }
-  .evidence .e-sprite img { width: 100%; height: 100%; object-fit: cover; }
-  .evidence .e-type {
+  .item.t3 .item-img { width: 70%; aspect-ratio: 1; }
+  .item-img img { width: 100%; height: 100%; object-fit: cover; }
+
+  .item-tag {
     font-size: 4.5pt;
     color: #a09080;
-    letter-spacing: 0.2em;
+    letter-spacing: 0.22em;
     text-transform: uppercase;
   }
-  .evidence .e-name {
+  .item.t3 .item-tag { font-size: 4pt; }
+  .item-name {
     font-size: 6.5pt;
     font-weight: 600;
     color: #3c3024;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.04em;
     line-height: 1.3;
   }
-  .evidence .e-desc {
+  .item.t3 .item-name { font-size: 5.5pt; }
+  .item-desc {
     font-size: 5.5pt;
     line-height: 1.55;
     color: #6b5e4e;
-    letter-spacing: 0.03em;
+    letter-spacing: 0.02em;
   }
-  .evidence .e-aspects {
+  .item.t3 .item-desc { font-size: 5pt; line-height: 1.5; }
+  .item-icons {
     display: flex;
     gap: 2px;
     margin-top: auto;
   }
-  .evidence .e-aspects img { width: 10px; height: 10px; opacity: 0.45; }
+  .item-icons img { width: 9px; height: 9px; opacity: 0.4; }
+  .item.t3 .item-icons img { width: 7px; height: 7px; }
 
-  /* ── Bottom: 3 traces (smaller, inline) ── */
-  .trace-row {
-    display: flex;
-    gap: 3mm;
-  }
-  .trace {
-    flex: 1;
-    display: flex;
-    gap: 2mm;
-    padding: 2mm 3mm;
-    border-left: 1px solid rgba(0,0,0,0.06);
-    align-items: flex-start;
-  }
-  .trace .t-icon {
-    flex: 0 0 12mm;
-    height: 12mm;
-    overflow: hidden;
-    background: #d8d0c0;
-    border: 1px solid rgba(0,0,0,0.05);
-  }
-  .trace .t-icon img { width: 100%; height: 100%; object-fit: cover; }
-  .trace .t-body { flex: 1; }
-  .trace .t-type {
-    font-size: 4.5pt;
-    color: #a09080;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-  }
-  .trace .t-name {
-    font-size: 6pt;
-    font-weight: 600;
-    color: #3c3024;
-    margin-bottom: 0.3mm;
-  }
-  .trace .t-desc {
-    font-size: 5pt;
-    line-height: 1.5;
-    color: #6b5e4e;
-  }
+  /* Space-breaker: push t3 items down */
+  .break { flex-basis: 100%; height: 3mm; }
+  .spacer { flex: 1 0 30mm; }
 
   @media print { body { background: white; padding: 0; } .page { box-shadow: none; } }
-  @media screen and (max-width: 800px) {
-    .page { width: 100%; padding: 5mm 4mm; }
-    .top { flex-direction: column; align-items: center; }
-    .evidence-row { flex-wrap: wrap; }
-    .evidence { flex: 0 0 calc(50% - 1.5mm); }
-  }
 </style>
 </head>
 <body>
 
-<div class="page">
-  <div class="content" id="content"><!-- rendered by JS --></div>
-</div>
+<div class="page" id="page"></div>
 
 <script>
-// All images: generated sprites where available, game sprites otherwise
-const IMG = {
+const S = (id) => ({
   'ally.anya': 'sprite_ally_anya.png',
   'book.nameless': 'sprite_book_nameless.png',
   'tool.keeners.shawl': '../../references/sprites/toolwinterb.png',
@@ -207,72 +156,58 @@ const IMG = {
   'influence.preforget': 'sprite_influence_preforget.png',
   'rumour.dont.ask': 'sprite_rumour_dontask.png',
   'element.violet.sketch': '../../references/sprites/paintingmasterwinter.png',
-};
-const ICON = {
-  '冬': '../../references/sprites/winter.png',
-  '启': '../../references/sprites/knock.png',
-  '蛾': '../../references/sprites/moth.png',
-  '秘史': '../../references/sprites/secrethistories.png',
-};
+})[id] || 'sprite_ally_anya.png';
+const I = (a) => ({
+  '冬':'../../references/sprites/winter.png',
+  '启':'../../references/sprites/knock.png',
+  '蛾':'../../references/sprites/moth.png',
+  '秘史':'../../references/sprites/secrethistories.png',
+});
+const icons = (aa) => aa.map(a => I(a) ? `<img src="${I(a)}" alt="${a}">` : '').join('');
 
-const D = {"character":{"name":"阿妮亚·沃洛格达","element_id":"ally.anya","aspects":["冬","启"],"desc":"她从来不会用沙哑得像冻土的声音做自我介绍。她的日记里没有她自己的名字。"},"constellation":[{"name":"《无名日记》","el":"book.nameless","type":"书籍","aspects":["冬","秘史"],"desc":"封皮磨损。内页以细小工整的俄文笔迹写满——每页一个名字。全书四百一十二个名字。日记主人的名字不在其中。","tier":2},{"name":"哭丧人的披肩","el":"tool.keeners.shawl","type":"工具","aspects":["冬","启"],"desc":"黑色羊毛织品。触感永远湿冷。贴近耳际可听到模糊的俄语悼歌。唱到第三节总会停。","tier":2},{"name":"沃洛格达郊外的空坟","el":"location.emptygrave.vologda","type":"地点","aspects":["冬"],"desc":"圣安娜墓园。墓碑风化。坟穴中空，土面平整。教堂登记簿1910年11月条被指甲刮去。","tier":2},{"name":"记名亡者","el":"spirit.recorded.dead","type":"召唤物","aspects":["冬","启"],"desc":"\"你还记得我吗。\"——轮廓模糊的人形。它说话时嘴不动。只属于某个记下它名字的人。","tier":2},{"name":"哑歌之仪","el":"ritual.mute.elegy","type":"仪式","aspects":["冬","启"],"desc":"备一张不是你自己写的日记残页。置于朝北窗台。点燃蜡烛。全程不可出声。","tier":2},{"name":"预忘","el":"influence.preforget","type":"影响","aspects":["冬","蛾"],"desc":"我刚和谁说过话。站台上。黑披肩。我想不起她的脸了。但霜的气味还没散。","tier":3},{"name":"打听不得的女人","el":"rumour.dont.ask","type":"传闻","aspects":["秘史","冬"],"desc":"莫斯科—喀山线的规矩。末班车最后一节车厢。穿黑披肩的女人。不买票。不要问。","tier":3},{"name":"维奥莱特的速写","el":"element.violet.sketch","type":"回忆","aspects":["冬","蛾"],"desc":"速写本里唯一有人物的一页。站台，长凳，一个女人。画中女人没有脸。旁注：\"第二天醒来已经忘了。但画还在。\"","tier":3}]};
+const D = {"character":{"name":"阿妮亚·沃洛格达","el":"ally.anya","aspects":["冬","启"],"desc":"她从来不会用沙哑得像冻土的声音做自我介绍。她的日记里没有她自己的名字。"},"items":[{"name":"《无名日记》","el":"book.nameless","type":"书籍","aspects":["冬","秘史"],"desc":"封皮磨损。内页以细小工整的俄文笔迹写满——每页一个名字。全书四百一十二个名字。日记主人的名字不在其中。","t":2},{"name":"哭丧人的披肩","el":"tool.keeners.shawl","type":"工具","aspects":["冬","启"],"desc":"黑色羊毛织品。触感永远湿冷。贴近耳际可听到模糊的俄语悼歌。唱到第三节总会停——不是唱完了，是被什么东西打断了。","t":2},{"name":"沃洛格达郊外的空坟","el":"location.emptygrave.vologda","type":"地点","aspects":["冬"],"desc":"圣安娜墓园。墓碑风化。坟穴中空，土面平整。教堂登记簿1910年11月条被指甲刮去。","t":2},{"name":"记名亡者","el":"spirit.recorded.dead","type":"召唤物","aspects":["冬","启"],"desc":"\"你还记得我吗。\"——轮廓模糊的人形。它说话时嘴不动。只属于某个记下它名字的人。","t":2},{"name":"哑歌之仪","el":"ritual.mute.elegy","type":"仪式","aspects":["冬","启"],"desc":"备一张不是你自己写的日记残页。置于朝北窗台。点燃蜡烛。全程不可出声。悼歌诗人不听有声音的祈祷。","t":2},{"name":"预忘","el":"influence.preforget","type":"影响","aspects":["冬","蛾"],"desc":"我刚和谁说过话。站台上。黑披肩。想不起脸了。想不起声音了。但霜的气味还没散。","t":3},{"name":"打听不得的女人","el":"rumour.dont.ask","type":"传闻","aspects":["秘史","冬"],"desc":"莫斯科—喀山线的规矩。末班车最后一节车厢。披肩。不买票。不要问。喀山的新人，一九二三年，不信——事后什么也说不出来。","t":3},{"name":"维奥莱特的速写","el":"element.violet.sketch","type":"回忆","aspects":["冬","蛾"],"desc":"速写本里唯一有人物的一页。站台，长凳，一个女人。画中女人没有脸。旁注：\"第二天醒来已经忘了。但画还在。\"","t":3}]};
 
 (function(){
-  const el = document.getElementById('content');
+  const pg = document.getElementById('page');
   const cc = D.character;
-  const iconRow = (aa) => aa.map(a => ICON[a] ? `<img src="${ICON[a]}" alt="${a}">` : '').join('');
 
-  // Top: portrait + name
-  el.insertAdjacentHTML('beforeend', `
-    <div class="top">
-      <div class="portrait"><img src="${IMG[cc.element_id]}"></div>
-      <div class="top-text">
-        <div class="tier">长生者 · 悼歌诗人唤归</div>
-        <div class="name">${cc.name}</div>
-        <div class="aspect-row">${iconRow(cc.aspects)}</div>
-        <div class="desc">${cc.desc}</div>
+  let html = `
+    <div class="hero">
+      <div class="hero-img"><img src="${S(cc.el)}"></div>
+      <div class="hero-body">
+        <div class="hero-tag">Long · Elegiast</div>
+        <div class="hero-name">${cc.name}</div>
+        <div class="hero-desc">${cc.desc}</div>
+        <div class="hero-icons">${icons(cc.aspects)}</div>
       </div>
     </div>
-  `);
+    <div class="items">`;
 
-  // Evidence: tier 2 items (5 cards, 3+2)
-  const t2 = D.constellation.filter(c => c.tier === 2);
-  el.insertAdjacentHTML('beforeend', '<div class="section-head">物 证</div>');
-  el.insertAdjacentHTML('beforeend', '<div class="evidence-row">' +
-    t2.slice(0,3).map(c => `
-      <div class="evidence">
-        <div class="e-sprite"><img src="${IMG[c.el] || IMG['ally.anya']}"></div>
-        <div class="e-type">${c.type}</div>
-        <div class="e-name">${c.name}</div>
-        <div class="e-desc">${c.desc}</div>
-        <div class="e-aspects">${iconRow(c.aspects)}</div>
-      </div>`).join('') +
-  '</div>');
-  el.insertAdjacentHTML('beforeend', '<div class="evidence-row">' +
-    t2.slice(3,5).map(c => `
-      <div class="evidence">
-        <div class="e-sprite"><img src="${IMG[c.el] || IMG['ally.anya']}"></div>
-        <div class="e-type">${c.type}</div>
-        <div class="e-name">${c.name}</div>
-        <div class="e-desc">${c.desc}</div>
-        <div class="e-aspects">${iconRow(c.aspects)}</div>
-      </div>`).join('') +
-  '</div>');
+  // Tier 2 items first, then a spacer, then tier 3
+  D.items.filter(i=>i.t===2).forEach(i => {
+    html += `<div class="item t2">
+      <div class="item-img"><img src="${S(i.el)}"></div>
+      <div class="item-tag">${i.type}</div>
+      <div class="item-name">${i.name}</div>
+      <div class="item-desc">${i.desc}</div>
+      <div class="item-icons">${icons(i.aspects)}</div>
+    </div>`;
+  });
 
-  // Traces: tier 3 items (3 cards)
-  const t3 = D.constellation.filter(c => c.tier === 3);
-  el.insertAdjacentHTML('beforeend', '<div class="section-head">痕 迹</div>');
-  el.insertAdjacentHTML('beforeend', '<div class="trace-row">' +
-    t3.map(c => `
-      <div class="trace">
-        <div class="t-icon"><img src="${IMG[c.el] || IMG['ally.anya']}"></div>
-        <div class="t-body">
-          <div class="t-type">${c.type}</div>
-          <div class="t-name">${c.name}</div>
-          <div class="t-desc">${c.desc}</div>
-        </div>
-      </div>`).join('') +
-  '</div>');
+  html += '<div class="break"></div><div class="spacer"></div>';
+
+  D.items.filter(i=>i.t===3).forEach(i => {
+    html += `<div class="item t3">
+      <div class="item-img"><img src="${S(i.el)}"></div>
+      <div class="item-tag">${i.type}</div>
+      <div class="item-name">${i.name}</div>
+      <div class="item-desc">${i.desc}</div>
+      <div class="item-icons">${icons(i.aspects)}</div>
+    </div>`;
+  });
+
+  html += '</div>';
+  pg.innerHTML = html;
 })();
 </script>
 
