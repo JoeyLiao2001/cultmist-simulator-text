@@ -2,10 +2,9 @@
 <html lang="zh">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>阿妮亚·沃洛格达</title>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Noto+Serif+SC:wght@300;400;600&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;600&display=swap');
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -13,10 +12,9 @@
     background: #d5cdbd;
     display: flex;
     justify-content: center;
-    align-items: flex-start;
     padding: 1.5rem;
-    min-height: 100vh;
     font-family: 'Noto Serif SC', 'SimSun', serif;
+    min-height: 100vh;
   }
 
   .page {
@@ -26,117 +24,39 @@
     background-image:
       repeating-linear-gradient(45deg, transparent, transparent 3.5px, rgba(180,160,130,0.07) 3.5px, rgba(180,160,130,0.07) 4.5px),
       repeating-linear-gradient(-45deg, transparent, transparent 3.5px, rgba(180,160,130,0.07) 3.5px, rgba(180,160,130,0.07) 4.5px);
-    padding: 11mm 12mm;
-    box-shadow: 0 0 0 1px rgba(0,0,0,0.06), 0 2px 16px rgba(0,0,0,0.15);
-    position: relative;
+    padding: 10mm 11mm;
+    box-shadow: 0 0 0 1px rgba(0,0,0,0.06), 0 2px 16px rgba(0,0,0,0.12);
   }
 
-  /* ── Hero row ── */
-  .hero {
-    display: flex;
-    gap: 5mm;
-    align-items: flex-start;
-    margin-bottom: 6mm;
-  }
-  .hero-img {
-    flex: 0 0 52mm;
-    height: 52mm;
-    background: #d8d0c0;
-    border: 1px solid rgba(0,0,0,0.06);
-    overflow: hidden;
-  }
+  /* ── Hero ── */
+  .hero { display: flex; gap: 4mm; align-items: center; margin-bottom: 5mm; }
+  .hero-img { flex: 0 0 30mm; height: 30mm; background: #d8d0c0; border: 1px solid rgba(0,0,0,0.06); overflow: hidden; }
   .hero-img img { width: 100%; height: 100%; object-fit: cover; }
-  .hero-body { flex: 1; padding-top: 2mm; }
-  .hero-tag {
-    font-size: 5.5pt;
-    color: #908070;
-    letter-spacing: 0.28em;
-    text-transform: uppercase;
-  }
-  .hero-name {
-    font-family: 'Cormorant Garamond', 'Noto Serif SC', serif;
-    font-size: 18pt;
-    font-weight: 300;
-    color: #3c4048;
-    letter-spacing: 0.12em;
-    line-height: 1.1;
-    margin: 1.5mm 0;
-  }
-  .hero-desc {
-    font-size: 7.5pt;
-    line-height: 2;
-    color: #5a4e3e;
-    letter-spacing: 0.04em;
-    font-style: italic;
-    max-width: 95mm;
-    margin-bottom: 2mm;
-  }
-  .hero-icons {
-    display: flex;
-    gap: 4px;
-  }
-  .hero-icons img { width: 15px; height: 15px; opacity: 0.55; }
+  .hero-tag { font-size: 5.5pt; color: #908070; letter-spacing: 0.28em; text-transform: uppercase; }
+  .hero-name { font-size: 13pt; font-weight: 400; color: #3c4048; letter-spacing: 0.1em; margin: 1mm 0; }
+  .hero-desc { font-size: 8.5pt; line-height: 1.8; color: #5a4e3e; letter-spacing: 0.04em; font-style: italic; max-width: 130mm; }
+  .hero-icons { display: flex; gap: 4px; margin-top: 1.5mm; }
+  .hero-icons img { width: 14px; height: 14px; opacity: 0.55; }
 
-  /* ── Items: varied sizes, not a grid ── */
-  .items {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 3mm;
-  }
+  /* ── Item list ── */
+  .list { display: flex; flex-wrap: wrap; gap: 3.5mm 5mm; }
 
-  .item {
-    display: flex;
-    flex-direction: column;
-    gap: 1mm;
-  }
-  /* Tier 2: larger */
-  .item.t2 { flex: 0 0 calc(33.33% - 2mm); max-width: 55mm; }
-  /* Tier 3: smaller, more marginal */
-  .item.t3 { flex: 0 0 calc(33.33% - 2mm); max-width: 48mm; opacity: 0.85; }
+  .item { display: flex; gap: 2.5mm; align-items: flex-start; }
+  .item.t2 { flex: 0 0 calc(50% - 2.5mm); }
+  .item.t3 { flex: 0 0 calc(33.33% - 3.3mm); }
 
-  .item-img {
-    width: 100%;
-    aspect-ratio: 1;
-    background: #d8d0c0;
-    border: 1px solid rgba(0,0,0,0.05);
-    overflow: hidden;
-  }
-  .item.t3 .item-img { width: 70%; aspect-ratio: 1; }
+  .item-img { flex: 0 0 16mm; height: 16mm; background: #d8d0c0; border: 1px solid rgba(0,0,0,0.05); overflow: hidden; }
+  .item.t3 .item-img { flex: 0 0 12mm; height: 12mm; }
   .item-img img { width: 100%; height: 100%; object-fit: cover; }
 
-  .item-tag {
-    font-size: 4.5pt;
-    color: #a09080;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-  }
-  .item.t3 .item-tag { font-size: 4pt; }
-  .item-name {
-    font-size: 6.5pt;
-    font-weight: 600;
-    color: #3c3024;
-    letter-spacing: 0.04em;
-    line-height: 1.3;
-  }
-  .item.t3 .item-name { font-size: 5.5pt; }
-  .item-desc {
-    font-size: 5.5pt;
-    line-height: 1.55;
-    color: #6b5e4e;
-    letter-spacing: 0.02em;
-  }
-  .item.t3 .item-desc { font-size: 5pt; line-height: 1.5; }
-  .item-icons {
-    display: flex;
-    gap: 2px;
-    margin-top: auto;
-  }
+  .item-body { flex: 1; display: flex; flex-direction: column; gap: 0.8mm; min-width: 0; }
+  .item-tag { font-size: 5pt; color: #a09080; letter-spacing: 0.2em; text-transform: uppercase; }
+  .item-name { font-size: 7.5pt; font-weight: 600; color: #3c3024; letter-spacing: 0.04em; line-height: 1.3; }
+  .item.t3 .item-name { font-size: 6.5pt; }
+  .item-desc { font-size: 6.5pt; line-height: 1.6; color: #6b5e4e; letter-spacing: 0.02em; }
+  .item.t3 .item-desc { font-size: 5.8pt; }
+  .item-icons { display: flex; gap: 2px; }
   .item-icons img { width: 9px; height: 9px; opacity: 0.4; }
-  .item.t3 .item-icons img { width: 7px; height: 7px; }
-
-  /* Space-breaker: push t3 items down */
-  .break { flex-basis: 100%; height: 3mm; }
-  .spacer { flex: 1 0 30mm; }
 
   @media print { body { background: white; padding: 0; } .page { box-shadow: none; } }
 </style>
@@ -146,68 +66,48 @@
 <div class="page" id="page"></div>
 
 <script>
-const S = (id) => ({
+const IMG = {
   'ally.anya': 'sprite_ally_anya.png',
   'book.nameless': 'sprite_book_nameless.png',
-  'tool.keeners.shawl': '../../references/sprites/toolwinterb.png',
-  'location.emptygrave.vologda': '../../references/sprites/rarity.winter.png',
-  'spirit.recorded.dead': '../../references/sprites/spirit_winterd_edge.png',
-  'ritual.mute.elegy': '../../references/sprites/ritual.png',
+  'tool.keeners.shawl': 'toolwinterb.png',
+  'location.emptygrave.vologda': 'rarity.winter.png',
+  'spirit.recorded.dead': 'spirit_winterd_edge.png',
+  'ritual.mute.elegy': 'ritual.png',
   'influence.preforget': 'sprite_influence_preforget.png',
   'rumour.dont.ask': 'sprite_rumour_dontask.png',
-  'element.violet.sketch': '../../references/sprites/paintingmasterwinter.png',
-})[id] || 'sprite_ally_anya.png';
-const I = (a) => ({
-  '冬':'../../references/sprites/winter.png',
-  '启':'../../references/sprites/knock.png',
-  '蛾':'../../references/sprites/moth.png',
-  '秘史':'../../references/sprites/secrethistories.png',
-});
-const icons = (aa) => aa.map(a => I(a) ? `<img src="${I(a)}" alt="${a}">` : '').join('');
+  'element.violet.sketch': 'paintingmasterwinter.png',
+};
+const ICO = {
+  '冬': 'winter.png', '启': 'knock.png', '蛾': 'moth.png', '秘史': 'secrethistories.png',
+};
+const icons = (aa) => aa.map(a => `<img src="${ICO[a]}" alt="${a}">`).join('');
 
-const D = {"character":{"name":"阿妮亚·沃洛格达","el":"ally.anya","aspects":["冬","启"],"desc":"她从来不会用沙哑得像冻土的声音做自我介绍。她的日记里没有她自己的名字。"},"items":[{"name":"《无名日记》","el":"book.nameless","type":"书籍","aspects":["冬","秘史"],"desc":"封皮磨损。内页以细小工整的俄文笔迹写满——每页一个名字。全书四百一十二个名字。日记主人的名字不在其中。","t":2},{"name":"哭丧人的披肩","el":"tool.keeners.shawl","type":"工具","aspects":["冬","启"],"desc":"黑色羊毛织品。触感永远湿冷。贴近耳际可听到模糊的俄语悼歌。唱到第三节总会停——不是唱完了，是被什么东西打断了。","t":2},{"name":"沃洛格达郊外的空坟","el":"location.emptygrave.vologda","type":"地点","aspects":["冬"],"desc":"圣安娜墓园。墓碑风化。坟穴中空，土面平整。教堂登记簿1910年11月条被指甲刮去。","t":2},{"name":"记名亡者","el":"spirit.recorded.dead","type":"召唤物","aspects":["冬","启"],"desc":"\"你还记得我吗。\"——轮廓模糊的人形。它说话时嘴不动。只属于某个记下它名字的人。","t":2},{"name":"哑歌之仪","el":"ritual.mute.elegy","type":"仪式","aspects":["冬","启"],"desc":"备一张不是你自己写的日记残页。置于朝北窗台。点燃蜡烛。全程不可出声。悼歌诗人不听有声音的祈祷。","t":2},{"name":"预忘","el":"influence.preforget","type":"影响","aspects":["冬","蛾"],"desc":"我刚和谁说过话。站台上。黑披肩。想不起脸了。想不起声音了。但霜的气味还没散。","t":3},{"name":"打听不得的女人","el":"rumour.dont.ask","type":"传闻","aspects":["秘史","冬"],"desc":"莫斯科—喀山线的规矩。末班车最后一节车厢。披肩。不买票。不要问。喀山的新人，一九二三年，不信——事后什么也说不出来。","t":3},{"name":"维奥莱特的速写","el":"element.violet.sketch","type":"回忆","aspects":["冬","蛾"],"desc":"速写本里唯一有人物的一页。站台，长凳，一个女人。画中女人没有脸。旁注：\"第二天醒来已经忘了。但画还在。\"","t":3}]};
+const D = {"character":{"name":"阿妮亚·沃洛格达","el":"ally.anya","aspects":["冬","启"],"desc":"她从来不会用沙哑得像冻土的声音做自我介绍。她的日记里没有她自己的名字。"},"items":[{"name":"《无名日记》","el":"book.nameless","type":"书籍","aspects":["冬","秘史"],"desc":"封皮磨损。内页以细小工整的俄文笔迹写满——每页一个名字。全书四百一十二个名字。日记主人的名字不在其中。","t":2},{"name":"哭丧人的披肩","el":"tool.keeners.shawl","type":"工具","aspects":["冬","启"],"desc":"黑色羊毛织品。触感永远湿冷。贴近耳际可听到模糊的俄语悼歌。唱到第三节总会停——不是唱完了，是被什么东西打断了。","t":2},{"name":"沃洛格达郊外的空坟","el":"location.emptygrave.vologda","type":"地点","aspects":["冬"],"desc":"圣安娜墓园。墓碑风化。坟穴中空，土面平整。教堂登记簿1910年11月条被指甲刮去。","t":2},{"name":"记名亡者","el":"spirit.recorded.dead","type":"召唤物","aspects":["冬","启"],"desc":"\"你还记得我吗。\"——轮廓模糊的人形。它说话时嘴不动。只属于某个记下它名字的人。","t":2},{"name":"哑歌之仪","el":"ritual.mute.elegy","type":"仪式","aspects":["冬","启"],"desc":"备一张不是你自己写的日记残页。置于朝北窗台。点燃蜡烛。全程不可出声。悼歌诗人不听有声音的祈祷。","t":2},{"name":"预忘","el":"influence.preforget","type":"影响","aspects":["冬","蛾"],"desc":"我刚和谁说过话。站台上。黑披肩。想不起脸了。想不起声音了。但霜的气味还没散。","t":3},{"name":"打听不得的女人","el":"rumour.dont.ask","type":"传闻","aspects":["秘史","冬"],"desc":"莫斯科—喀山线的规矩。末班车，最后一节车厢，靠窗。披肩。不买票。不要问。","t":3},{"name":"维奥莱特的速写","el":"element.violet.sketch","type":"回忆","aspects":["冬","蛾"],"desc":"速写本里唯一有人物的一页。站台，长凳，一个女人。画中女人没有脸。旁注：\"第二天醒来已经忘了。但画还在。\"","t":3}]};
 
 (function(){
-  const pg = document.getElementById('page');
   const cc = D.character;
+  let h = `<div class="hero">
+    <div class="hero-img"><img src="${IMG[cc.el]}"></div>
+    <div>
+      <div class="hero-tag">Long · Elegiast</div>
+      <div class="hero-name">${cc.name}</div>
+      <div class="hero-desc">${cc.desc}</div>
+      <div class="hero-icons">${icons(cc.aspects)}</div>
+    </div></div><div class="list">`;
 
-  let html = `
-    <div class="hero">
-      <div class="hero-img"><img src="${S(cc.el)}"></div>
-      <div class="hero-body">
-        <div class="hero-tag">Long · Elegiast</div>
-        <div class="hero-name">${cc.name}</div>
-        <div class="hero-desc">${cc.desc}</div>
-        <div class="hero-icons">${icons(cc.aspects)}</div>
-      </div>
-    </div>
-    <div class="items">`;
-
-  // Tier 2 items first, then a spacer, then tier 3
-  D.items.filter(i=>i.t===2).forEach(i => {
-    html += `<div class="item t2">
-      <div class="item-img"><img src="${S(i.el)}"></div>
-      <div class="item-tag">${i.type}</div>
-      <div class="item-name">${i.name}</div>
-      <div class="item-desc">${i.desc}</div>
-      <div class="item-icons">${icons(i.aspects)}</div>
-    </div>`;
+  D.items.forEach(i => {
+    h += `<div class="item t${i.t}">
+      <div class="item-img"><img src="${IMG[i.el]}"></div>
+      <div class="item-body">
+        <div class="item-tag">${i.type}</div>
+        <div class="item-name">${i.name}</div>
+        <div class="item-desc">${i.desc}</div>
+        <div class="item-icons">${icons(i.aspects)}</div>
+      </div></div>`;
   });
 
-  html += '<div class="break"></div><div class="spacer"></div>';
-
-  D.items.filter(i=>i.t===3).forEach(i => {
-    html += `<div class="item t3">
-      <div class="item-img"><img src="${S(i.el)}"></div>
-      <div class="item-tag">${i.type}</div>
-      <div class="item-name">${i.name}</div>
-      <div class="item-desc">${i.desc}</div>
-      <div class="item-icons">${icons(i.aspects)}</div>
-    </div>`;
-  });
-
-  html += '</div>';
-  pg.innerHTML = html;
+  h += '</div>';
+  document.getElementById('page').innerHTML = h;
 })();
 </script>
 
