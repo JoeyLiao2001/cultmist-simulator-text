@@ -19,8 +19,8 @@
   .hero-icons { display: flex; gap: 5px; margin-top: 2mm; }
   .hero-icons img { width: 22px; height: 22px; opacity: 0.55; }
 
-  .vignette { max-width: 150mm; margin: 0 auto; padding: 8mm 0 7mm; }
-  .vignette p { font-size: 8.5pt; line-height: 2.4; color: #5a4e3e; letter-spacing: 0.04em; text-indent: 2em; margin: 0; }
+  .vignette { max-width: 150mm; margin: 0 auto; padding: 12mm 0 10mm; }
+  .vignette p { font-size: 8.5pt; line-height: 2.4; color: #5a4e3e; letter-spacing: 0.04em; text-indent: 2em; margin: 0 0 3mm 0; }
 
   .list { display: flex; flex-wrap: wrap; gap: 3.5mm 5mm; align-content: flex-start; }
   .item { display: flex; gap: 2.5mm; align-items: flex-start; }
@@ -70,7 +70,7 @@ const ITEMS = [
 ];
 
 (function(){
-  let h = `<div class="hero"><div class="hero-img"><img src="${IMG['hero']}"></div><div><div class="hero-tag">${HERO.tag}</div><div class="hero-name">${HERO.name}</div><div class="hero-desc">${HERO.desc}</div><div class="hero-icons">${icons(HERO.aspects)}</div></div></div><div class="vignette"><p>狮子匠的锻炉在漫宿深处日夜不歇。每一块被重锻的铁都有自己的声音——但在此之前，从没有人把自己的声音锻进去过。他在雨林战场上折断第三次之后，锻炉的火色变了一瞬。狮子匠低头看了一眼铁砧。砧面上多了一道不是锤子打的凹痕。此后漫宿的锻炉每隔七年会短暂地停一次火——不长，只够一片榕树叶从枝头落到地上。刃之准则的学徒在这七年间挥刀的速度会恰好慢下来半拍。他们自己察觉不到。但他们的对手察觉到了。</p></div><div class="list">`;
+  let h = `<div class="hero"><div class="hero-img"><img src="${IMG['hero']}"></div><div><div class="hero-tag">${HERO.tag}</div><div class="hero-name">${HERO.name}</div><div class="hero-desc">${HERO.desc}</div><div class="hero-icons">${icons(HERO.aspects)}</div></div></div><div class="vignette"><p>狮子匠的锻炉在漫宿深处日夜不歇。每一块被重锻的铁都有自己的声音——但在此之前，从没有人把自己的声音锻进去过。</p><p>他在雨林战场上折断第三次之后，锻炉的火色变了一瞬。狮子匠低头看了一眼铁砧。砧面上多了一道不是锤子打的凹痕。</p><p>此后漫宿的锻炉每隔七年会短暂地停一次火——不长，只够一片榕树叶从枝头落到地上。刃之准则的学徒在这七年间挥刀的速度会恰好慢下来半拍。他们自己察觉不到。但他们的对手察觉到了。</p></div><div class="list">`;
   ITEMS.forEach(i => { h += `<div class="item t${i.ti}"><div class="item-img"><img src="${IMG[i.el]}"></div><div class="item-body"><div class="item-tag">${i.t}</div><div class="item-name">${i.n}</div><div class="item-desc">${i.d}</div><div class="item-icons">${icons(i.a)}</div></div></div>`; });
   h += '</div>'; document.getElementById('page').innerHTML = h;
 })();
