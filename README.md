@@ -33,7 +33,6 @@ Under the hood: a codified style guide (10 writing rules + 18 carrier-type voice
 │   ├── occult-traditions/      # Real-world occult references
 │   └── aspect-registry.md      # Per-category mandatory aspects
 ├── src/
-│   ├── cleaner/                # Text cleaning pipeline (54 tests)
 │   └── validate_aspects.py     # Aspect validation script
 └── output/
     ├── ally.anya/              # Anya of Vologda — Winter/Knock Long

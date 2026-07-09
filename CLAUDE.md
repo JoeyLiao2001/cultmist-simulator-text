@@ -4,57 +4,24 @@
 
 ## 项目结构
 
-| 路径 | 属性 | 说明 |
-|------|------|------|
-| skill.md | 入口 | 六阶段工作流 + 准则速查 |
-| prompts/cs-writing-guide.md | 核心 | 完整风格语法书（10 条规则 + 语态指南 + 七维度 + 实操技法） |
-| prompts/concept-generation.md | 模板 | 角色概念 JSON 模板 |
-| prompts/page-design.md | 模板 | A4 页面设计令牌 |
-| knowledge/cs-lore/ | 人工维护 | 密教宇宙显式知识库 |
-| knowledge/occult-traditions/ | 人工维护 | 真实世界神秘学知识 |
-| knowledge/aspect-registry.md | 只读 | 按类别分组的强制性相注册表（基于 2,146 条数据） |
-| src/ | 可编辑 | 清洗 pipeline + 性相校验脚本 |
-| output/ | 创作内容 | 每个 OC 一个子目录，含 index.html 和 assets/ |
-| knowledge/cs-lore/ | 人工维护 | 密教宇宙显式知识库 |
-| knowledge/occult-traditions/ | 人工维护 | 真实世界神秘学知识 |
-| src/ | 可编辑 | 所有源代码 |
-| prompts/ | 可编辑 | 生成 prompt 模板 |
-| references/ | 可编辑 | 风格指南、创作访谈参考 |
-| output/ | 可编辑 | 用户生成的实体卡牌和故事 |
-| tests/ | 可编辑 | 单元测试与集成测试 |
-| docs/ | 可编辑 | 设计文档与实施计划 |
+| 路径 | 说明 |
+|------|------|
+| skill.md | 六阶段工作流 + 准则速查（英文） |
+| prompts/cs-writing-guide.md | 完整风格语法书（10 条规则 + 语态指南 + 七维度 + 实操技法） |
+| prompts/concept-generation.md | 角色概念 JSON 模板 |
+| prompts/page-design.md | A4 页面设计令牌 |
+| knowledge/cs-lore/ | 密教宇宙显式知识库 |
+| knowledge/occult-traditions/ | 真实世界神秘学知识 |
+| knowledge/aspect-registry.md | 强制性相注册表（基于 2,146 条数据） |
+| src/validate_aspects.py | 性相校验脚本 |
+| output/ | OC 产出目录（不纳入版本控制） |
 
 ## 硬约束
 
-### 数据不可变
-- data/raw/ 和 data/cleaned/ 中的任何文件不得手动编辑
-- 如需更正清洗结果，修改 src/cleaner/ 中的逻辑后重新运行
-
-### 知识库与代码隔离
-- knowledge/ 是人写的结构化知识，不包含代码
-- src/ 是通用工具代码，不包含具体 OC 设定
-- output/ 是创作内容，每个 OC 一个子目录，含 index.html 和 assets/
-- prompts/ 是生成模板（概念→星座→卡牌→页面）
-- references/sprites/ 是从游戏提取的视觉素材，只读
-
-### 生成流程
-1. 用户描述需求（性相、类别、创作方向）
-2. 检索 knowledge/cs-lore/ 中的相关设定
-3. 检索 knowledge/occult-traditions/ 中的相关文化知识
-4. 检索 data/cleaned/ 中的风格参考文本
-5. 使用 prompts/ 中的模板进行两步生成（概念→卡牌描述）
-6. 用户审核、编辑、确认
-7. 输出保存到 output/entities/
-
-## 技术栈
-- Python 3.10+
-- 清洗: pyyaml, jsonlines, pytest
-- 生成: Claude API（通过 skill 调用）
-- 风格指标: numpy
-
-## 当前进度
-- [x] 文本清洗 pipeline（2,146 条）
-- [ ] cs-lore 知识库（进行中）
-- [ ] occult-traditions 知识库（进行中）
-- [ ] skill 定义
-- [ ] 初始 OC 创作
+- knowledge/ 不包含代码，src/ 不包含 OC 设定
+- data/ 和 references/sprites/ 不在版本库中（游戏版权数据）
+- 不创造新的准则或司辰
+- 长生者及以上层级必须有代价或印记
+- OC 标志物在全星座中出现不超过两次
+- 叙事星座内容不重叠
+- 不编造 lore——所有锚点必须追溯至 knowledge/cs-lore/
