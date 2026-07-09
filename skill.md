@@ -25,9 +25,9 @@ Cultist Simulator worldbuilding engine. Creates lore-consistent original charact
 
 ### Layer 3: Real-world occult traditions
 
-| File | Content |
-|------|---------|
-| `knowledge/occult-traditions/` | Hermeticism, alchemy, Orphic tradition, Zoroastrianism, Dionysian tradition. Use for occult root references |
+**6 overview docs** (`knowledge/occult-traditions/*.md`): Hermeticism, alchemy, Orphic tradition, Zoroastrianism, Dionysian tradition. Use for broad occult framework.
+
+**200+ concept cards** (`knowledge/occult-traditions/cards/*.md`): Individual occult concepts — emerald tablet, chinvat bridge, rubedo, golem, fana, tulku, etc. **During concept generation, search these cards for concepts matching the OC's principle and theme. Each card is one markdown file named after the concept.** These are the primary source for the `occult_roots` field in the concept JSON.
 
 ### Layer 4: Aspect validation
 
@@ -40,7 +40,9 @@ Cultist Simulator worldbuilding engine. Creates lore-consistent original charact
 
 ### Phase 1: Character concept
 
-Read `prompts/concept-generation.md`. Guide the user through entity type, primary principle, and core concept design. Output a structured concept JSON. Must be approved before proceeding.
+Read `prompts/concept-generation.md`. Guide the user through entity type, primary principle, and core concept design.
+
+**Before writing the concept JSON, search `knowledge/occult-traditions/cards/`** for occult concepts matching the OC's principle and theme. Use Glob or Grep with principle-related keywords (e.g., for a Winter OC: "death", "ice", "silence", "underworld", "forgetting"). Read the matching cards and incorporate at least 2 into the `occult_roots` field. Output a structured concept JSON. Must be approved before proceeding.
 
 ### Phase 2: Narrative constellation
 

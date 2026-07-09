@@ -11,7 +11,7 @@
 | prompts/concept-generation.md | 角色概念 JSON 模板 |
 | prompts/page-design.md | A4 页面设计令牌 |
 | knowledge/cs-lore/ | 密教宇宙显式知识库 |
-| knowledge/occult-traditions/ | 真实世界神秘学知识 |
+| knowledge/occult-traditions/ | 神秘学综述 + 200+ 概念卡片，OC 构思时必须搜索 |
 | knowledge/aspect-registry.md | 强制性相注册表（基于 2,146 条数据） |
 | src/validate_aspects.py | 性相校验脚本 |
 | output/ | OC 产出目录（不纳入版本控制） |
