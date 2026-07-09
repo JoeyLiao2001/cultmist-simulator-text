@@ -1,13 +1,20 @@
 # Cultist Simulator 文本工具
 
-密教模拟器与司辰之书结构化知识库、风格分析与创作工具。
+密教模拟器结构化知识库、风格分析与 OC 创作工具。核心方法论：叙事星座——将人物故事拆碎，散落在 7-8 个不同游戏对象类型的碎片中。六阶段流程：概念 → 星座 → 双 Agent 写作 → 性相校验 → A4 页面 → 完整性审查。
 
 ## 项目结构
 
 | 路径 | 属性 | 说明 |
 |------|------|------|
-| data/raw/ | 只读 | 原始抓取的密教模拟器文本（14类别） |
-| data/cleaned/ | 只读 | 清洗后的结构化数据集 |
+| skill.md | 入口 | 六阶段工作流 + 准则速查 |
+| prompts/cs-writing-guide.md | 核心 | 完整风格语法书（10 条规则 + 语态指南 + 七维度 + 实操技法） |
+| prompts/concept-generation.md | 模板 | 角色概念 JSON 模板 |
+| prompts/page-design.md | 模板 | A4 页面设计令牌 |
+| knowledge/cs-lore/ | 人工维护 | 密教宇宙显式知识库 |
+| knowledge/occult-traditions/ | 人工维护 | 真实世界神秘学知识 |
+| knowledge/aspect-registry.md | 只读 | 按类别分组的强制性相注册表（基于 2,146 条数据） |
+| src/ | 可编辑 | 清洗 pipeline + 性相校验脚本 |
+| output/ | 创作内容 | 每个 OC 一个子目录，含 index.html 和 assets/ |
 | knowledge/cs-lore/ | 人工维护 | 密教宇宙显式知识库 |
 | knowledge/occult-traditions/ | 人工维护 | 真实世界神秘学知识 |
 | src/ | 可编辑 | 所有源代码 |

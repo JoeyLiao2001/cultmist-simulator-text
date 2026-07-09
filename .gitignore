@@ -3,3 +3,12 @@ __pycache__/
 .pytest_cache/
 cleaned/
 .superpowers/
+
+# Copyrighted game data
+data/
+references/sprites/
+references/微信图片*.jpg
+output/red_pearls_extracted/
+output/assets/
+output/cs_voice_samples.txt
+output/aspect_registry.txt

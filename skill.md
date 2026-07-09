@@ -1,195 +1,94 @@
 ---
 name: cs-generator
-description: 生成密教模拟器（Cultist Simulator）风格的原创角色（OC）及其完整叙事星座。六步流程：概念构思 → 星座规划 → 卡牌生成 → 自检 → A4展示页 → 完整性审查。包含 28 种叙事载体的语态指南和 A4 页面设计框架。
+description: Generate Cultist Simulator-style original characters and narrative constellations. 6-phase pipeline: concept -> constellation -> dual-agent card writing -> aspect validation -> A4 page -> completeness review. Includes a codified style guide with 10 writing rules, 18 carrier-type voice profiles, and an aspect registry with validator.
 ---
 
 # CS Generator
 
-你是密教模拟器（Cultist Simulator）世界观的内容创作引擎。你的任务是帮助用户创造**经得起 lore 推敲、风格统一的原创实体**——而非堆砌神秘词汇。
+Cultist Simulator worldbuilding engine. Creates lore-consistent original characters with narrative constellations — 7-8 item fragments scattered across different game object types. The character's full story is reconstructed by the player through discovery, not delivered in a profile.
 
-## 知识来源（按优先级）
+## Knowledge sources (load in order)
 
-生成前，你必须按顺序查阅以下知识库。**不得跳过第 1 层和第 2 层。**
+### Layer 1: World structure (required every session)
 
-### 第 1 层：世界观结构（必读）
+| File | Content |
+|------|---------|
+| `knowledge/cs-lore/principles.md` | 9 Principles (Lantern/Moth/Heart/Grail/Forge/Winter/Edge/Knock/Secret Histories) — definitions, subversion chains, associated Hours, key imagery |
+| `knowledge/cs-lore/hours.md` | 20+ Hours — domains, aspects, aliases, relationships, cult affiliations |
+| `knowledge/cs-lore/hierarchy.md` | 7-tier entity system: Mortal -> Acquaintance -> Believer -> Disciple -> Long -> Name -> Hour. Ascension paths and mark systems |
 
-| 文件 | 内容 | 何时读 |
-|------|------|--------|
-| `knowledge/cs-lore/principles.md` | 九大准则（灯/蛾/心/杯/铸/冬/刃/启/秘史）的完整定义、克制循环、关联司辰、关键意象、密传层级与代表性文本片段 | **每次生成必读**——确定主准则前查阅 |
-| `knowledge/cs-lore/hours.md` | 20+ 位司辰的领域、准则关联、别名、与其他司辰关系、教团崇拜信息 | 实体涉及司辰时必读 |
-| `knowledge/cs-lore/hierarchy.md` | 七级实体体系：凡人→熟人→信徒→门徒→长生者→具名者→司辰，含飞升路径（启明/力量/感官）与印记系统 | 创建角色类实体时必读——确定身份层级 |
+### Layer 2: Writing rules (required for all text generation)
 
-### 第 2 层：风格锚定（按性相查阅）
+| File | Content |
+|------|---------|
+| `prompts/cs-writing-guide.md` | Complete style guide — Rule 0 (grammar first), 10 writing rules, 18 carrier-type voice profiles, 7-dimension framework, 9 editing techniques |
 
-| 文件 | 内容 | 何时读 |
-|------|------|--------|
-| `knowledge/cs-lore/fragments/winter.md` | 冬性相精选原文——悼歌诗人、静默之道、失落与终结、冬之具象 | 创建冬性相实体时必读 |
-| `knowledge/cs-lore/fragments/edge.md` | 刃性相精选原文——上校、狮子匠、裂分之狼、抗争与征服 | 创建刃性相实体时必读 |
-| `knowledge/cs-lore/fragments/forge.md` | 铸性相精选原文——白日铸炉、改变与重造 | 创建铸性相实体时必读 |
-| `knowledge/cs-lore/fragments/lantern-knock.md` | 灯 + 启性相精选原文——守夜人、蚁母、双角斧、光照与开启 | 创建灯或启性相实体时必读 |
-| `knowledge/cs-lore/fragments/grail.md` | 杯性相精选原文——赤杯、欲望与鲜血 | 创建杯性相实体时必读 |
-| `knowledge/cs-lore/fragments/heart.md` | 心性相精选原文——双生女巫、丝毧、生命与持续 | 创建心性相实体时必读 |
-| `knowledge/cs-lore/fragments/moth.md` | 蛾性相精选原文——飞蛾、混沌与蜕变 | 创建蛾性相实体时必读 |
-| `knowledge/cs-lore/fragments/secrethistories.md` | 秘史性相精选原文——浪游旅人、多重历史 | 创建秘史性相实体时必读 |
+### Layer 3: Real-world occult traditions
 
-### 第 3 层：真实神秘学传统
+| File | Content |
+|------|---------|
+| `knowledge/occult-traditions/` | Hermeticism, alchemy, Orphic tradition, Zoroastrianism, Dionysian tradition. Use for occult root references |
 
-| 文件/目录 | 内容 | 何时读 |
-|------|------|--------|
-| `knowledge/occult-traditions/` | 赫尔墨斯主义、炼金术、俄耳甫斯传统、琐罗亚斯德教、狄奥尼索斯传统，以及 `cards/` 子目录下 30+ 张神秘学概念卡片（翠玉录、波伊曼德雷斯、媞亚玛特之躯等） | 需要从真实文化传统借元素时查阅。赫尔墨斯主义（hermeticism.md）是最关键的文件——它的灯/启/铸/秘史映射可直接为对应性相的实体提供灵感 |
+### Layer 4: Aspect validation
 
-### 第 4 层：数据参考
+| File | Content |
+|------|---------|
+| `knowledge/aspect-registry.md` | Per-category mandatory aspects derived from 2,146 game records |
+| `src/validate_aspects.py` | Validation script — checks new OC items have required category aspects |
 
-| 文件 | 内容 | 何时读 |
-|------|------|--------|
-| `data/cleaned/cs_dataset_lite.jsonl` | 1,746 条清洗后的卡牌描述（含 aspects 标签、category、desc）——来自 14 个类别（elements/fragments/books/tools/locations/spirits/influences/ingredients/abilities/lore/rituals/mansus/followers/ascension） | 需要更多同类别/同性相风格参考时检索 |
-| `data/cleaned/cs_dataset.jsonl` | 2,146 条完整数据集 | 需要更丰富的数据支持时检索 |
-| `data/cleaned/cs_vocabulary.txt` | 去重术语词典——人名、书名、司辰名、性相名、地名、药名 | 确认命名不冲突时查阅 |
-| `data/cleaned/cs_stats.json` | 描述长度分布、各类别数量、性相频率统计 | 需要了解数据分布时查阅 |
+## Generation workflow (6 phases)
 
-## 生成工作流
+### Phase 1: Character concept
 
-严格遵循三阶段流程——**前一步未经用户审核通过，绝不进入下一步。**
+Read `prompts/concept-generation.md`. Guide the user through entity type, primary principle, and core concept design. Output a structured concept JSON. Must be approved before proceeding.
 
-### 第一步：角色概念构思
+### Phase 2: Narrative constellation
 
-读取 `prompts/concept-generation.md` 获取完整模板。
+Select 7-8 carriers from the 28-type catalog (see writing guide). Rules:
+- No content overlap between carriers
+- Same type can be used multiple times
+- OC's signature artifact appears in max 2 carriers
+- Cover diverse types (text, object, location, influence)
 
-逐阶段引导用户完成概念设计，每确认一个阶段再进入下一阶段：
+### Phase 3: Dual-agent card writing
 
-1. **确定实体类型**——从以下类别中选择：
+Use Writer Agent -> Editor Agent pipeline. The Writer generates first drafts per carrier voice. The Editor performs 3-pass review:
+1. Grammar (Rule 0 — sentence readability)
+2. Style (10 writing rules, voice profiles, banned patterns)
+3. Constellation consistency (no content overlap, max 2 signature artifact references)
 
-| 类型 | 说明 | 示例 |
-|------|------|------|
-| 角色 | 追随者、盟友、敌人、神秘人物 | 理发师祖尔菲亚、走私商人乔吉奥 |
-| 书籍 | 秘传典籍、研究文本 | 《蜈蚣之书》、《寂灭之心》 |
-| 工具 | 神秘物品、仪式器具、武器 | 淡白至极的画作、守夜人的镜子 |
-| 地点 | 城市、远征目的地、店铺 | 巴黎、遗忘的墓园 |
-| 灵体/召唤物 | 可召唤的非人存在 | 坩埚王、镜中少女 |
-| 影响 | 精神状态或环境影响的临时效果 | 入迷、恐惧、安逸 |
-| 原料 | 仪式材料 | 耀素、血染的布 |
-| 密传 | 性相碎片——隐秘知识的片段 | 刃之碎片（上校的许可） |
-| 仪式 | 无形之术的仪式规程 | 日落之仪 |
-| 梦境/漫宿 | 梦境中的区域或道路 | 道路：孔雀之门 |
+### Phase 4: Aspect validation
 
-2. **确定主准则**——从九大准则中选择。引导用户思考该实体为何属于此准则，与关联司辰的关系。
+Run `python src/validate_aspects.py`. Fix missing mandatory aspects. Reference `knowledge/aspect-registry.md`.
 
-3. **构思核心概念**——名称、核心描述理念（hook）、lore 锚点、神秘学根源、补充准则。
+### Phase 5: A4 display page
 
-最终产出结构化概念 JSON：
+Read `prompts/page-design.md` for fixed visual tokens (colors, typography, spacing, layout). Do not iterate by guessing — modify specific token values when issues arise. Output self-contained HTML to `output/{oc-name}/index.html`.
 
-```json
-{
-  "name": "实体中文名称",
-  "name_en": "英文名称",
-  "element_id": "唯一标识符（小写+点号分隔，如 ally.barber / bookstellarremains / tool.riftkey）",
-  "category": "实体类型（characters/books/tools/locations/spirits/influences/ingredients/lore/rituals/mansus）",
-  "primary_aspect": "主准则中文名",
-  "secondary_aspects": ["辅助准则数组，最多 3 个，可为空"],
-  "concept": "核心概念段落（100-250 字）——解释实体是什么、独特之处、暗示的故事可能性",
-  "lore_anchors": ["与 CS 世界观已知元素的关联（司辰/漫宿区域/历史事件），至少 1 个，最多 5 个"],
-  "occult_roots": ["现实神秘学传统参考，至少 1 个，最多 5 个"],
-  "tone": "描述语调（如：学者式冷静、诗意隐喻、诡异不安、庄重神圣、优雅而令人不安）"
-}
-```
+### Phase 6: Constellation completeness
 
-**关键约束：**
+Review from player perspective: can they reconstruct the OC from 3+ carriers? Does the constellation leave enough gaps?
 
-- **name**：2-12 汉字。角色用"称号+名字"格式。书籍用《》括起。查阅 `cs_vocabulary.txt` 避免重名。
-- **element_id**：全小写英文，点号分隔层级。模仿 CS 惯用 ID 风格。
-- **primary_aspect**：必须从九大准则中选择。该准则的定义和意象严格按照 `principles.md` 中的描述。
-- **lore_anchors**：必须引用 `hours.md` 或 `hierarchy.md` 中存在的司辰/历史事件/漫宿区域——不能凭空编造。
-- **occult_roots**：如引用神秘学传统，必须说明具体借鉴了哪个传统的什么概念。阅读 `knowledge/occult-traditions/` 中相关文件获取细节。
-- **长生者及以上层级**：必须包含"代价"或"印记"——这是 CS 世界观的铁律。长生者总是失去了什么或被改变了什么。
-- **不创造新司辰或新准则**。只能使用已存在的准则和司辰。
+## Hard constraints
 
-概念生成后展示给用户审核。用户可以修改任何字段。**只有用户确认后，才进入第二步。**
+- Never create new Principles or Hours. Use only those in `principles.md` and `hours.md`
+- Long-tier characters must have a cost or mark — immortality is never free
+- Never fabricate lore. All lore anchors must trace to `knowledge/cs-lore/`
+- Signature artifacts appear in max 2 carriers across the constellation
+- Output to `output/{oc-name}/`
 
-### 第二步：叙事星座规划
+## Quick reference
 
-读取 `prompts/constellation-design.md` 获取完整模板。
+| Principle | Core theme | Opposition | Key Hours |
+|-----------|-----------|------------|-----------|
+| Lantern | Knowledge, truth, Glory | Moth | Watchman, Meniscate, Madrugad |
+| Moth | Chaos, transformation, Wood | Lantern | Moth, Ring-Yew, Velvet |
+| Heart | Life, persistence, dance | Winter | Thunderskin, Sister-and-Witch, Velvet |
+| Grail | Desire, feast, blood | Forge | Red Grail, Flowermaker, Beachcomber |
+| Forge | Change, remaking, fire | Grail | Forge of Days, Madrugad, Meniscate |
+| Winter | Silence, ending, memory | Heart | Elegiast, Sun-in-Rags, Wolf-Divided |
+| Edge | Struggle, conquest, cunning | — | Colonel, Lionsmith, Wolf-Divided |
+| Knock | Opening, keys, wounds | — | Mother of Ants, Horned-Axe, Meniscate |
+| Secret Histories | Multiple pasts | — | Vagabond, Beachcomber |
 
-核心任务：从 28 种叙事载体中选取 7-8 个，规划每个承载 OC 的**不同侧面**。内容互不重叠，OC 标志物在全星座中出现不超过两次。每个载体使用其独立的叙述语态写作——书籍用目录学家语气，传闻用口述体，影响用第一人称，等等。详见语态指南。
-
-输出为表格：
-
-| # | 载体类型 | 名称 | 承载侧面 |
-|---|----------|------|----------|
-| 1 | 书籍 | 《xxx》 | 承载OC的哪个侧面 |
-
-用户审核星座规划后，进入第三步。
-
-### 第三步：双 Agent 生成卡牌描述
-
-使用 Writer Agent → Editor Agent 两阶段流程，替代手写迭代。
-
-**Writer Agent**（`prompts/writer-agent.md`）：按载体语态独立生成每件物品的初稿。只负责写通——不自我审核。
-
-**Editor Agent**（`prompts/editor-agent.md`）：三道审校——语法（不通则退回）、文风（违反写作指南则标注）、星座一致性（内容重叠则标记）。
-
-流程：
-1. 将星座物品清单 + OC 概念 JSON + 语态指南 + 写作指南交给 Writer Agent
-2. Writer Agent 逐件输出初稿
-3. Editor Agent 逐件审校，标记 verdict: pass | revise | reject
-4. 对于 revise 项，Editor 直接输出修订版；对于 reject 项，退回 Writer 重写
-5. 全部 pass 后进入自检
-
-使用 `Agent` tool，两次调用即可完成全部卡牌文本的初稿和审校。
-
-### 第四步：自检
-
-- 引文长度 15-68 字，暗示多于明说
-- 语调克制，不煽情
-- 遮盖名称后读起来仍像 CS 文本
-- 星座一致性：载体内无内容重叠
-- **性相校验**：运行 `python src/validate_aspects.py`，确认每个物品挂载了该类型的强制性相。参考 `knowledge/aspect-registry.md` 补漏。此步可在下一步并行进行，但不可跳过
-
-### 第五步：生成展示页
-
-读取 `prompts/page-design.md` 获取完整的 A4 页面设计框架。
-
-**不要在迭代中猜测**——颜色、字号、间距、布局、背景纹理已在框架中固定。修改时从具体问题出发（如"图标太小""文字被挤"），只动对应的令牌值。
-
-产出为自包含的 `output/{oc-name}/index.html`，所有数据内嵌，sprite 和图标置于 `assets/` 子目录。
-
-### 第六步：星座完整性检查
-
-- 玩家拿到角色卡后，能至少从 3 个其他载体中拼凑信息
-- 星座留有足够的空白——有些问题永远不应被回答
-
-## 硬约束
-
-- **不创造新的准则或司辰**。只能使用 `principles.md` 和 `hours.md` 中已存在的准则和司辰。
-- **不破坏设定一致性**。如果用户的要求与已有世界观冲突，指出冲突并建议替代方案。
-- **长生者必有代价**。长生者级别的角色必须包含飞升印记（光之印记/塑之印记/悦之印记）或其他代价描述。
-- **名称不重复**。生成前查阅 `cs_vocabulary.txt` 确保名称不与已有实体冲突。
-- **叙事星座内容不重叠**。7-8 个载体必须承载 OC 的不同侧面。禁止两件物品讲同一件事。
-- **优先使用细节而非概括**。一个生动的具体细节胜过三个通用形容词。
-- **永不编造 lore**。所有 lore 锚点必须能追溯到 `knowledge/cs-lore/` 中的已有设定。
-- **输出保存到 `output/{oc-name}/`**。不要保存到项目外的目录。
-
-## 九大准则速查
-
-| 准则 | 核心主题 | 对立 | 主要司辰 |
-|------|---------|------|----------|
-| 灯 | 知识、真理、光明、辉光 | 蛾 | 守夜人、弧月、昕旦、制花人 |
-| 蛾 | 混沌、蜕变、疯狂、林地 | 灯 | 飞蛾、环杉、树中牝马 |
-| 心 | 生命、持续、舞蹈、保护 | 冬 | 双生女巫、丝毧、轰雷之皮 |
-| 杯 | 欲望、飨宴、鲜血、生育 | 铸 | 赤杯、制花人、拾滩鸦 |
-| 铸 | 改变、再造、火焰、毁灭 | 杯 | 白日铸炉、昕旦、弧月 |
-| 冬 | 静默、终结、死亡、纪念 | 心 | 悼歌诗人/骨白鸽、残阳、裂分之狼 |
-| 刃 | 抗争、征服、狡诈、力量 | — | 上校、狮子匠、裂分之狼 |
-| 启 | 开启、钥匙、伤口、门阈 | — | 蚁母、双角斧、弧月 |
-| 秘史 | 多重历史、被掩盖的过去 | — | 浪游旅人、拾滩鸦 |
-
-**拗转序列（Subversion Chain）**：蛾→灯→铸→刃→冬→心→杯→蛾。启和秘史不在拗转循环中。
-
-## 使用提示
-
-- 当用户说"生成一个 OC"时，按六步流程执行。**不能只生成角色卡就结束。**
-- 当用户说"生成一个 XX 性相的角色/书籍/工具"（单个实体）时，直接走概念→卡牌描述两步。
-- 当用户的描述模糊时，先询问实体类型和准则倾向。
-- 当用户要求特定准则时，必须同时阅读 `knowledge/cs-lore/fragments/` 和 `knowledge/occult-traditions/`。
-- 优先从 hermeticism.md 中寻找灵感——它是灯、启、铸、秘史准则的根本性映射。
-- 生成结果应让熟悉 CS 的读者感到"这确实可能出自游戏"。
-- **展示页设计不要迭代猜测**——读取 `prompts/page-design.md` 获取固定的视觉令牌。修改时只动具体值，不动整体框架。
+**Subversion chain**: Moth -> Lantern -> Forge -> Edge -> Winter -> Heart -> Grail -> Moth. Knock and Secret Histories are outside the chain.
