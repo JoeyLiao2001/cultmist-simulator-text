@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Parang Ludwig</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;600&display=swap');
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #d5cdbd; display: flex; justify-content: center; padding: 1.5rem; font-family: 'Noto Serif SC','SimSun',serif; min-height: 100vh; }
+  .page { width: 210mm; height: 297mm; background: #ece4d5; background-image: repeating-linear-gradient(45deg,transparent,transparent 3.5px,rgba(180,160,130,0.07) 3.5px,rgba(180,160,130,0.07) 4.5px),repeating-linear-gradient(-45deg,transparent,transparent 3.5px,rgba(180,160,130,0.07) 3.5px,rgba(180,160,130,0.07) 4.5px); padding: 14mm; overflow: hidden; box-shadow: 0 0 0 1px rgba(0,0,0,0.06),0 2px 16px rgba(0,0,0,0.12); }
+
+  .hero { display: flex; gap: 6mm; align-items: center; margin-bottom: 5mm; }
+  .hero-img { flex: 0 0 36mm; height: 36mm; background: #d8d0c0; border: 1px solid rgba(0,0,0,0.06); overflow: hidden; }
+  .hero-img img { width: 100%; height: 100%; object-fit: cover; }
+  .hero-tag { font-size: 6pt; color: #908070; letter-spacing: 0.28em; text-transform: uppercase; }
+  .hero-name { font-size: 15pt; font-weight: 400; color: #3c4048; letter-spacing: 0.1em; margin: 1.5mm 0; }
+  .hero-desc { font-size: 8pt; line-height: 1.9; color: #5a4e3e; letter-spacing: 0.04em; max-width: 130mm; }
+  .hero-icons { display: flex; gap: 5px; margin-top: 2mm; }
+  .hero-icons img { width: 22px; height: 22px; opacity: 0.55; }
+
+  .vignette { max-width: 150mm; margin: 0 auto; padding: 12mm 0 10mm; }
+  .vignette p { font-size: 8.5pt; line-height: 2.4; color: #5a4e3e; letter-spacing: 0.04em; text-indent: 2em; margin: 0 0 3mm 0; }
+
+  .list { display: flex; flex-wrap: wrap; gap: 3.5mm 5mm; align-content: flex-start; }
+  .item { display: flex; gap: 2.5mm; align-items: flex-start; }
+  .item.t2 { flex: 0 0 calc(50% - 2.5mm); }
+  .item.t3 { flex: 0 0 calc(50% - 2.5mm); }
+  .item-img { flex: 0 0 18mm; height: 18mm; background: #d8d0c0; border: 1px solid rgba(0,0,0,0.05); overflow: hidden; }
+  .item.t3 .item-img { flex: 0 0 16mm; height: 16mm; }
+  .item-img img { width: 100%; height: 100%; object-fit: cover; }
+  .item-body { flex: 1; display: flex; flex-direction: column; gap: 0.8mm; min-width: 0; }
+  .item-tag { font-size: 5pt; color: #a09080; letter-spacing: 0.2em; text-transform: uppercase; }
+  .item-name { font-size: 7.5pt; font-weight: 600; color: #3c3024; letter-spacing: 0.04em; line-height: 1.3; }
+  .item.t3 .item-name { font-size: 6.5pt; }
+  .item-desc { font-size: 6.5pt; line-height: 1.6; color: #6b5e4e; letter-spacing: 0.02em; }
+  .item.t3 .item-desc { font-size: 5.8pt; }
+  .item-icons { display: flex; gap: 3px; }
+  .item-icons img { width: 13px; height: 13px; opacity: 0.45; }
+
+  @media print { * { -webkit-print-color-adjust: exact; print-color-adjust: exact; } body { background: #d5cdbd; padding: 0; } .page { box-shadow: none; } }
+</style>
+</head>
+<body><div class="page" id="page"></div>
+<script>
+const IMG = {
+  'hero':'assets/sprite_parang.png','parang':'assets/tooledgef.png','forge':'assets/loc.shrine.lionsmith.png',
+  'lionsmith':'assets/fragmentedge.lionsmith.png','rail':'assets/twisted-rail.png',
+  'book':'assets/books.png','curse':'assets/fragmentmothg.png',
+  'dream':'assets/dream.png','painting':'assets/paintingmastermoth.png'
+};
+const ICO = {'刃':'assets/edge.png','蛾':'assets/moth.png','杯':'assets/grail.png','工具':'assets/tool.png','文献':'assets/books.png','密传':'assets/lore.png','地点':'assets/location.png','欲望':'assets/desire.png'};
+const icons = (aa) => aa.map(a => ICO[a] ? `<img src="${ICO[a]}" alt="${a}">` : '').join('');
+
+const HERO = {
+  name:'Parang Ludwig', tag:'Long · Lionsmith · 刃 / 蛾 / 杯',
+  aspects:['刃','蛾','杯'],
+  desc:'刀的名字。锻过三次。断过三次。每次都接了回去。断过三次的人站在你旁边的时候，子弹会恰好绕开他。'
+};
+
+const ITEMS = [
+  {n:'巴冷刀',t:'工具',a:['刃','杯','工具'],d:'刀身三道锻接痕。第一道青黑，拇指宽——入会礼那年打断的。第二道铁色泛白，收窄了近半，密林里一架机枪的弹链扫过来，刀替他挡了。第三道细若游丝，对光才现。断过的钢锻回去比原来更密。断过三次的人站在你旁边的时候，子弹会恰好绕开他。',ti:2,el:'parang'},
+  {n:'锻炉空地',t:'地点',a:['刃','地点'],d:'林中有座藤蔓覆盖的石砌锻炉。灰浆配比对不上任何殖民时期的建筑记录。至少二百年。铁砧上的凹痕比锤印窄——比任何锻造工具都窄。周围一圈树的树龄不超过一百二十年。最近一棵在七年前破土。地下三尺挖出过半截刀尖。刃口朝上。没有刀柄。刀尖埋下去的时间比锻炉还要早四十年。',ti:2,el:'forge'},
+  {n:'狮子匠的教诲',t:'密传',a:['刃','密传'],d:'狮子匠砸碎佩剑。碎铁七片。重锻。重淬。重碎。七次之后，碎片不再反光。刃口不再卷。末页注文非原典所载——热带硬木炭，马来语。译文：第一次折断，是别人砸的。后面都是自己砸的。',ti:2,el:'lionsmith'},
+  {n:'被扭断的铁轨',t:'地点',a:['刃','蛾','地点'],d:'一段窄轨铁路穿越榕树林。铁轨从路基中间朝上翻卷。弯口处扳手齿痕仍在——是从下方被拧起来的。旁边石头上一行马来语。苔藓盖了大半。能辨认的词：飞。不对。铁。路基积了雨季的水。铁锈色深。比血浅。',ti:2,el:'rail'},
+  {n:'《雨林匿杀录》',t:'书籍',a:['刃','蛾','文献'],d:'四十三条战术，各附日期地名。笔迹愈后愈急——四十一页始见潦草，五十三页墨淡近无。六十七页写至半句而止，后半页被刀切掉了。',ti:2,el:'book'},
+  {n:'《刀之诵读》',t:'密传',a:['蛾','密传'],d:'由当地一种巫医的特殊文字写成，殖民档案未收录。诵之，令入侵者的工具逐一失灵：枪哑火、航图失读、罗盘针自顾自转。至第三段，雨林深处有人挥刀——每字一刀，与咒文同拍。末句诵毕，刀声止息。不必再念。砍刀声已在门外。',ti:2,el:'curse'},
+  {n:'《雨林梦境》',t:'梦境',a:['蛾'],d:'游荡在丛林边缘的人被梦境困住了：他沉默穿梭，蹲于板根榕前以刀刻符。每夜所刻，皆是异形。第一夜，他惊醒，掌心汗透。第三夜，他摸黑摹下那些梦境的残迹：三道撕裂现实的斜线，两处回环的弧度，一个如骨折般决绝的折角。',ti:3,el:'dream'},
+  {n:'《热带的黄昏》',t:'画作',a:['蛾'],d:'业余油画，一八八七年作。前景雨林——树蕨，交叠的板根。远处窄轨铁路穿林，树冠阴影里站着一人。然而画家坚称从未画过此人。拆下画布会发现画框内侧粘着一片枯叶。',ti:3,el:'painting'},
+];
+
+(function(){
+  let h = `<div class="hero"><div class="hero-img"><img src="${IMG['hero']}"></div><div><div class="hero-tag">${HERO.tag}</div><div class="hero-name">${HERO.name}</div><div class="hero-desc">${HERO.desc}</div><div class="hero-icons">${icons(HERO.aspects)}</div></div></div><div class="vignette"><p>狮子匠的锻炉在漫宿深处日夜不歇。每一块被重锻的铁都有自己的声音——但在此之前，从没有人把自己的声音锻进去过。</p><p>他在雨林战场上折断第三次之后，锻炉的火色变了一瞬。狮子匠低头看了一眼铁砧。砧面上多了一道不是锤子打的凹痕。</p><p>此后漫宿的锻炉每隔七年会短暂地停一次火——不长，只够一片榕树叶从枝头落到地上。刃之准则的学徒在这七年间挥刀的速度会恰好慢下来半拍。他们自己察觉不到。但他们的对手察觉到了。</p></div><div class="list">`;
+  ITEMS.forEach(i => { h += `<div class="item t${i.ti}"><div class="item-img"><img src="${IMG[i.el]}"></div><div class="item-body"><div class="item-tag">${i.t}</div><div class="item-name">${i.n}</div><div class="item-desc">${i.d}</div><div class="item-icons">${icons(i.a)}</div></div></div>`; });
+  h += '</div>'; document.getElementById('page').innerHTML = h;
+})();
+</script>
+</body>
+</html>

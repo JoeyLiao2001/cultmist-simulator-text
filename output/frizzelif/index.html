@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>夫里泽里夫</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;600&display=swap');
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: #d5cdbd;
+    display: flex;
+    justify-content: center;
+    padding: 1.5rem;
+    font-family: 'Noto Serif SC', 'SimSun', serif;
+    min-height: 100vh;
+  }
+
+  .page {
+    width: 210mm;
+    height: 297mm;
+    background: #ece4d5;
+    background-image:
+      repeating-linear-gradient(45deg, transparent, transparent 3.5px, rgba(180,160,130,0.07) 3.5px, rgba(180,160,130,0.07) 4.5px),
+      repeating-linear-gradient(-45deg, transparent, transparent 3.5px, rgba(180,160,130,0.07) 3.5px, rgba(180,160,130,0.07) 4.5px);
+    padding: 14mm 14mm;
+    overflow: hidden;
+    box-shadow: 0 0 0 1px rgba(0,0,0,0.06), 0 2px 16px rgba(0,0,0,0.12);
+  }
+
+  /* ── Hero ── */
+  .hero { display: flex; gap: 6mm; align-items: center; margin-bottom: 6mm; }
+  .hero-img { flex: 0 0 36mm; height: 36mm; background: #d8d0c0; border: 1px solid rgba(0,0,0,0.06); overflow: hidden; }
+  .hero-img img { width: 100%; height: 100%; object-fit: cover; }
+  .hero-tag { font-size: 6pt; color: #908070; letter-spacing: 0.28em; text-transform: uppercase; }
+  .hero-name { font-size: 15pt; font-weight: 400; color: #3c4048; letter-spacing: 0.1em; margin: 1.5mm 0; }
+  .hero-desc { font-size: 8pt; line-height: 1.9; color: #5a4e3e; letter-spacing: 0.04em; max-width: 130mm; }
+  .hero-icons { display: flex; gap: 5px; margin-top: 2mm; }
+  .hero-icons img { width: 22px; height: 22px; opacity: 0.55; }
+
+  /* ── Vignette ── */
+  .vignette { max-width: 150mm; margin: 0 auto; padding: 5mm 0 4mm; }
+  .vignette p { font-size: 8.5pt; line-height: 2.0; color: #5a4e3e; letter-spacing: 0.04em; text-indent: 2em; margin: 0 0 1.5mm 0; }
+
+  /* ── Items ── */
+  .list { display: flex; flex-wrap: wrap; gap: 4mm 5mm; align-content: flex-start; }
+
+  .item { display: flex; gap: 2.5mm; align-items: flex-start; }
+  .item.t2 { flex: 0 0 calc(50% - 2.5mm); }
+  .item.t3 { flex: 0 0 calc(50% - 2.5mm); }
+
+  .item-img { flex: 0 0 18mm; height: 18mm; background: #d8d0c0; border: 1px solid rgba(0,0,0,0.05); overflow: hidden; }
+  .item.t3 .item-img { flex: 0 0 16mm; height: 16mm; }
+  .item-img img { width: 100%; height: 100%; object-fit: cover; }
+
+  .item-body { flex: 1; display: flex; flex-direction: column; gap: 0.8mm; min-width: 0; }
+  .item-tag { font-size: 5pt; color: #a09080; letter-spacing: 0.2em; text-transform: uppercase; }
+  .item-name { font-size: 7.5pt; font-weight: 600; color: #3c3024; letter-spacing: 0.04em; line-height: 1.3; }
+  .item.t3 .item-name { font-size: 6.5pt; }
+  .item-desc { font-size: 6.5pt; line-height: 1.6; color: #6b5e4e; letter-spacing: 0.02em; }
+  .item.t3 .item-desc { font-size: 5.8pt; }
+  .item-icons { display: flex; gap: 3px; }
+  .item-icons img { width: 13px; height: 13px; opacity: 0.45; }
+
+  @media print {
+    * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    body { background: #d5cdbd; padding: 0; }
+    .page { box-shadow: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page" id="page"></div>
+
+<script>
+const IMG = {
+  'frizzelif': 'assets/sprite_frizzelif.png',
+  'playbill': 'assets/sprite_playbill.png',
+  'score': 'assets/bookofmasks.png',
+  'aria': 'assets/memory.golden.png',
+  'ring': 'assets/sprite_ring.png',
+  'seat': 'assets/sprite_seat.png',
+  'roost': 'assets/fragmentmothg.png',
+  'decree': 'assets/bookwhitecat.png',
+  'scar': 'assets/sprite_scar.png',
+  'thrill': 'assets/influencemoth.png',
+  'beach': 'assets/TheBeachcomber.png',
+};
+
+const ICO = {
+  '蛾': 'assets/moth.png', '启': 'assets/knock.png', '心': 'assets/heart.png', '秘史': 'assets/secrethistories.png',
+  '工具': 'assets/tool.png', '文献': 'assets/books.png', '密传': 'assets/lore.png', '伤疤': 'assets/scar.png', '欲望': 'assets/desire.png', '地点': 'assets/location.png', '回忆': 'assets/memory.png', '原料': 'assets/ingredient.png',
+};
+const icons = (aa) => aa.map(a => ICO[a] ? `<img src="${ICO[a]}" alt="${a}">` : '').join('');
+
+const HERO = {
+  name: '喜鹊·夫里泽里夫', tag: 'Name · Moth · Roost', aspects: ['蛾'],
+  desc: '左爪少一根趾。维也纳河畔剧院首演《翼中之翼》那晚，他蹲在包厢最左侧的栏杆上。第三幕后他不在那里了。栏杆上有三道抓痕——不是火灾后木头的焦痕，而是新鲜的，往下渗着某种比木头更深的颜色。此后每版《翼中之翼》的第三幕都不是首演的原版。',
+};
+
+const ITEMS = [
+  {n:'烧焦的节目单',t:'工具',a:['工具','蛾'],d:'维也纳河畔剧院，《翼中之翼》，1897年。右上角烧穿了——烧痕恰好让 Wing Within Wing 的铅字变成 Wing With Win。背面铅笔字不属于在场的任何人。第三幕，第四小节。',ti:2,el:'playbill'},
+  {n:'《翼中之翼》总谱残本',t:'书籍',a:['文献','蛾'],d:'传说中的歌剧残本。第三幕终曲的页脚有尖细的划痕——不是笔，硬度像指甲但比人的窄。原谱上的女高音部分被划掉了，补上去的音符整整高出一个全音，不在任何人的音域内。',ti:2,el:'score'},
+  {n:'咏叹调间的空白',t:'回忆',a:['蛾','回忆'],d:'演出进行到第三幕中段，台上的女高音还在唱，然后突然失声了。你回头看邻座——你不记得你旁边本该坐着谁，但一定不是现在这个。包厢最左侧的栏杆上有一个凹痕，不是木头原来的疤。有什么东西刚才蹲在上面，现在不在那里了。',ti:2,el:'aria'},
+  {n:'被偷换的戒指',t:'原料',a:['启','原料'],d:'曾属于一位准备了三年的蛾之飞升者——飞升前夜发现它被调换成了黄铜。三天后银戒指出现在枕头上，内侧多刻了一个字典里没有的词。念出此词的人舌尖会顶住上颚，发不出音来。',ti:2,el:'ring'},
+  {n:'七排三座',t:'地点',a:['蛾','地点'],d:'布达佩斯喜剧剧院二楼有一个永久预订的座位，票根上从不写名字。每季最后一场散场后座位上放着一枚不属于今晚剧组的纽扣，一页被改了调号的乐谱，以及一张字条，上面写着今晚的某个错音恰好应该如此。',ti:2,el:'seat'},
+  {n:'《栖鸣录》',t:'密传',a:['蛾','密传'],d:'蛾之残篇，页面无字——只有细密如乐谱的刻痕。阅读时脑中自动出现鸟鸣，第三节之后鸟鸣开始拼成句子，内容不可转述。最后一页有人补了一行普通墨水：以上均未经喜鹊核实。',ti:2,el:'roost'},
+  {n:'《关于维持一切事物存续的教令》抄本',t:'书籍',a:['文献','心'],d:'心之准则典籍。第七章页边有一只喜鹊的黑白速写——并非出自抄写者之手，因为墨水比正文新了几个世纪。嘴尖恰好指向一段经文：有些事物的存续只需要被某个人用某种方式记住一次。',ti:2,el:'decree'},
+  {n:'河畔剧院的爪痕',t:'伤疤',a:['蛾','伤疤'],d:'右手虎口三道平行的细线。伤在皮肤下面，触不到，只在某些光线角度下可见。伤疤一年发痒两次：每次都在《翼中之翼》重演的那一周，不只是痒。皮肤下面的三道线会动——微微往手腕方向移。',ti:3,el:'scar'},
+  {n:'林间的悸动',t:'诱惑',a:['蛾','欲望'],d:'被诱惑者深知不该追寻祂——飞蛾的赐予从来不是免费的。但他也清楚祂从不拒绝那些渴望意外的人：比如今晚的门锁恰好坏掉，或者那份密传恰好出现在能被找到的地方。他无法确定，究竟是祂在助他一臂之力，还是他恰好沦为了共犯。但他知道，事成之后的窗外会留下一根不请自来的羽毛。',ti:3,el:'thrill'},
+  {n:'拾滩鸦的一句话',t:'其他角色提及',a:[],d:'曾有一段弥阿文抄本记录了栖木的聚会。拾滩鸦在散场时顺嘴说的话，抄写者记在页脚：不是所有羽毛都能沉进海里。喜鹊上礼拜搞砸了斯德哥尔摩那次。他乐坏了。飞蛾也乐坏了。浪游旅人说下次换个人吧，但没人当真。没人能替代他的位置。',ti:3,el:'beach'},
+];
+
+(function(){
+  let h = `<div class="hero">
+    <div class="hero-img"><img src="${IMG['frizzelif']}"></div>
+    <div>
+      <div class="hero-tag">${HERO.tag}</div>
+      <div class="hero-name">${HERO.name}</div>
+      <div class="hero-desc">${HERO.desc}</div>
+      <div class="hero-icons">${icons(HERO.aspects)}</div>
+    </div></div>
+    <div class="vignette">
+      <p>《翼中之翼》首演于1577年曼托瓦的维多利歌剧院。此后四百年间上演了十一次，没有一次完整演完。</p>
+      <p>演出事故各不相同。吊灯在第三幕第四小节坠落。台板在同一小节塌陷。布拉格那次女高音在第三幕中段失声，此后再没唱过一个完整的句子——后来改行当了大理石匠。每次散场后包厢栏杆上都会发现一根黑白羽毛。</p>
+      <p>歌剧的原始总谱已经失传。每版重排的指挥都会在第三幕前夕做同一个梦：一只喜鹊蹲在指挥台的谱架上，伸出左爪，给他们看它少了一根趾。梦里的它不说话。</p>
+      <p>林地栖木的聚会不设固定日期。骨白鸽、拾滩鸦、双生女巫和她的另一半、浪游旅人——在林地的某根枝条上碰面。飞蛾的座位永远是满的，但座位上的不是飞蛾。</p>
+    </div>
+    <div class="list">`;
+
+  ITEMS.forEach(i => {
+    h += `<div class="item t${i.ti}">
+      <div class="item-img"><img src="${IMG[i.el]}"></div>
+      <div class="item-body">
+        <div class="item-tag">${i.t}</div>
+        <div class="item-name">${i.n}</div>
+        <div class="item-desc">${i.d}</div>
+        <div class="item-icons">${icons(i.a)}</div>
+      </div></div>`;
+  });
+
+  h += '</div>';
+  document.getElementById('page').innerHTML = h;
+})();
+</script>
+
+</body>
+</html>

@@ -1,6 +1,6 @@
 ---
 name: cs-generator
-description: Generate Cultist Simulator-style original characters and narrative constellations. 6-phase pipeline: concept -> constellation -> dual-agent card writing -> aspect validation -> A4 page -> completeness review. Includes a codified style guide with 10 writing rules, 18 carrier-type voice profiles, and an aspect registry with validator.
+description: Generate Cultist Simulator-style original characters and narrative constellations. Six-phase pipeline from concept through constellation planning, dual-agent card writing, aspect validation, A4 page generation, to completeness review. Includes a codified style guide (10 writing rules, 18 carrier voice profiles) and an aspect registry with validator.
 ---
 
 # CS Generator

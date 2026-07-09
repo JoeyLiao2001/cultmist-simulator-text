@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<title>阿妮亚·沃洛格达</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;600&display=swap');
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: #d5cdbd;
+    display: flex;
+    justify-content: center;
+    padding: 1.5rem;
+    font-family: 'Noto Serif SC', 'SimSun', serif;
+    min-height: 100vh;
+  }
+
+  .page {
+    width: 210mm;
+    height: 297mm;
+    background: #ece4d5;
+    background-image:
+      repeating-linear-gradient(45deg, transparent, transparent 3.5px, rgba(180,160,130,0.07) 3.5px, rgba(180,160,130,0.07) 4.5px),
+      repeating-linear-gradient(-45deg, transparent, transparent 3.5px, rgba(180,160,130,0.07) 3.5px, rgba(180,160,130,0.07) 4.5px);
+    padding: 14mm 14mm;
+    box-shadow: 0 0 0 1px rgba(0,0,0,0.06), 0 2px 16px rgba(0,0,0,0.12);
+    overflow: hidden;
+  }
+
+  /* ── Hero ── */
+  .hero { display: flex; gap: 6mm; align-items: center; margin-bottom: 8mm; }
+  .hero-img { flex: 0 0 36mm; height: 36mm; background: #d8d0c0; border: 1px solid rgba(0,0,0,0.06); overflow: hidden; }
+  .hero-img img { width: 100%; height: 100%; object-fit: cover; }
+  .hero-tag { font-size: 6pt; color: #908070; letter-spacing: 0.28em; text-transform: uppercase; }
+  .hero-name { font-size: 15pt; font-weight: 400; color: #3c4048; letter-spacing: 0.1em; margin: 1.5mm 0; }
+  .hero-desc { font-size: 9pt; line-height: 1.9; color: #5a4e3e; letter-spacing: 0.04em; font-style: italic; max-width: 130mm; }
+  .hero-icons { display: flex; gap: 5px; margin-top: 2mm; }
+  .hero-icons img { width: 22px; height: 22px; opacity: 0.55; }
+
+  /* ── Vignette ── */
+  .vignette {
+    max-width: 150mm;
+    margin: 0 auto;
+    padding: 8mm 0 6mm;
+  }
+  .vignette p {
+    font-size: 8.5pt;
+    line-height: 2.3;
+    color: #5a4e3e;
+    letter-spacing: 0.04em;
+    text-indent: 2em;
+    margin: 0 0 3mm 0;
+  }
+
+  /* ── Item list ── */
+  .list { display: flex; flex-wrap: wrap; gap: 5mm 6mm; align-content: flex-start; }
+
+  .item { display: flex; gap: 3mm; align-items: flex-start; }
+  .item.t2 { flex: 0 0 calc(50% - 3mm); }
+  .item.t3 { flex: 0 0 calc(33.33% - 4mm); }
+
+  .item-img { flex: 0 0 20mm; height: 20mm; background: #d8d0c0; border: 1px solid rgba(0,0,0,0.05); overflow: hidden; }
+  .item.t3 .item-img { flex: 0 0 15mm; height: 15mm; }
+  .item-img img { width: 100%; height: 100%; object-fit: cover; }
+
+  .item-body { flex: 1; display: flex; flex-direction: column; gap: 1mm; min-width: 0; }
+  .item-tag { font-size: 5.5pt; color: #a09080; letter-spacing: 0.2em; text-transform: uppercase; }
+  .item-name { font-size: 8pt; font-weight: 600; color: #3c3024; letter-spacing: 0.04em; line-height: 1.3; }
+  .item.t3 .item-name { font-size: 7pt; }
+  .item-desc { font-size: 7pt; line-height: 1.65; color: #6b5e4e; letter-spacing: 0.02em; }
+  .item.t3 .item-desc { font-size: 6.2pt; }
+  .item-icons { display: flex; gap: 3px; }
+  .item-icons img { width: 15px; height: 15px; opacity: 0.5; }
+
+  @media print {
+    * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    body { background: #d5cdbd; padding: 0; }
+    .page { box-shadow: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page" id="page"></div>
+
+<script>
+const IMG = {
+  'ally.anya': 'assets/sprite_ally_anya.png',
+  'book.nameless': 'assets/sprite_book_nameless.png',
+  'tool.keeners.shawl': 'assets/toolwinterb.png',
+  'location.emptygrave.vologda': 'assets/rarity.winter.png',
+  'spirit.recorded.dead': 'assets/spirit_winterd_edge.png',
+  'ritual.mute.elegy': 'assets/ritual.png',
+  'influence.preforget': 'assets/sprite_influence_preforget.png',
+  'rumour.dont.ask': 'assets/sprite_rumour_dontask.png',
+  'element.violet.sketch': 'assets/paintingmasterwinter.png',
+};
+const ICO = {
+  '冬': 'assets/winter.png', '启': 'assets/knock.png', '蛾': 'assets/moth.png', '秘史': 'assets/secrethistories.png',
+  '文献': 'assets/books.png', '工具': 'assets/tool.png', '影响': 'assets/influence.png', '传闻': 'assets/rumour.png', '仪式': 'assets/ritual_icon.png',
+};
+const icons = (aa) => aa.map(a => `<img src="${ICO[a]}" alt="${a}">`).join('');
+
+const D = {"character":{"name":"阿妮亚·沃洛格达","el":"ally.anya","aspects":["冬","启"],"desc":"她从来不会用沙哑得像冻土的声音做自我介绍。她的日记里没有她自己的名字。"},"items":[{"name":"《无名日记》","el":"book.nameless","type":"书籍","aspects":["文献","冬","秘史"],"desc":"八开本，深棕色皮革。每页一个名字。你在第十三页停下——前十二页的名字还在纸上，但一个也不记得了。往后再翻。往后再翻。第四百一十二页之后是空白。","t":2},{"name":"哭丧人的披肩","el":"tool.keeners.shawl","type":"工具","aspects":["工具","冬"],"desc":"黑色羊毛。边缘磨出了线。永远湿冷。若在夜里贴到耳边，能听到一首俄语悼歌。每次都是第三节。唱完第三节就没有了。","t":2},{"name":"沃洛格达郊外的空坟","el":"location.emptygrave.vologda","type":"地点","aspects":["冬"],"desc":"圣安娜墓园，北墙根下。花岗岩碑，碑文已不可辨。坟穴打开时土面平整，无锹痕。墓园登记簿1910年11月第十七条：姓名栏被指甲刮去。对光倾斜，凹痕仍在——七个字母的宽度。","t":2},{"name":"记名亡者","el":"spirit.recorded.dead","type":"召唤物","aspects":["冬","启"],"desc":"\"你还记得我吗。\"嘴唇不动。声音从别的地方来。站在你身后时没有脚步声。召唤它不需要司辰的许可——只需要一个名字。不是你的名字。是你写下过的名字。","t":2},{"name":"哑歌之仪","el":"ritual.mute.elegy","type":"仪式","aspects":["仪式","冬","启"],"desc":"备纸一张，非己笔迹。面北。窗台。烛火。全程不可出声。若出声，纸上的字不变。若静默至烛尽，纸上的名字将不是你认识的人。","t":2},{"name":"预忘","el":"influence.preforget","type":"影响","aspects":["影响","冬","蛾"],"desc":"我刚才在站台上和一个人说了话。黑披肩。声音很沙。问了我往哪里去。我回答了。她走了。现在我想不起来她的脸。想不起来声音。笔记本上多了一行字。不是我的笔迹。什么时候写的。空气里有霜的气味。","t":3},{"name":"打听不得的女人","el":"rumour.dont.ask","type":"传闻","aspects":["传闻","秘史","冬"],"desc":"莫斯科—喀山线，夜班。末节车厢，靠窗。有个女人总在那里。不买票。梁赞来的检票员跟她说过一次话。第二天的交班记录上他只写了三行。第一行是他母亲的名字。后两行被划掉了。","t":3},{"name":"维奥莱特的速写","el":"element.violet.sketch","type":"回忆","aspects":["冬","蛾"],"desc":"棕色纸面速写本，线装。三百多页里没有人。只有这一页。铅笔：站台透视线，长椅，女人坐姿。脸的位置是擦痕——擦了很多次，纸面已经起毛。右下角铅笔字：\"第二天忘了。画还在。\"","t":3}]};
+
+(function(){
+  const cc = D.character;
+  let h = `<div class="hero">
+    <div class="hero-img"><img src="${IMG[cc.el]}"></div>
+    <div>
+      <div class="hero-tag">Long · Elegiast</div>
+      <div class="hero-name">${cc.name}</div>
+      <div class="hero-desc">${cc.desc}</div>
+      <div class="hero-icons">${icons(cc.aspects)}</div>
+    </div></div><div class="list">`;
+
+    // Vignette between hero and items
+  h += `<div class="vignette">
+    <p>沃洛格达伤寒，1910年11月。圣安娜墓园登记簿第十七条。葬礼上没有花。哭丧人的挽歌由下一个哭丧人来唱——她们总是互相唱的。但那场葬礼没有挽歌。下一个哭丧人已经死了。</p>
+    <p>三年后，第十七条上的名字被人用指甲刮去。同年，墓穴被打开时是空的。土面平整，无锹痕。</p>
+    <p>1923年冬。莫斯科—喀山线夜班列车的交班记录上，有人在备注栏写了一个名字。不是列车员的名字。此后每逢冬月，备注栏里都会出现一个人名，笔迹各不相同。只有一次重复。写这个名字的人又把它划掉了。</p>
+  </div>`;
+
+  D.items.forEach(i => {
+    h += `<div class="item t${i.t}">
+      <div class="item-img"><img src="${IMG[i.el]}"></div>
+      <div class="item-body">
+        <div class="item-tag">${i.type}</div>
+        <div class="item-name">${i.name}</div>
+        <div class="item-desc">${i.desc}</div>
+        <div class="item-icons">${icons(i.aspects)}</div>
+      </div></div>`;
+  });
+
+  h += '</div>';
+  document.getElementById('page').innerHTML = h;
+})();
+</script>
+
+</body>
+</html>
