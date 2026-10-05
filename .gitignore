@@ -1,0 +1,21 @@
+# 密钥：仅 src/review_layout.py 识图评审使用，严禁用于文字/代码处理
+.env
+
+# 项目规则声明不入版本库的目录
+# 游戏版权数据：解包数据、蒸馏语料、证据归档、sprite 与解包游戏
+data/
+raw/
+_meta/
+references/
+output/
+
+# 第三方工具
+tools/
+
+# 临时产物
+_repo_tree.json
+*.review.png
+
+# 缓存
+.pytest_cache/
+__pycache__/
